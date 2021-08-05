@@ -11,3 +11,23 @@ export const Heading1 = styled.h1`
   margin-left: 15px;
   font-weight: 300;
 `;
+
+
+export const Name = styled.h1`
+  font-size: 5rem;
+  @media screen and (max-width: 480px) { font-size: 2rem; }
+  @media (prefers-color-scheme: dark) { color: white; }
+`;
+
+export const Avator = styled.img`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 480px ){
+    width: 100px;
+    height: 100px;
+  }
+`;
