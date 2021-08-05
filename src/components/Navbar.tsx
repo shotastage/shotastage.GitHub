@@ -10,21 +10,24 @@ import {
   NavLink,
 } from "./NavbarCommon";
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <Navigation>
-        <NavBrandArea href="/">
-          <NavBrand>{this.props.children}</NavBrand>
-        </NavBrandArea>
-        <NavArea>
-          <NavItems>
-            <NavLink to="/m/logout">Logout</NavLink>
-          </NavItems>
-        </NavArea>
-      </Navigation>
-    );
-  }
+type Props = {
+  children: React.ReactNode;
+};
+
+const Navbar = (props: Props) => {
+  
+  return (
+    <Navigation>
+      <NavBrandArea href="/">
+        <NavBrand>{props.children}</NavBrand>
+      </NavBrandArea>
+      <NavArea>
+        <NavItems>
+          <NavLink to="/m/logout">Logout</NavLink>
+        </NavItems>
+      </NavArea>
+    </Navigation>
+  );
 }
 
 export default Navbar;
