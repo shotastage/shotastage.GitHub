@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 type Props = {
   children: React.ReactNode;
 };
@@ -13,7 +12,6 @@ export const Footer = (props: Props) => {
     </>
   );
 }
-
 
 const CopyrightText = styled.p`
   font-family: 'Roboto', sans-serif;

@@ -29,7 +29,11 @@ const App = () => {
         <Row>
           <Heading2>Social</Heading2>
         </Row>
-
+        <Row>
+          <p>Instagram</p>
+          <p>Twitter</p>
+          <p>YouTube</p>
+        </Row>
         <Row>
           
             <Footer>
