@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   NavBrandArea,
-  NavBrandLogo,
   Navigation,
   NavBrand,
   NavArea,

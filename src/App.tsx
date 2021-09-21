@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import { Row } from './components/Grid';
 import { Card } from './components/Cards';
 import { Footer, FooterCopyright } from './components/Footer';
-import { Heading1, Heading2, Heading3, Heading4, Heading5 } from './components/Typography';
+import { Heading2 } from './components/Typography';
 import { AppContainer, Avator, Name } from './components/AppComponent';
 
 const App = () => {
