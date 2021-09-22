@@ -11,8 +11,10 @@ const App = () => {
       <Navbar>@shotastage</Navbar>
       <AppContainer>
         <Row>
-          <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
-          <Name>Shota Shimazu</Name>
+          <Card>
+            <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
+            <Name>Shota Shimazu</Name>
+          </Card>
         </Row>
         <Row>
           <Heading2>Works</Heading2>
@@ -34,12 +36,10 @@ const App = () => {
           <p>Twitter</p>
           <p>YouTube</p>
         </Row>
-        <Row>
-          
-            <Footer>
-              <FooterCopyright/>
-            </Footer>
-          
+        <Row>  
+          <Footer>
+            <FooterCopyright/>
+          </Footer>  
         </Row>
       </AppContainer>
     </>

@@ -25,6 +25,7 @@ interface RowProps {
 }
 
 export const Row = styled.div<RowProps>`
+background: red;
     width: 100%;
     margin: 10px;
     margin-left: 0;

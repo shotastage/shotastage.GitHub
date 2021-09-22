@@ -14,9 +14,10 @@ export const Heading1 = styled.h1`
 
 
 export const Name = styled.h1`
-  font-size: 5rem;
+  font-size: 4.5rem;
+  padding: 20px;
   @media screen and (max-width: 480px) { font-size: 2rem; }
-  @media (prefers-color-scheme: dark) { color: white; }
+  @media (prefers-color-scheme: dark) { color: #333; }
 `;
 
 export const Avator = styled.img`
