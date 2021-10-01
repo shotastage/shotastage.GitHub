@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
-import { Row } from './components/Grid';
-import { Card } from './components/Cards';
+import { Row, Col } from './components/Grid';
+import { Card, CardHeading, CardDescription } from './components/Cards';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Heading2 } from './components/Typography';
 import { AppContainer, Avator, Name } from './components/AppComponent';
@@ -17,10 +17,30 @@ const App = () => {
           </Card>
         </Row>
         <Row>
-          <Heading2>Works</Heading2>
+          <Heading2>Services</Heading2>
         </Row>
         <Row>
-          <Heading2>Blog</Heading2>
+          <Col>
+            <Card>
+              <CardHeading>GeoTube</CardHeading>
+              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <CardHeading>GeoTube</CardHeading>
+              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <CardHeading>GeoTube</CardHeading>
+              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+            </Card>
+          </Col>      
+        </Row>
+        <Row>
+          <Heading2>Media</Heading2>
         </Row>
         <Row>
           <Card/>

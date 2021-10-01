@@ -30,10 +30,16 @@ export const Row = styled.div<RowProps>`
     margin-left: 0;
     margin-right: 0;
     display: flex;
+    flex-direction: row;
     justify-content: ${ props => props.right ? "flex-end" : "space-around"};
     align-items: center;
     flex-wrap: wrap;
     background: ${ props => props.debug ? "blue" : "transparent"};
+`;
+
+export const Col = styled.div`
+    flex: 1 1 auto;
+    padding: 12px;
 `;
 
 export const MarginSparcer = styled.div`
@@ -55,7 +61,7 @@ export const GridContainer = styled.div`
         min-width: 0;
         padding: 1.1em;
     }
-    @media screen and (max-width: 480px ){
+    @media screen and (max-width: 480px ) {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         margin-left: 8px;
         margin-right: 8px;
