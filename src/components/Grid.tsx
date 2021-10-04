@@ -9,6 +9,7 @@ export const Container = styled.div<ContainerProps>`
     margin-right: 50px;
     width: auto;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
@@ -25,21 +26,23 @@ interface RowProps {
 }
 
 export const Row = styled.div<RowProps>`
-    width: 100%;
-    margin: 0;
-    margin-left: 0;
-    margin-right: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: ${ props => props.right ? "flex-end" : "space-around"};
-    align-items: center;
-    flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
     background: ${ props => props.debug ? "blue" : "transparent"};
+
+    * {
+        box-sizing: border-box;
+    }
 `;
 
-export const Col = styled.div`
-    flex: 1 1 auto;
-    padding: 12px;
+interface ColProps {
+    no?: number;
+}
+
+export const Col = styled.div<ColProps>`
+    padding: 5px 10px;
+    width: 100%;
 `;
 
 export const MarginSparcer = styled.div`

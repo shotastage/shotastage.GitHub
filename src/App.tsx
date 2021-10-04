@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import { Row, Col } from './components/Grid';
-import { Card, CardHeading, CardDescription } from './components/Cards';
+import { Card, CardBody, CardHeading, CardDescription } from './components/Cards';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Heading2 } from './components/Typography';
 import { AppContainer, Avator, Name } from './components/AppComponent';
@@ -10,32 +10,38 @@ const App = () => {
     <>
       <Navbar>@shotastage</Navbar>
       <AppContainer>
-        <Row>
-          <Card>
+        <Card>
+          <CardBody>
             <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
             <Name>Shota Shimazu</Name>
-          </Card>
-        </Row>
+          </CardBody>
+        </Card>      
         <Row>
           <Heading2>Services</Heading2>
         </Row>
         <Row>
-          <Col>
+          <Col no={3}>
             <Card>
-              <CardHeading>GeoTube</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardBody>
+                <CardHeading>GeoTube</CardHeading>
+                <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              </CardBody>
             </Card>
           </Col>
-          <Col>
+          <Col no={3}>
             <Card>
-              <CardHeading>GeoTube</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardBody>
+                <CardHeading>GeoTube</CardHeading>
+                <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              </CardBody>
             </Card>
           </Col>
-          <Col>
+          <Col no={3}>
             <Card>
-              <CardHeading>GeoTube</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardBody>
+                <CardHeading>GeoTube</CardHeading>
+                <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              </CardBody>
             </Card>
           </Col>      
         </Row>

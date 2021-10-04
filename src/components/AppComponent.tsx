@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-  margin-left: 30px;
-  margin-right: 30px;
-  padding-top: 30px;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const Heading1 = styled.h1`
