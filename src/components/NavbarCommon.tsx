@@ -41,12 +41,12 @@ export const Navigation = styled.nav`
   @media screen and (max-width: 480px) {
     height: 60px;
   }
-  @media (prefers-color-scheme: dark) {
-    color: white;
-    background: #232423;
-    filter: drop-shadow(0px 0px 1px rgb(70, 70, 70));
-  }
 `;
+// @media (prefers-color-scheme: dark) {
+//  color: white;
+//  background: #232423;
+//  filter: drop-shadow(0px 0px 1px rgb(70, 70, 70));
+// }
 
 export const NavBrand = styled.h1`
   font-family: "Lora", serif;

@@ -19,12 +19,3 @@ code {
     monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #232423;
-  }
-
-  h1, h2, p, li {
-    color: white;
-  }
-}
