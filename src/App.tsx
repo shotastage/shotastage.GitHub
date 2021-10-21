@@ -4,7 +4,7 @@ import { Heading } from './components/Heading';
 import { Card, CardBody, CardHeading, CardDescription } from './components/Cards';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Heading2 } from './components/Typography';
-import { Avator, Name } from './components/AppComponent';
+import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 
 const App = () => {
   return (
@@ -13,10 +13,11 @@ const App = () => {
       <Container>
         <Grid colStart={1} colEnd={4} rowStart={1} rowEnd={4}>
           <Heading>
-            <CardBody>
-              <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
+            <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
+            <NameArea>
               <Name>Shota Shimazu</Name>
-            </CardBody>
+              <UserName>@shotastage</UserName>
+            </NameArea>
           </Heading>
         </Grid>
         <Grid colStart={1} colEnd={4} rowStart={5} rowEnd={6}>

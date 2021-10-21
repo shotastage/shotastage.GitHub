@@ -8,6 +8,7 @@ export const Container = styled.div<ContainerProps>`
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto;
+    overflow: hidden;
     background: ${ props => props.debug ? "red" : "transparent"};
 `;
 

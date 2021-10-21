@@ -15,11 +15,20 @@ export const Heading1 = styled.h1`
 `;
 
 
-export const Name = styled.h1`
+export const Name = styled.span`
   font-size: 4.5rem;
   padding: 20px;
   @media screen and (max-width: 480px) { font-size: 2rem; }
   @media (prefers-color-scheme: dark) { color: #333; }
+`;
+
+export const UserName = styled.span`
+  padding-left: 20px;
+`;
+
+export const NameArea = styled.h1`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Avator = styled.img`
