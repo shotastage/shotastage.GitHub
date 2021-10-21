@@ -38,8 +38,13 @@ export const Avator = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform .7s ease-in-out;
   @media screen and (max-width: 480px ){
     width: 100px;
     height: 100px;
+  }
+
+  &:hover {
+    transform: rotate(360deg);
   }
 `;
