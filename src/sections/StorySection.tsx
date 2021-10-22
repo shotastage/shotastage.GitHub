@@ -19,67 +19,57 @@ const Story = styled.div`
   }
 `;
 
-const StoryCircle = styled.div`
+const StoryCircleBase = styled.div`
   flex: 0 0 70px;
   min-width: 70px;
   min-height: 70px;
+  max-width: 70px;
+  max-height: 70px;
   background: transparent;
   border: 1px solid #c0c0c0;
   border-radius: calc(70px / 2);
   margin: 10px 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+
+const StoryCircleImage = styled.img`
+  width: 66px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: calc(66px / 2);
+`;
+
+interface StoryCircleProps {
+  imageUrl: string
+  altText: string
+}
+
+const StoryCircle = (props: StoryCircleProps) => {
+  return (
+    <StoryCircleBase>
+      <StoryCircleImage alt={props.altText} src={props.imageUrl} decoding="async" />
+    </StoryCircleBase>
+  );
+}
 
 export const StorySection = () => {
 
     const [stories, setStories] = useState([]);
 
     useEffect(() => {
-        ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", "1c868f91-632c-4a24-974f-c8011839f137"]])
-        .then((res: any) => {
-            console.log(res.contents);
-        });
-    });
+      ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", "1c868f91-632c-4a24-974f-c8011839f137"]])
+      .then((data: any) => {
+          console.log(data.contents);
+          setStories(data.contents);
+      });
+    }, []);
 
     return (
         <Story>
-            <div style={{ height: "1px", width: "100px" }} />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
-            <StoryCircle />
+          <div style={{ height: "1px", width: "30px" }} />
+          { stories.map((value) => <StoryCircle key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />)}   
         </Story>
     );
 }
