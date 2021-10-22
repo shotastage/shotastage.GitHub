@@ -1,5 +1,5 @@
-
-
+import { useEffect, useState } from 'react';
+import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
 
 const Story = styled.div`
@@ -30,6 +30,16 @@ const StoryCircle = styled.div`
 `;
 
 export const StorySection = () => {
+
+    const [stories, setStories] = useState([]);
+
+    useEffect(() => {
+        ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", "1c868f91-632c-4a24-974f-c8011839f137"]])
+        .then((res: any) => {
+            console.log(res.contents);
+        });
+    });
+
     return (
         <Story>
             <div style={{ height: "1px", width: "100px" }} />

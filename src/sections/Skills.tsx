@@ -33,6 +33,7 @@ export const SkillsSection = (): JSX.Element => {
                     {SkillMaker("Djnago", "django-icon.svg")}
                     {SkillMaker("Play Framework", "play.svg")}
                     {SkillMaker("WordPress", "wordpress-icon.svg")}
+                    {SkillMaker("Ubuntu", "ubuntu.svg")}
                     {SkillMaker("HTML5", "html-5.svg")}
                     {SkillMaker("CSS3", "css-3.svg")}
                     {SkillMaker("Sass", "sass.svg")}
