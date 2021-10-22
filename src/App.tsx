@@ -8,15 +8,13 @@ import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
-
-// import TIPSTOCK from './assets/TIPSTOCK.svg';
-
+import { StorySection } from './sections/StorySection';
 
 const App = () => {
-  alert("このサイトは現在作成中です。");
   return (
     <React.Fragment>
       <Navbar>@shotastage</Navbar>
+      <StorySection />
       <Container>
         <Grid colStart={1} colEnd={4} rowStart={1} rowEnd={4}>
           <Heading>
