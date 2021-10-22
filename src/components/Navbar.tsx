@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
       </NavBrandArea>
       <NavArea>
         <NavItems>
-          <NavLink to="/m/logout">Logout</NavLink>
+          <NavLink to="/m/logout">Button</NavLink>
         </NavItems>
       </NavArea>
     </Navigation>

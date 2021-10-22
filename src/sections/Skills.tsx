@@ -16,7 +16,7 @@ export const SkillsSection = (): JSX.Element => {
     return (
         <React.Fragment>
             <Grid colStart={1} colEnd={4} rowStart={13} rowEnd={14}>
-                <Heading2>Skills & Experience</Heading2>
+                <Heading2>Skills & Experiences</Heading2>
             </Grid>
             <Grid colStart={1} colEnd={4} rowStart={15} rowEnd={16} style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ display: "flex" }}>
