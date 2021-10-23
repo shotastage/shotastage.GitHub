@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from "./router/main-router";
+import Router from "./routers/main-router";
 import "normalize.css";
 import './index.css';
 import reportWebVitals from './reportWebVitals';

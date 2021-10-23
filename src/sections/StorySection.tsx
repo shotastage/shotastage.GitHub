@@ -61,7 +61,6 @@ export const StorySection = () => {
     useEffect(() => {
       ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", "1c868f91-632c-4a24-974f-c8011839f137"]])
       .then((data: any) => {
-        console.log(data.contents);
         setStories(data.contents);
       });
     }, []);
