@@ -11,6 +11,7 @@ import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
 
 const App = () => {
+  alert("このサイトは現在製作中です.");
   return (
     <React.Fragment>
       <Navbar>@shotastage</Navbar>

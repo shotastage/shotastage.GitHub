@@ -6,7 +6,7 @@ interface ContainerProps {
   
 export const Container = styled.div<ContainerProps>`
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: auto;
     overflow: hidden;
     margin-top: 0;
