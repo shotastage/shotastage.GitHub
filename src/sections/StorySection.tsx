@@ -15,7 +15,7 @@ const Story = styled.div`
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    display:none;
+    display: none;
   }
 `;
 
@@ -32,6 +32,10 @@ const StoryCircleBase = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    margin: 5px 5px 0 5px;
+  }
 `;
 
 const StoryCircleImage = styled.img`

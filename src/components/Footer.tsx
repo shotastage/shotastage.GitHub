@@ -4,12 +4,12 @@ import styled from 'styled-components';
 type Props = {
   children: React.ReactNode;
 };
-  
+
 export const Footer = (props: Props) => {
   return (
-    <>
+    <React.Fragment>
       {props.children}
-    </>
+    </React.Fragment>
   );
 }
 
@@ -21,7 +21,7 @@ const CopyrightText = styled.p`
   margin-top: 1em;
   margin-bottom: 1em;
   @media screen and (max-width: 480px) {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 `;
 

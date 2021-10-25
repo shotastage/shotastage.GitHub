@@ -18,14 +18,30 @@ export const CardSquare = styled.div`
   background: white;
   border-radius: 30px;
   margin: 10px;
-  width: 150px;
-  height: 150px;
+  min-width: 150px;
+  min-height: 150px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
+
+  @media screen and (max-width: 1360px) {
+    min-width: 130px;
+    min-height: 130px;
+  }
+
+  @media screen and (max-width: 480px) {
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 20px;
+  }
 `;
 
 export const CardIcon = styled.object`
   width: 80px;
   height: 80px;
+  
+  @media screen and (max-width: 480px) {
+    width: 55px;
+    height: 55px;
+  }
 `;
 
 export const CardBody = styled.div`
