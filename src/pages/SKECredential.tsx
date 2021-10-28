@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
-import { ApiClient } from 'mini-apiclient';
-import { API_KEYS } from '../env-values';
 import { Button } from '../components/Button';
 import { Footer, FooterCopyright } from '../components/Footer';
 // import { auth } from '../firebaseInitl';

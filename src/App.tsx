@@ -9,6 +9,7 @@ import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
+import { DevelPopup } from './components/DevelPopup';
 
 const HeadingGridLayoutGlobal: GridGlobal = {
   colStart: 1,
@@ -37,10 +38,11 @@ const App = () => {
     window.location.href = 'https://twitter.com/shotastage';
   };
 
-  alert('このページが現在開発中です');
-
   return (
     <React.Fragment>
+      <DevelPopup>
+        <p>このページは現在開発中です。</p>
+      </DevelPopup>
       <Navbar>@shotastage</Navbar>
       <StorySection />
       <Heading>
