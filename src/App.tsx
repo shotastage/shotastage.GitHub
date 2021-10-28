@@ -37,6 +37,8 @@ const App = () => {
     window.location.href = 'https://twitter.com/shotastage';
   };
 
+  alert('このページが現在開発中です');
+
   return (
     <React.Fragment>
       <Navbar>@shotastage</Navbar>

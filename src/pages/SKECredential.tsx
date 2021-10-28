@@ -21,23 +21,20 @@ const AuthCard = styled.div`
   padding-top: 0;
   margin-top: 90px;
   background-color: white;
-  max-width: 470px;
-  min-width: 450px;
+  max-width: 410px;
+  width: 80%;
 
   margin-left: auto;
   margin-right: auto;
 
 
   @media screen and (max-width: 480px ) {
-    width: 100%;
+    width: 80%;
     min-height: 400px;
-    border: none;
-    margin-top: 30px;
   }
 `;
 
 const AuthCardHeadings = styled.div`
-
   h1, p {
     font-weight: bold;
     text-align: center;
@@ -98,16 +95,9 @@ const SKECredential = () => {
   };
   */
 
-  useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.X_MICROCMS_API_KEY]])
-    .then((data: any) => {
-      //setStories(data.contents);
-    });
-  }, []);
-
   return (
     <React.Fragment>
-      <Navbar>@shotastage - SKE System</Navbar>
+      <Navbar>SKE System</Navbar>
         <AuthCard>
           <AuthCardHeadings>
             <h1>Access Code</h1>

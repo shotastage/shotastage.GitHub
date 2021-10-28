@@ -8,6 +8,7 @@ export const NavBrandArea = styled.a`
   flex-direction: row;
   align-items: center;
   color: #333;
+
   &:visited {
     text-decoration: none;
     color: #333;
