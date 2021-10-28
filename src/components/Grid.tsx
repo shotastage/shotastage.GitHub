@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 interface ContainerProps {
     debug?: string;
 }
-  
+
 export const Container = styled.div<ContainerProps>`
     display: grid;
     grid-template-rows: auto;
