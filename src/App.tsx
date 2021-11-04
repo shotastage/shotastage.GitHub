@@ -42,6 +42,7 @@ const App = () => {
     <React.Fragment>
       <DevelPopup>
         <p>このページは現在開発中です。</p>
+        <p>ご不便をおかけしますが、ご了承ください。</p>
       </DevelPopup>
       <Navbar>@shotastage</Navbar>
       <StorySection />
