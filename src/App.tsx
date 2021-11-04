@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import { Container, GridNext, GridGlobal } from './components/Grid';
+import { Container, Grid, GridGlobal } from './components/Grid';
 import { Heading } from './components/Typography';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Heading2 } from './components/Typography';
@@ -10,13 +10,6 @@ import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
 import { DevelPopup } from './components/DevelPopup';
-
-const HeadingGridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 1,
-  rowEnd: 4,
-};
 
 const SocialGridLayoutGlobal: GridGlobal = {
   colStart: 1,
@@ -41,8 +34,7 @@ const App = () => {
   return (
     <React.Fragment>
       <DevelPopup>
-        <p>このページは現在開発中です。</p>
-        <p>ご不便をおかけしますが、ご了承ください。</p>
+        <p>このページは現在開発中です。ご不便をおかけしますが、ご了承ください。</p>
       </DevelPopup>
       <Navbar>@shotastage</Navbar>
       <StorySection />
@@ -54,16 +46,14 @@ const App = () => {
         </NameArea>
       </Heading>
       <Container>
-        <GridNext className="Heading" global={HeadingGridLayoutGlobal}>
-        </GridNext>
         <Works />
         <Writings />
         <SkillsSection />
-        <GridNext global={SocialGridLayoutGlobal}>
+        <Grid global={SocialGridLayoutGlobal}>
           <Heading2>Social</Heading2>
-        </GridNext>
-        <GridNext global={FooterGridLayoutGlobal}>
-        </GridNext>
+        </Grid>
+        <Grid global={FooterGridLayoutGlobal}>
+        </Grid>
       </Container>
       <Footer>
         <FooterCopyright />

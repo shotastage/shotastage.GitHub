@@ -6,13 +6,9 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 10em);
     gap: 0px 0px;
-    grid-template-areas: 
-    "Heading Heading Heading"
-    "WorkSectionTitle WorkSectionTitle WorkSectionTitle"
-    "Work1 Work2 Work3"; 
+
     overflow: hidden;
     margin-top: 0;
     margin-left: 8rem;
@@ -29,9 +25,8 @@ export const Container = styled.div<ContainerProps>`
         margin-left: 3rem;
         margin-right: 3rem;
     }
-    
+
     @media screen and (max-width: 480px) {
-        grid-template-columns: 1fr 1fr;
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -50,13 +45,6 @@ export const Col = styled.div<ColProps>`
 export const MarginSparcer = styled.div`
     height: 10px;
 `;
-
-interface GridProps {
-    colStart?: number;
-    colEnd?: number;
-    rowStart?: number;
-    rowEnd?: number;
-}
 
 export interface GridGlobal {
     colStart?: number;
@@ -87,7 +75,7 @@ interface GridObjects {
 }
 
 
-export const GridNext = styled.div<GridObjects>`
+export const Grid = styled.div<GridObjects>`
     ${ props =>　props.global.colStart && css`grid-column-start: ${props.global.colStart};`}
     ${ props => props.global.colEnd && css`grid-column-end: ${props.global.colEnd};`}
     ${ props => props.global.rowStart && css`grid-row-start: ${props.global.rowStart};`}
@@ -106,13 +94,6 @@ export const GridNext = styled.div<GridObjects>`
         ${ props => props.mobile?.rowStart && css`grid-row-start: ${props.mobile?.rowStart};`}
         ${ props => props.mobile?.rowEnd && css`grid-row-end: ${props.mobile?.rowEnd};`}
     }
-`;
-
-export const Grid = styled.div<GridProps>`
-    ${ props =>　props.colStart && css`grid-column-start: ${props.colStart};`}
-    ${ props => props.colEnd && css`grid-column-end: ${props.colEnd};`}
-    ${ props => props.rowStart && css`grid-row-start: ${props.rowStart};`}
-    ${ props => props.rowEnd && css`grid-row-end: ${props.rowEnd};`}
 `;
 
 export const Row = styled.div`

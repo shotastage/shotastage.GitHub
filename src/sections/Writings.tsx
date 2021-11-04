@@ -1,15 +1,43 @@
 import React from "react";
-import { Grid } from '../components/Grid';
+import { Grid, GridGlobal } from '../components/Grid';
 import { Card, CardIcon, CardBody, CardHeading, CardDescription } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
+
+const HeadingLayout: GridGlobal = {
+  colStart: 1,
+  colEnd: 4,
+  rowStart: 9,
+  rowEnd: 10,
+}
+
+const WritingSection1: GridGlobal = {
+  colStart: 1,
+  colEnd: 2,
+  rowStart: 11,
+  rowEnd: 12,
+}
+
+const WritingSection2: GridGlobal = {
+  colStart: 2,
+  colEnd: 3,
+  rowStart: 11,
+  rowEnd: 12,
+}
+
+const WritingSection3: GridGlobal = {
+  colStart: 3,
+  colEnd: 4,
+  rowStart: 11,
+  rowEnd: 12,
+}
 
 export const Writings = () => {
     return (
       <React.Fragment>
-        <Grid colStart={1} colEnd={4} rowStart={9} rowEnd={10}>
+        <Grid global={HeadingLayout}>
           <Heading2>Writing</Heading2>
         </Grid>
-        <Grid colStart={1} colEnd={2} rowStart={11} rowEnd={12}>
+        <Grid global={WritingSection1}>
           <Card>
             <CardBody>
               <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/tipstock.svg`} style={{width: "100%"}}/>
@@ -17,7 +45,7 @@ export const Writings = () => {
             </CardBody>
           </Card>
         </Grid>
-        <Grid colStart={2} colEnd={3} rowStart={11} rowEnd={12}>
+        <Grid global={WritingSection2}>
           <Card>
             <CardBody>
               <CardHeading>blog</CardHeading>
@@ -25,7 +53,7 @@ export const Writings = () => {
             </CardBody>
           </Card>
         </Grid>
-        <Grid colStart={3} colEnd={4} rowStart={11} rowEnd={12}>
+        <Grid global={WritingSection3}>
           <Card style={{ background: "#1be31b" }}>
             <CardBody>
               <CardHeading>Qiita</CardHeading>
