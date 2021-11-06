@@ -1,7 +1,18 @@
 import React from 'react';
+import {createUseStyles} from 'react-jss';
 import { Grid, GridGlobal } from '../components/Grid';
 import { CardSquare, CardIcon } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
+
+const useStyles = createUseStyles({
+  gridStyle: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  skillsBlock: {
+    display: 'flex',
+  },
+});
 
 // MARK: Skills grid layout
 const HeadingLayout: GridGlobal = {
@@ -27,13 +38,16 @@ const SkillMaker = (name: string, dataPath: string) => {
 }
 
 export const SkillsSection = (): JSX.Element => {
+
+  const classes = useStyles()
+
   return (
     <React.Fragment>
       <Grid global={HeadingLayout}>
         <Heading2>Skills & Experiences</Heading2>
       </Grid>
-      <Grid global={SkillGridLayout} style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex" }}>
+      <Grid global={SkillGridLayout} className={classes.gridStyle}>
+        <div className={classes.skillsBlock}>
           {SkillMaker("Swift", "swift.svg")}
           {SkillMaker("TypeScript", "typescript-icon.svg")}
           {SkillMaker("Python", "python.svg")}
