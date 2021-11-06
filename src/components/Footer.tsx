@@ -1,5 +1,16 @@
 import React from 'react';
+import {createUseStyles} from 'react-jss';
 import styled from 'styled-components';
+
+
+const useStyles = createUseStyles({
+  link: {
+    textDecoration: 'none',
+    '&:visited': {
+      color: 'inherit',
+    },
+  },
+});
 
 type Props = {
   children: React.ReactNode;
@@ -26,11 +37,12 @@ const CopyrightText = styled.p`
 `;
 
 export const FooterCopyright = () => {
-  const currentDate = new Date().getFullYear();      
+  const classes = useStyles()
+  const currentDate = new Date().getFullYear();
 
   return (
     <CopyrightText>
-      Copyright © {currentDate} Shota Shimazu, All rights reserved.
+      Copyright © {currentDate} <a className={classes.link} href="https://twitter.com/shotastage">Shota Shimazu</a>, All rights reserved.
     </CopyrightText>
   );
 }
