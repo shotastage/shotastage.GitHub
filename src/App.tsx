@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { ApiClient } from 'mini-apiclient';
+import { API_KEYS } from './env-values';
 import Navbar from './components/Navbar';
 import { Container, Grid, GridGlobal } from './components/Grid';
 import { Heading } from './components/Typography';
@@ -26,6 +28,14 @@ const FooterGridLayoutGlobal: GridGlobal = {
 }
 
 const App = () => {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    ApiClient.GET("https://shota-folio.microcms.io/api/v1/main_contents", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
+    .then((data: any) => {
+      setMessage(data.contents);
+    });
+  }, []);
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -34,7 +44,7 @@ const App = () => {
   return (
     <React.Fragment>
       <DevelPopup>
-        <p>このページは現在開発中です。ご不便をおかけしますが、ご了承ください。</p>
+        <p>{message}</p>
       </DevelPopup>
       <Navbar>@shotastage</Navbar>
       <StorySection />

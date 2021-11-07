@@ -11,12 +11,12 @@ const SKESystem = () => {
 
 
   useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.X_MICROCMS_API_KEY]])
+    ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
     .then((data: any) => {
       //setStories(data.contents);
     });
   }, []);
-  
+
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
   };

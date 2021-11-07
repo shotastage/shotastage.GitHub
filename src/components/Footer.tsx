@@ -42,7 +42,7 @@ export const FooterCopyright = () => {
 
   return (
     <CopyrightText>
-      Copyright © {currentDate} <a className={classes.link} href="https://twitter.com/shotastage">Shota Shimazu</a>, All rights reserved.
+      Copyright © {currentDate} <a className={classes.link} href="https://twitter.com/shotastage" target="_blank" rel="noopener noreferrer">Shota Shimazu</a>, All rights reserved.
     </CopyrightText>
   );
 }

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
 
+import { API_KEYS } from '../env-values';
+
 const Story = styled.div`
   display: flex;
   align-items: center;
@@ -63,7 +65,7 @@ export const StorySection = () => {
     const [stories, setStories] = useState([]);
 
     useEffect(() => {
-      ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", "1c868f91-632c-4a24-974f-c8011839f137"]])
+      ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
       .then((data: any) => {
         setStories(data.contents);
       });
@@ -72,7 +74,7 @@ export const StorySection = () => {
     return (
         <Story>
           <div style={{ height: "1px", width: "30px" }} />
-          { stories.map((value) => <StoryCircle key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />)}   
+          { stories.map((value) => <StoryCircle key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />)}
         </Story>
     );
 }
