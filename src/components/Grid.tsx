@@ -5,10 +5,9 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 10em);
-    gap: 0px 0px;
-
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 0.8em;
     overflow: hidden;
     margin-top: 0;
     margin-left: 8rem;

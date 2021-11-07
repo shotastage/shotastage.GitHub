@@ -11,6 +11,8 @@ const useStyles = createUseStyles({
   },
   skillsBlock: {
     display: 'flex',
+    overflow: 'hidden',
+    overflowX: 'scroll',
   },
 });
 
@@ -57,7 +59,7 @@ export const SkillsSection = (): JSX.Element => {
           {SkillMaker("AWS", "aws.svg")}
           {SkillMaker("Git", "git-icon.svg")}
         </div>
-        <div style={{ display: "flex" }}>
+        <div className={classes.skillsBlock}>
           {SkillMaker("Djnago", "django-icon.svg")}
           {SkillMaker("Play Framework", "play.svg")}
           {SkillMaker("WordPress", "wordpress-icon.svg")}

@@ -11,7 +11,7 @@ import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
-import { DevelPopup } from './components/DevelPopup';
+import { TopPopup } from './components/TopPopup';
 
 const SocialGridLayoutGlobal: GridGlobal = {
   colStart: 1,
@@ -43,9 +43,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <DevelPopup>
-        <p>{message}</p>
-      </DevelPopup>
+      { message !== '' && <TopPopup><p>{message}</p></TopPopup> }
       <Navbar>@shotastage</Navbar>
       <StorySection />
       <Heading>
