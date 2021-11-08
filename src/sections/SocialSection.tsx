@@ -12,6 +12,24 @@ const SocialButtonBase = styled.button`
   outline: none;
   padding: 0;
   appearance: none;
+  height: 200px;
+  width: 350px;
+  margin-right: 8em;
+  margin-left: 8em;
+
+  @media screen and (max-width: 480px) {
+    height: 140px;
+    width: 320px;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 1060px) {
+    height: 140px;
+    max-width: 200px;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
 `;
 
 const Twitter = styled(SocialButtonBase)`
@@ -24,8 +42,6 @@ const Twitter = styled(SocialButtonBase)`
   border-radius: 20px;
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
-  height: 200px;
-  width: 350px;
 `;
 
 const Instagram = styled(SocialButtonBase)`
@@ -37,8 +53,6 @@ const Instagram = styled(SocialButtonBase)`
   border-radius: 20px;
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
-  height: 200px;
-  width: 350px;
   background: #f09433;
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 `;
@@ -53,24 +67,21 @@ const Github = styled(SocialButtonBase)`
   border-radius: 20px;
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
-  height: 200px;
-  width: 350px;
 `;
 
 const useStyles = createUseStyles({
   gridStyle: {
     display: 'flex',
-    flexDirection: 'column',
-  },
-  skillsBlock: {
-    display: 'flex',
-    overflow: 'hidden',
-    overflowX: 'scroll',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    '@media (max-width: 480px)': {
+      flexDirection: 'column',
+      alignItems: 'center',
+    }
   },
 });
 
 // MARK: Skills grid layout
-
 const SocialGridLayoutGlobal: GridGlobal = {
   colStart: 1,
   colEnd: 4,
