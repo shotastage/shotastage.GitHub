@@ -2,30 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
 import Navbar from './components/Navbar';
-import { Container, Grid, GridGlobal } from './components/Grid';
+import { Container } from './components/Grid';
 import { Heading } from './components/Typography';
 import { Footer, FooterCopyright } from './components/Footer';
-import { Heading2 } from './components/Typography';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
+import { SocialSection } from './sections/SocialSection';
 import { TopPopup } from './components/TopPopup';
-
-const SocialGridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 17,
-  rowEnd: 18,
-}
-
-const FooterGridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 19,
-  rowEnd: 20,
-}
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -57,11 +43,7 @@ const App = () => {
         <Works />
         <Writings />
         <SkillsSection />
-        <Grid global={SocialGridLayoutGlobal}>
-          <Heading2>Social</Heading2>
-        </Grid>
-        <Grid global={FooterGridLayoutGlobal}>
-        </Grid>
+        <SocialSection />
       </Container>
       <Footer>
         <FooterCopyright />

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const useStyles = createUseStyles({
   link: {
     textDecoration: 'none',
+    color: 'inherit',
     '&:visited': {
       color: 'inherit',
     },

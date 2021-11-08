@@ -57,7 +57,6 @@ export const SkillsSection = (): JSX.Element => {
           {SkillMaker("React", "react.svg")}
           {SkillMaker("Google Cloud Platform", "google-cloud.svg")}
           {SkillMaker("AWS", "aws.svg")}
-          {SkillMaker("Git", "git-icon.svg")}
         </div>
         <div className={classes.skillsBlock}>
           {SkillMaker("Djnago", "django-icon.svg")}
@@ -67,6 +66,9 @@ export const SkillsSection = (): JSX.Element => {
           {SkillMaker("HTML5", "html-5.svg")}
           {SkillMaker("CSS3", "css-3.svg")}
           {SkillMaker("Sass", "sass.svg")}
+        </div>
+        <div className={classes.skillsBlock}>
+          {SkillMaker("Git", "git-icon.svg")}
         </div>
       </Grid>
     </React.Fragment>
