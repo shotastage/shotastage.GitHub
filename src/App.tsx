@@ -11,7 +11,7 @@ import { Writings } from './sections/Writings';
 import { SkillsSection } from './sections/Skills';
 import { StorySection } from './sections/StorySection';
 import { SocialSection } from './sections/SocialSection';
-import { TopPopup } from './components/TopPopup';
+import { TopBanner } from './components/TopPopup';
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      { message !== '' && <TopPopup><p>{message}</p></TopPopup> }
+      { message !== '' && <TopBanner>{message}</TopBanner> }
       <Navbar>@shotastage</Navbar>
       <StorySection />
       <Heading>

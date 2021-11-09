@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 export const TopPopup = styled.div`
@@ -15,3 +16,14 @@ export const TopPopup = styled.div`
         font-weight: bold;
     }
 `;
+
+export const TopBanner = (props: React.PropsWithChildren<{}>) => {
+
+    return (
+        <TopPopup>
+            <p>
+                {props.children}
+            </p>
+        </TopPopup>
+    );
+};
