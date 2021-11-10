@@ -12,3 +12,7 @@ export const FIREBASE_CONFIG = {
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_APP_ID,
 };
+
+export const GA_KEYS = {
+    gaID: process.env.REACT_APP_G_ANALYTOCS_ID,
+};
