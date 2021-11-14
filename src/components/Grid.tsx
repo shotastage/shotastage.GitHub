@@ -10,24 +10,29 @@ export const Container = styled.div<ContainerProps>`
     grid-gap: 0.8em;
     overflow: hidden;
     margin-top: 0;
-    margin-left: 8rem;
-    margin-right: 8rem;
-    max-width: 1780px;
+    margin-left: auto;
+    margin-right: auto;
     background: ${ props => props.debug ? "red" : "transparent"};
 
-    @media screen and (min-width: 1780px) {
-        margin-left: auto;
-        margin-right: auto;
+    @media screen and (min-width: 1200px) {
+        max-width: 1100px;
     }
 
-    @media screen and (max-width: 1360px) {
-        margin-left: 3rem;
-        margin-right: 3rem;
+    @media screen and (max-width: 1200px) {
+        max-width: 900px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        max-width: 700px;
+    }
+
+    @media screen and (max-width: 800px) {
+        max-width: 750px;
     }
 
     @media screen and (max-width: 480px) {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: 0;
+        margin-right: 0;
     }
 `;
 
