@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
 
@@ -47,6 +47,13 @@ const StoryCircleImage = styled.img`
   border-radius: calc(66px / 2);
 `;
 
+const StoryCircleBlank = styled.span`
+  width: 66px;
+  height: 66px;
+  background: pink;
+  border-radius: calc(66px / 2);
+`;
+
 interface StoryCircleProps {
   imageUrl: string
   altText: string
@@ -55,7 +62,9 @@ interface StoryCircleProps {
 const StoryCircle = (props: StoryCircleProps) => {
   return (
     <StoryCircleBase>
-      <StoryCircleImage alt={props.altText} src={props.imageUrl} decoding="async" />
+      <Suspense fallback={<StoryCircleBlank />}>
+        <StoryCircleImage alt={props.altText} src={props.imageUrl} decoding="async" />
+      </Suspense>
     </StoryCircleBase>
   );
 }

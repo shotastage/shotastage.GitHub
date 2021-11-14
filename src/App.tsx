@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
 import Navbar from './components/Navbar';
@@ -6,12 +6,20 @@ import { Container } from './components/Grid';
 import { Heading } from './components/Typography';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
+import { TopBanner } from './components/TopPopup';
+
+
+// Page Sections
+import { StorySection } from './sections/StorySection';
 import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
-import { SkillsSection } from './sections/Skills';
-import { StorySection } from './sections/StorySection';
 import { SocialSection } from './sections/SocialSection';
-import { TopBanner } from './components/TopPopup';
+
+const SkillsSection = React.lazy(() =>
+  import('./sections/Skills')
+    .then(({ SkillsSection }) => ({ default: SkillsSection })),
+);
+
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -42,7 +50,9 @@ const App = () => {
       <Container>
         <Works />
         <Writings />
-        <SkillsSection />
+        <Suspense fallback="loading...">
+          <SkillsSection />
+        </Suspense>
         <SocialSection />
       </Container>
       <Footer>
