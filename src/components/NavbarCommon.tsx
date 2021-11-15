@@ -7,6 +7,7 @@ export const NavBrandArea = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   color: #333;
 
   &:visited {
