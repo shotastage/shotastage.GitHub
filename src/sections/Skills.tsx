@@ -39,7 +39,7 @@ const SkillMaker = (name: string, dataPath: string) => {
   );
 }
 
-export const SkillsSection = (): JSX.Element => {
+const SkillsSection = (): JSX.Element => {
 
   const classes = useStyles()
 
@@ -74,3 +74,5 @@ export const SkillsSection = (): JSX.Element => {
     </React.Fragment>
   );
 }
+
+export default SkillsSection;

@@ -14,18 +14,16 @@ import { TopBanner } from './components/TopPopup';
 import { StorySection } from './sections/StorySection';
 import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
+import SkillsSection from './sections/Skills';
 import { SocialSection } from './sections/SocialSection';
-import { SkillsSection } from './sections/Skills';
 
-const App = () => {
-  const [message, setMessage] = useState('');
+const TopStaticComponents = React.memo(props => {
+  return (
+    <Navbar>@shotastage</Navbar>
+  );
+});
 
-  useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/main_contents", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
-    .then((data: any) => {
-      setMessage(data.contents);
-    });
-  }, []);
+const StaticComponentSection = React.memo(props => {
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -33,9 +31,6 @@ const App = () => {
 
   return (
     <React.Fragment>
-      { message !== '' && <TopBanner>{message}</TopBanner> }
-      <Navbar>@shotastage</Navbar>
-      <StorySection />
       <Heading>
         <Image
           imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
@@ -57,6 +52,26 @@ const App = () => {
       <Footer>
         <FooterCopyright />
       </Footer>
+    </React.Fragment>
+  );
+});
+
+const App = () => {
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    ApiClient.GET("https://shota-folio.microcms.io/api/v1/main_contents", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
+    .then((data: any) => {
+      setMessage(data.contents);
+    });
+  }, []);
+
+  return (
+    <React.Fragment>
+      { message !== '' && <TopBanner>{message}</TopBanner> }
+      <TopStaticComponents />
+      <StorySection />
+      <StaticComponentSection />
     </React.Fragment>
   );
 }

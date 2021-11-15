@@ -9,7 +9,6 @@ import { Name, UserName, NameArea } from '../components/AppComponent';
 
 const SKESystem = () => {
 
-
   useEffect(() => {
     ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
     .then((data: any) => {
