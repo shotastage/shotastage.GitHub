@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
 import Navbar from './components/Navbar';
@@ -15,12 +15,7 @@ import { StorySection } from './sections/StorySection';
 import { Works } from './sections/Works';
 import { Writings } from './sections/Writings';
 import { SocialSection } from './sections/SocialSection';
-
-const SkillsSection = React.lazy(() =>
-  import('./sections/Skills')
-    .then(({ SkillsSection }) => ({ default: SkillsSection })),
-);
-
+import { SkillsSection } from './sections/Skills';
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -56,9 +51,7 @@ const App = () => {
       <Container>
         <Works />
         <Writings />
-        <Suspense fallback="loading...">
-          <SkillsSection />
-        </Suspense>
+        <SkillsSection />
         <SocialSection />
       </Container>
       <Footer>

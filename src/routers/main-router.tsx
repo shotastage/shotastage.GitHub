@@ -6,11 +6,7 @@ import {
 } from "react-router-dom";
 
 // Import pages
-const App = React.lazy(() =>
-  import('../App').then((module) => ({
-    default: module.default,
-  }))
-);
+import App from   "../App";
 
 const Sitemap = React.lazy(() =>
   import('../pages/Sitemap').then((module) => ({
