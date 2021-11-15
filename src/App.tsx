@@ -4,6 +4,7 @@ import { API_KEYS } from './env-values';
 import Navbar from './components/Navbar';
 import { Container } from './components/Grid';
 import { Heading } from './components/Typography';
+import { Image } from './components/Image';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
@@ -41,7 +42,12 @@ const App = () => {
       <Navbar>@shotastage</Navbar>
       <StorySection />
       <Heading>
-        <Avator src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg" />
+        <Image
+          imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
+          webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
+          alt="avator image"
+          imgComponent={Avator}
+          />
         <NameArea>
           <Name>Shota Shimazu</Name>
           <UserName onClick={userClick}>@shotastage</UserName>

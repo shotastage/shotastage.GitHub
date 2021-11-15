@@ -1,8 +1,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
-
 import { API_KEYS } from '../env-values';
+import { Image } from '../components/Image';
 
 const Story = styled.div`
   display: flex;
@@ -35,14 +35,20 @@ const StoryCircleBase = styled.div`
   align-items: center;
   justify-content: center;
 
+  picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media screen and (max-width: 480px) {
     margin: 5px 5px 0 5px;
   }
 `;
 
 const StoryCircleImage = styled.img`
-  width: 66px;
-  height: 66px;
+  width: 66px !important;
+  height: 66px !important;
   object-fit: cover;
   border-radius: calc(66px / 2);
 `;
@@ -55,6 +61,7 @@ const StoryCircleBlank = styled.span`
 `;
 
 interface StoryCircleProps {
+  webpImageUrl?: string;
   imageUrl: string
   altText: string
 }
@@ -63,7 +70,7 @@ const StoryCircle = (props: StoryCircleProps) => {
   return (
     <StoryCircleBase>
       <Suspense fallback={<StoryCircleBlank />}>
-        <StoryCircleImage alt={props.altText} src={props.imageUrl} decoding="async" />
+        <Image alt={props.altText} webPSrc={props.webpImageUrl} imgSrc={props.imageUrl} imgComponent={StoryCircleImage} />
       </Suspense>
     </StoryCircleBase>
   );
@@ -83,7 +90,13 @@ export const StorySection = () => {
     return (
         <Story>
           <div style={{ height: "1px", width: "30px" }} />
-          { stories.map((value) => <StoryCircle key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />)}
+          { stories.map((value) => {
+            return (
+               value['headlineMinified']
+              ? <StoryCircle key={value['id']} altText={value['story_id']} webpImageUrl={value['headlineMinified']['url']} imageUrl={value['headline']['url']} />
+              : <StoryCircle key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />
+            );
+          })}
         </Story>
     );
 }
