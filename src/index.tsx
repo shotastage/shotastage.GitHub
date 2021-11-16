@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from "./routers/main-router";
-import "normalize.css";
+import NormalizeCSS from 'normalize-css.ts';
 import { GlobalStyle } from "./styles/globalStyle";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <NormalizeCSS />
     <GlobalStyle />
     <Router />
   </React.StrictMode>,
