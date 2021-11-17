@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth" // New import
+import { getAuth } from "firebase/auth";
 import { FIREBASE_CONFIG } from './env-values';
 
 const app = initializeApp(FIREBASE_CONFIG);

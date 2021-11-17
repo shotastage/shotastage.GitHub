@@ -32,7 +32,7 @@ const SKECredential = React.lazy(() =>
 
 
 const Loading: React.FC = () => {
-  return <div>Loading...</div>;
+  return <div />;
 };
 
 const Router: React.FC = () => {

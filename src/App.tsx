@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import Navbar from './components/Navbar';
 import { Container } from './components/Grid';
 import { Heading } from './components/Typography';
 import { Image } from './components/Image';
 import { Footer, FooterCopyright } from './components/Footer';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
+import Navbar from './components/Navbar';
 
 
 // Page Sections
@@ -17,13 +17,7 @@ import { Writings } from './sections/Writings';
 import SkillsSection from './sections/Skills';
 import { SocialSection } from './sections/SocialSection';
 
-const TopStaticComponents = React.memo(props => {
-  return (
-    <Navbar>@shotastage</Navbar>
-  );
-});
-
-const StaticComponentSection = React.memo(props => {
+const MemorizedComponents = React.memo(props => {
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -31,6 +25,8 @@ const StaticComponentSection = React.memo(props => {
 
   return (
     <React.Fragment>
+      <Navbar>@shotastage</Navbar>
+      <StorySection />
       <Heading>
         <Image
           imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
@@ -69,9 +65,7 @@ const App = () => {
   return (
     <React.Fragment>
       { message !== '' && <TopBanner>{message}</TopBanner> }
-      <TopStaticComponents />
-      <StorySection />
-      <StaticComponentSection />
+      <MemorizedComponents />
     </React.Fragment>
   );
 }
