@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {createUseStyles} from 'react-jss';
 import { Grid, GridGlobal } from '../components/Grid';
 import { CardIcon } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
@@ -69,17 +68,16 @@ const Github = styled(SocialButtonBase)`
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
 `;
 
-const useStyles = createUseStyles({
-  gridStyle: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    '@media (max-width: 480px)': {
-      flexDirection: 'column',
-      alignItems: 'center',
-    }
-  },
-});
+const SocialGrid = styled(Grid)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 // MARK: Skills grid layout
 const SocialGridLayoutGlobal: GridGlobal = {
@@ -97,15 +95,12 @@ const FooterGridLayoutGlobal: GridGlobal = {
 }
 
 export const SocialSection = (): JSX.Element => {
-
-  const classes = useStyles()
-
   return (
     <React.Fragment>
       <Grid global={SocialGridLayoutGlobal}>
         <Heading2>Social</Heading2>
       </Grid>
-      <Grid global={FooterGridLayoutGlobal} className={classes.gridStyle}>
+      <SocialGrid global={FooterGridLayoutGlobal}>
         <Twitter onClick={() => window.open('https://twitter.com/shotastage', '_blank')}>
           <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/twitter.svg`} />
         </Twitter>
@@ -115,7 +110,7 @@ export const SocialSection = (): JSX.Element => {
         <Github onClick={() => window.open('https://github.com/shotastage', '_blank')}>
           <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/github.svg`} />
         </Github>
-      </Grid>
+      </SocialGrid>
     </React.Fragment>
   );
 }

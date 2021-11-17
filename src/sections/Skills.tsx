@@ -1,20 +1,19 @@
 import React from 'react';
-import {createUseStyles} from 'react-jss';
+import styled from 'styled-components';
 import { Grid, GridGlobal } from '../components/Grid';
 import { CardSquare, CardIcon } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
 
-const useStyles = createUseStyles({
-  gridStyle: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  skillsBlock: {
-    display: 'flex',
-    overflow: 'hidden',
-    overflowX: 'scroll',
-  },
-});
+const SkillsGrid = styled(Grid)`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SkillsBlock = styled.div`
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+`;
 
 // MARK: Skills grid layout
 const HeadingLayout: GridGlobal = {
@@ -40,16 +39,13 @@ const SkillMaker = (name: string, dataPath: string) => {
 }
 
 const SkillsSection = (): JSX.Element => {
-
-  const classes = useStyles()
-
   return (
     <React.Fragment>
       <Grid global={HeadingLayout}>
         <Heading2>Skills & Experiences</Heading2>
       </Grid>
-      <Grid global={SkillGridLayout} className={classes.gridStyle}>
-        <div className={classes.skillsBlock}>
+      <SkillsGrid global={SkillGridLayout}>
+        <SkillsBlock>
           {SkillMaker("Swift", "swift.svg")}
           {SkillMaker("TypeScript", "typescript-icon.svg")}
           {SkillMaker("Python", "python.svg")}
@@ -57,8 +53,8 @@ const SkillsSection = (): JSX.Element => {
           {SkillMaker("React", "react.svg")}
           {SkillMaker("Google Cloud Platform", "google-cloud.svg")}
           {SkillMaker("AWS", "aws.svg")}
-        </div>
-        <div className={classes.skillsBlock}>
+        </SkillsBlock>
+        <SkillsBlock>
           {SkillMaker("Djnago", "django-icon.svg")}
           {SkillMaker("Play Framework", "play.svg")}
           {SkillMaker("WordPress", "wordpress-icon.svg")}
@@ -66,11 +62,11 @@ const SkillsSection = (): JSX.Element => {
           {SkillMaker("HTML5", "html-5.svg")}
           {SkillMaker("CSS3", "css-3.svg")}
           {SkillMaker("Sass", "sass.svg")}
-        </div>
-        <div className={classes.skillsBlock}>
+        </SkillsBlock>
+        <SkillsBlock>
           {SkillMaker("Git", "git-icon.svg")}
-        </div>
-      </Grid>
+        </SkillsBlock>
+      </SkillsGrid>
     </React.Fragment>
   );
 }
