@@ -61,6 +61,6 @@ export const Writings = () => {
             </CardBody>
           </Card>
         </Grid>
-        </React.Fragment>
+      </React.Fragment>
     );
 }
