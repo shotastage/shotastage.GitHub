@@ -25,7 +25,7 @@ const MemorizedComponents = React.memo(props => {
 
   return (
     <React.Fragment>
-      <Navbar>@shotastage</Navbar>
+      <Navbar>@bout shota</Navbar>
       <StorySection />
       <Heading>
         <Image

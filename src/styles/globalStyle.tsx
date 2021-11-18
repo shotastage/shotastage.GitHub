@@ -1,6 +1,4 @@
-import { createGlobalStyle} from 'styled-components';
-
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = `
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #f2f2f5;
-    box-sizing : border-box;
+    box-sizing: border-box;
     margin: 0;
     overflow-x: hidden;
   }
