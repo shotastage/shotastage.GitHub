@@ -30,6 +30,12 @@ const SKECredential = React.lazy(() =>
   }))
 );
 
+const  Exchanger = React.lazy(() =>
+  import('../pages/Exchanger').then((module) => ({
+    default: module.default,
+  }))
+);
+
 
 const Loading: React.FC = () => {
   return <div />;
@@ -45,6 +51,7 @@ const Router: React.FC = () => {
           <Route exact path="/sitemap" component={Sitemap} />
           <Route exact path="/ske_sys" component={SKESystem} />
           <Route exact path="/ske_credential" component={SKECredential} />
+          <Route exact path="/exchanger" component={Exchanger} />
         </Switch>
       </Suspense>
     </BrowserRouter>

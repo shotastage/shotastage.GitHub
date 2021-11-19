@@ -14,7 +14,7 @@ type Props = {
 };
 
 const Navbar = (props: Props) => {
-  
+
   return (
     <Navigation>
       <NavBrandArea href="/">
@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
       </NavBrandArea>
       <NavArea>
         <NavItems>
-          <NavLink to="/m/logout">Button</NavLink>
+          <NavLink to="/">🥺</NavLink>
         </NavItems>
       </NavArea>
     </Navigation>
