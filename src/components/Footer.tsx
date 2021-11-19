@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const FooterArea = styled.div`
+  margin: 0;
+  margin-bottom: env(safe-area-inset-bottom);
+`;
+
 const FooterLink = styled.a`
   text-decoration: none;
   color: inherit;
@@ -15,9 +20,9 @@ type Props = {
 
 export const Footer = (props: Props) => {
   return (
-    <React.Fragment>
+    <FooterArea>
       {props.children}
-    </React.Fragment>
+    </FooterArea>
   );
 }
 
