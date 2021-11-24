@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, GridGlobal } from '../components/Grid';
+import { Container, Grid, GridGlobal } from '../components/Grid';
 import { CardIcon } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
 
@@ -96,7 +96,7 @@ const FooterGridLayoutGlobal: GridGlobal = {
 
 export const SocialSection = (): JSX.Element => {
   return (
-    <React.Fragment>
+    <Container>
       <Grid global={SocialGridLayoutGlobal}>
         <Heading2>Social</Heading2>
       </Grid>
@@ -111,6 +111,6 @@ export const SocialSection = (): JSX.Element => {
           <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/github.svg`} />
         </Github>
       </SocialGrid>
-    </React.Fragment>
+    </Container>
   );
 }

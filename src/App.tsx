@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import { Container } from './components/Grid';
 import { Heading } from './components/Typography';
 import { Image } from './components/Image';
 import { Footer, FooterCopyright } from './components/Footer';
@@ -39,12 +38,10 @@ const MemorizedComponents = React.memo(props => {
           <UserName onClick={userClick}>@shotastage</UserName>
         </NameArea>
       </Heading>
-      <Container>
-        <Works />
-        <Writings />
-        <SkillsSection />
-        <SocialSection />
-      </Container>
+      <Works />
+      <Writings />
+      <SkillsSection />
+      <SocialSection />
       <Footer>
         <FooterCopyright />
       </Footer>

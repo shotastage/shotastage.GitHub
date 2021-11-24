@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 
-const HorizontalScroll = css`
+const HorizontalNoscroll = css`
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -9,3 +9,5 @@ const HorizontalScroll = css`
     display: none;
   }
 `;
+
+export default HorizontalNoscroll;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, GridGlobal } from '../components/Grid';
+import { Container, Grid, GridGlobal } from '../components/Grid';
 import { Card, CardIcon, CardBody, CardHeading, CardDescription } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
 
@@ -34,9 +34,11 @@ const WritingSection3: GridGlobal = {
 export const Writings = () => {
     return (
       <React.Fragment>
-        <Grid global={HeadingLayout}>
-          <Heading2>Writing</Heading2>
-        </Grid>
+        <Container>
+          <Grid global={HeadingLayout}>
+            <Heading2>Writing</Heading2>
+          </Grid>
+        </Container>
         <Grid global={WritingSection1}>
           <Card>
             <CardBody>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, GridGlobal } from '../components/Grid';
+import { Container, Grid, GridGlobal } from '../components/Grid';
 import { CardSquare, CardIcon } from '../components/Cards';
 import { Heading2 } from '../components/Typography';
 
@@ -40,7 +40,7 @@ const SkillMaker = (name: string, dataPath: string) => {
 
 const SkillsSection = (): JSX.Element => {
   return (
-    <React.Fragment>
+    <Container>
       <Grid global={HeadingLayout}>
         <Heading2>Skills & Experiences</Heading2>
       </Grid>
@@ -67,7 +67,7 @@ const SkillsSection = (): JSX.Element => {
           {SkillMaker("Git", "git-icon.svg")}
         </SkillsBlock>
       </SkillsGrid>
-    </React.Fragment>
+    </Container>
   );
 }
 
