@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    appearance: none;
+const ButtonBase = styled.button`
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+`;
 
+export const Button = styled(ButtonBase)`
     display: inline-block;
     min-width: 180px;
     padding-left: 10px;
@@ -15,7 +16,6 @@ export const Button = styled.button`
     height: 60px;
     line-height: 60px;
     text-align: center;
-    text-transform: uppercase;
     transition: 0.5s;
     color: white;
     border-radius: 15px;
@@ -66,5 +66,41 @@ export const CopyButton = styled(Button)`
 
     @media screen and (max-width: 834px) {
         display: none;
+    }
+`;
+
+
+export const RoundButton = styled(ButtonBase)`
+    display: inline-block;
+    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    transition: 0.5s;
+    color: #303030;
+    border-radius: calc(45px /2);
+    background: #c2c2c2;
+    font-weight: bold;
+    font-size: 0.75rem;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    &:focus {
+	    outline:0;
+    }
+
+    &:hover {
+        background: #333;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.8rem;
     }
 `;

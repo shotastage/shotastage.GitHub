@@ -37,7 +37,7 @@ export const CardSquare = styled.div`
 export const CardIcon = styled.object`
   width: 80px;
   height: 80px;
-  
+
   @media screen and (max-width: 480px) {
     width: 55px;
     height: 55px;
@@ -45,10 +45,9 @@ export const CardIcon = styled.object`
 `;
 
 export const CardBody = styled.div`
-  padding: 1rem 1rem;
+  padding: 1.9rem 1.9rem;
   padding-top: 0.2rem;
 `;
-
 
 export const CardHeading = styled.h3`
   font-size: 1.5rem;
