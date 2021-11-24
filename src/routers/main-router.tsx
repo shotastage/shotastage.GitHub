@@ -36,6 +36,11 @@ const  Exchanger = React.lazy(() =>
   }))
 );
 
+const Admin = React.lazy(() =>
+  import('../pages/Admin').then((module) => ({
+    default: module.default,
+  }))
+);
 
 const Loading: React.FC = () => {
   return <div />;
@@ -52,6 +57,7 @@ const Router: React.FC = () => {
           <Route exact path="/ske_sys" component={SKESystem} />
           <Route exact path="/ske_credential" component={SKECredential} />
           <Route exact path="/exchanger" component={Exchanger} />
+          <Route exact path="/admin" component={Admin} />
         </Switch>
       </Suspense>
     </BrowserRouter>
