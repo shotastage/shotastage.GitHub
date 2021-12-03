@@ -67,6 +67,10 @@ const TileImage = styled.img`
   margin-left: calc((100% - 150px) / 2);
 `;
 
+const CardButton = styled(RoundButton)`
+  height: 100%;
+`;
+
 export const Works = () => {
   return (
     <React.Fragment>
@@ -104,7 +108,7 @@ export const Works = () => {
                   imgComponent={TileImage}
                 />
                 <CardDescription>
-                  <RoundButton>More</RoundButton>
+                  <CardButton>More</CardButton>
                 </CardDescription>
               </div>
             </CardBody>

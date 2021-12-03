@@ -8,6 +8,11 @@ export const Card = styled.div`
   border-radius: 20px;
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
 `;
 
 export const CardSquare = styled.div`
