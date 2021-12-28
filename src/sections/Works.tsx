@@ -1,10 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { RoundButton } from "../components/Button";
-import { Grid, GridGlobal, Container, FullContainer, ContainerMargin } from '../components/Grid';
-import { Image } from '../components/Image';
-import { Card, CardBody, CardHeading, CardDescription } from '../components/Cards';
-import { Heading2 } from '../components/Typography';
+import {
+  Grid,
+  GridGlobal,
+  Container,
+  FullContainer,
+  Box,
+  ContainerMargin,
+  Image,
+  Card,
+  CardBody,
+  CardHeading,
+  CardDescription,
+  Heading2
+} from '../components';
 import HorizontalNoscroll from '../styles/NoneScrollBar';
 
 const WorkCardsSection = styled(Grid)`
@@ -47,13 +57,6 @@ const WarkCardTopMargin = styled.div`
   }
 `;
 
-const WorkSectionTitleGridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 5,
-  rowEnd: 6,
-}
-
 const Work1GridLayoutGlobal: GridGlobal = {
   colStart: 1,
   colEnd: 2,
@@ -75,9 +78,9 @@ export const Works = () => {
   return (
     <React.Fragment>
       <Container>
-        <Grid className="WorkSectionTitle" global={WorkSectionTitleGridLayoutGlobal}>
+        <Box>
           <Heading2>Works</Heading2>
-        </Grid>
+        </Box>
       </Container>
       <FullContainer>
         <WorkCardsSection global={Work1GridLayoutGlobal}>
