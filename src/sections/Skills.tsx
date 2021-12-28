@@ -38,7 +38,7 @@ const SkillMaker = (name: string, dataPath: string) => {
   );
 }
 
-const SkillsSection = (): JSX.Element => {
+export const SkillsSection = (): JSX.Element => {
   return (
     <Container>
       <Grid global={HeadingLayout}>
@@ -70,5 +70,3 @@ const SkillsSection = (): JSX.Element => {
     </Container>
   );
 }
-
-export default SkillsSection;

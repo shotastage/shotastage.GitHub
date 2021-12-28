@@ -6,11 +6,13 @@ import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
 
 // Page Sections
-import { StorySection } from './sections/StorySection';
-import { Works } from './sections/Works';
-import { Writings } from './sections/Writings';
-import SkillsSection from './sections/Skills';
-import { SocialSection } from './sections/SocialSection';
+import {
+  StorySection,
+  Works,
+  Writings,
+  SkillsSection,
+  SocialSection
+} from './sections';
 
 const MemorizedComponents = React.memo(props => {
 
