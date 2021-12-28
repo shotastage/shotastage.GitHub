@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import { Navbar, Heading, Image, Footer, FooterCopyright } from './components';
+import { Box, Navbar, Heading, Image, Footer, FooterCopyright } from './components';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
 
@@ -13,7 +14,11 @@ import SkillsSection from './sections/Skills';
 import { SocialSection } from './sections/SocialSection';
 
 const MemorizedComponents = React.memo(props => {
+  const [modalIsOpen, setIsOpen] = useState(false);
 
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -29,11 +34,13 @@ const MemorizedComponents = React.memo(props => {
           webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
           alt="avator image"
           imgComponent={Avator}
-          />
-        <NameArea>
-          <Name>Shota Shimazu</Name>
-          <UserName onClick={userClick}>@shotastage</UserName>
-        </NameArea>
+        />
+        <Box>
+          <NameArea>
+            <Name>Shota Shimazu</Name>
+            <UserName onClick={userClick}>@shotastage</UserName>
+          </NameArea>
+        </Box>
       </Heading>
       <Works />
       <Writings />
@@ -51,14 +58,14 @@ const App = () => {
 
   useEffect(() => {
     ApiClient.GET("https://shota-folio.microcms.io/api/v1/main_contents", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
-    .then((data: any) => {
-      setMessage(data.contents);
-    });
+      .then((data: any) => {
+        setMessage(data.contents);
+      });
   }, []);
 
   return (
     <React.Fragment>
-      { message !== '' && <TopBanner>{message}</TopBanner> }
+      {message !== '' && <TopBanner>{message}</TopBanner>}
       <MemorizedComponents />
     </React.Fragment>
   );

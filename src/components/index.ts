@@ -1,3 +1,4 @@
+export * from './Box';
 export * from './Button';
 export * from './Cards';
 export * from './Footer';
@@ -7,4 +8,3 @@ export * from './Input';
 export * from './Navbar';
 export * from './Styler';
 export * from './Typography';
-
