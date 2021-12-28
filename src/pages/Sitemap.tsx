@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import { Footer, FooterCopyright } from '../components/Footer';
+import { Navbar, Footer, FooterCopyright } from '../components';
 
 const Sitemap = () => {
 

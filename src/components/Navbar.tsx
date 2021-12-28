@@ -13,7 +13,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Navbar = (props: Props) => {
+export const Navbar = (props: Props) => {
 
   return (
     <Navigation>
@@ -28,5 +28,3 @@ const Navbar = (props: Props) => {
     </Navigation>
   );
 }
-
-export default Navbar;

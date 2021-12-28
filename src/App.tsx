@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import { Heading } from './components/Typography';
-import { Image } from './components/Image';
-import { Footer, FooterCopyright } from './components/Footer';
+import { Navbar, Heading, Image, Footer, FooterCopyright } from './components';
 import { Avator, Name, UserName, NameArea } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
-import Navbar from './components/Navbar';
-
 
 // Page Sections
 import { StorySection } from './sections/StorySection';
@@ -17,6 +13,7 @@ import SkillsSection from './sections/Skills';
 import { SocialSection } from './sections/SocialSection';
 
 const MemorizedComponents = React.memo(props => {
+
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';

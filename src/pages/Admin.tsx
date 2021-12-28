@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../components/Navbar';
-import { Input } from '../components/Input';
-import { Button } from '../components/Button';
-import { Footer, FooterCopyright } from '../components/Footer';
+import { Navbar, Input, Button, Footer, FooterCopyright } from '../components';
 // import { auth } from '../firebaseInitl';
 // import { EmailAuthProvider, User, UserCredential, signInWithEmailAndPassword } from 'firebase/auth';
 
