@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
 import { Box, Navbar, Heading, Image, Footer, FooterCopyright } from './components';
@@ -14,11 +13,6 @@ import SkillsSection from './sections/Skills';
 import { SocialSection } from './sections/SocialSection';
 
 const MemorizedComponents = React.memo(props => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';

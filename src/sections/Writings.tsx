@@ -1,8 +1,6 @@
 import React from "react";
 import {
   Container,
-  Grid,
-  GridGlobal,
   Box,
   Heading2,
   Card,
