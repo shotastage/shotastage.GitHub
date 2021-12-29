@@ -38,11 +38,36 @@ export interface SHModalProps {
   onClose(initialState: boolean): void;
 }
 
+Modal.setAppElement("#root");
+
 export const SHModal = (props: SHModalProps) => {
   const { children, isOpen, onClose } = props;
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={200}>
+    <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={150} style={{
+      overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(65, 65, 65, 0.75)'
+      },
+      content: {
+        position: 'absolute',
+        top: '40px',
+        left: '40px',
+        right: '40px',
+        bottom: '40px',
+        border: 'none',
+        background: '#fff',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '20px',
+        outline: 'none',
+        padding: '20px'
+      }
+    }}>
       <ModalClose onClick={() => onClose(false)} />
       {children}
     </Modal>
