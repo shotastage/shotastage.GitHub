@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { RoundButton } from "../components/Button";
+import Modal from 'react-modal';
 import {
   Container,
   FullContainer,
@@ -11,7 +11,8 @@ import {
   CardBody,
   CardHeading,
   CardDescription,
-  Heading2
+  Heading2,
+  RoundButton,
 } from '../components';
 import HorizontalNoscroll from '../styles/NoneScrollBar';
 
@@ -66,6 +67,8 @@ const CardButton = styled(RoundButton)`
 `;
 
 export const Works = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   return (
     <React.Fragment>
       <Container>
@@ -102,8 +105,12 @@ export const Works = () => {
                   imgComponent={TileImage}
                 />
                 <CardDescription>
-                  <CardButton>More</CardButton>
+                  <CardButton onClick={() => setIsOpen(true)}>More</CardButton>
                 </CardDescription>
+                <Modal isOpen={modalIsOpen} onRequestClose={() => setIsOpen(false)} closeTimeoutMS={200}>
+                  <p>ただいま、このページは準備中です。</p>
+                  <button onClick={() => setIsOpen(false)}>Close</button>
+                </Modal>
               </div>
             </CardBody>
           </WorkCard>
