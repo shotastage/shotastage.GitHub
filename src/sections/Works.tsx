@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { RoundButton } from "../components/Button";
 import {
-  Grid,
-  GridGlobal,
   Container,
   FullContainer,
   Box,
@@ -17,7 +15,7 @@ import {
 } from '../components';
 import HorizontalNoscroll from '../styles/NoneScrollBar';
 
-const WorkCardsSection = styled(Grid)`
+const WorkCardsSection = styled(Box)`
   width: 100vw;
   display: flex;
   overflow-x: scroll;
@@ -57,13 +55,6 @@ const WarkCardTopMargin = styled.div`
   }
 `;
 
-const Work1GridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 2,
-  rowStart: 7,
-  rowEnd: 8,
-}
-
 const TileImage = styled.img`
   max-width: 150px;
   object-fit: cover;
@@ -83,7 +74,7 @@ export const Works = () => {
         </Box>
       </Container>
       <FullContainer>
-        <WorkCardsSection global={Work1GridLayoutGlobal}>
+        <WorkCardsSection>
           <ContainerMargin />
           <WarkCardTopMargin />
           <BhaaCard>
