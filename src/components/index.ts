@@ -1,6 +1,7 @@
 export * from './Box';
 export * from './Button';
 export * from './Cards';
+export * from './Flex';
 export * from './Footer';
 export * from './Grid';
 export * from './Image';

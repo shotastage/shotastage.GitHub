@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from "react-modal";
+import { Flex, Spacer } from '../components';
 import SvgIcon from '../assets/close_button.svg';
 
 const ModalIconObjElm = styled.img`
@@ -45,7 +46,10 @@ export const SHModal = (props: SHModalProps) => {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={300} className='SHModal' overlayClassName='SHModalOverlay'>
-      <ModalClose onClick={() => onClose(false)} />
+      <Flex>
+        <Spacer/>
+        <ModalClose onClick={() => onClose(false)} />
+      </Flex>
       {children}
     </Modal>
   );
