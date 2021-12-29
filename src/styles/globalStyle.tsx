@@ -13,6 +13,10 @@ export const GlobalStyle = `
     overflow-x: hidden;
   }
 
+  .ReactModal__Body--open {
+    position: fixed;
+  }
+
   .ReactModal__Overlay {
     opacity: 0;
     transition: opacity 500ms ease-in-out;
