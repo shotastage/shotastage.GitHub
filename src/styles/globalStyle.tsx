@@ -42,6 +42,14 @@ export const GlobalStyle = `
     border-radius: 20px;
     outline: none;
     padding: 20px;
+
+    @media screen and (max-width: 480px) {
+      border-radius: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
   .SHModalOverlay {
