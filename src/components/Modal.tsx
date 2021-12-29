@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import SvgIcon from '../assets/close_button.svg';
 
+const ModalIconObjElm = styled.object`
+  width: 18px;
+  height: 18px
+  pointer-events: none;
+`;
+
 export const ModalCloseIcon = () => {
   return (
-    <object type="image/svg+xml" data={SvgIcon} title='close icon' style={{
-      width: '22px',
-      height: '22px',
-      pointerEvents: 'none',
-    }} />
+    <ModalIconObjElm type="image/svg+xml" data={SvgIcon} title='close icon' />
   );
 };
 
@@ -18,8 +20,8 @@ export const ModalCloseButton = styled.button`
   outline: none;
   padding: 0;
   appearance: none;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
