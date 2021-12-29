@@ -40,6 +40,7 @@ export const CardSquare = styled.div`
 `;
 
 export const CardIcon = styled.object`
+  pointer-events: none;
   width: 80px;
   height: 80px;
 
