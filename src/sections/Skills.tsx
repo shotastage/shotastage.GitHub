@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Grid, GridGlobal } from '../components/Grid';
-import { CardSquare, CardIcon } from '../components/Cards';
-import { Heading2 } from '../components/Typography';
+import {
+  Container,
+  Grid,
+  GridGlobal,
+  CardSquare,
+  CardIcon,
+  Heading2,
+  Box
+} from '../components';
 
 const SkillsGrid = styled(Grid)`
   display: flex;
@@ -16,13 +22,6 @@ const SkillsBlock = styled.div`
 `;
 
 // MARK: Skills grid layout
-const HeadingLayout: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 13,
-  rowEnd: 14,
-}
-
 const SkillGridLayout: GridGlobal = {
   colStart: 1,
   colEnd: 4,
@@ -41,9 +40,9 @@ const SkillMaker = (name: string, dataPath: string) => {
 export const SkillsSection = (): JSX.Element => {
   return (
     <Container>
-      <Grid global={HeadingLayout}>
+      <Box marginTop='80px' marginBottom='30px'>
         <Heading2>Skills & Experiences</Heading2>
-      </Grid>
+      </Box>
       <SkillsGrid global={SkillGridLayout}>
         <SkillsBlock>
           {SkillMaker("Swift", "swift.svg")}

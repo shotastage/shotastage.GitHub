@@ -17,13 +17,13 @@ export interface StylerProps {
   paddingBottom?: string | number;
   paddingRight?: string | number;
   paddingLeft?: string | number;
-  backgroundColor?: string | '#ffffff';
+  backgroundColor?: string;
 };
 
 export const Styler = (props: StylerProps) => {
   const style = {
-    height: props.height || 0,
-    width: props.width || '100%',
+    height: props.height,
+    width: props.width,
     maxHeight: props.maxHeight,
     maxWidth: props.maxWidth,
     minHeight: props.minHeight,
@@ -38,7 +38,7 @@ export const Styler = (props: StylerProps) => {
     paddingBottom: props.paddingBottom,
     paddingLeft: props.paddingLeft,
     paddingRight: props.paddingRight,
-    backgroundColor: props.backgroundColor || '#ffffff',
+    backgroundColor: props.backgroundColor,
   };
 
   return style;

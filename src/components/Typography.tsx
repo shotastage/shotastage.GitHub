@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
+import { StylerProps } from './Styler';
 
-const textAlignment = css`
+const textAlignment = css<StylerProps>`
   text-align: center;
 `;
 
-const HeadingBase = css`
-  margin-top: 80px;
-  margin-bottom: 30px;
+const HeadingBase = css<StylerProps>`
+  margin: 0;
 `;
 
 export const Heading = styled.div`
@@ -24,11 +24,11 @@ export const Heading = styled.div`
   }
 `;
 
-export const Heading1 = styled.h1`
+export const Heading1 = styled.h1<StylerProps>`
   font-size: 3rem;
 `;
 
-export const Heading2 = styled.h2`
+export const Heading2 = styled.h2<StylerProps>`
   ${HeadingBase}
   padding-left: 0.8rem;
   font-size: 3.2rem;
@@ -38,14 +38,14 @@ export const Heading2 = styled.h2`
   }
 `;
 
-export const Heading3 = styled.h3`
+export const Heading3 = styled.h3<StylerProps>`
   font-size: 2.1rem;
 `;
 
-export const Heading4 = styled.h4`
+export const Heading4 = styled.h4<StylerProps>`
   font-size: 1.9rem;
 `;
 
-export const Heading5 = styled.h5`
+export const Heading5 = styled.h5<StylerProps>`
   font-size: 1.6rem;
 `;

@@ -14,6 +14,7 @@ export const GlobalStyle = `
   }
 
   .ReactModal__Body--open {
+    overflow-y: hidden;
   }
 
   .ReactModal__Overlay {
@@ -38,10 +39,16 @@ export const GlobalStyle = `
     border: none;
     background: #fff;
     overflow: auto;
+    overflow-y: scroll;
     webkit-overflow-scrolling: touch;
     border-radius: 20px;
     outline: none;
     padding: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media screen and (max-width: 480px) {
       border-radius: 0;

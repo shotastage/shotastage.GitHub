@@ -14,7 +14,7 @@ export const Writings = () => {
   return (
     <React.Fragment>
       <Container>
-        <Box>
+        <Box marginTop='80px' marginBottom='30px'>
           <Heading2>Writing</Heading2>
         </Box>
         <Box>

@@ -11,6 +11,7 @@ import {
   CardHeading,
   CardDescription,
   Heading2,
+  Heading3,
   RoundButton,
   SHModal,
   Flex,
@@ -73,7 +74,7 @@ export const Works = () => {
   return (
     <React.Fragment>
       <Container>
-        <Box>
+        <Box marginTop='80px' marginBottom='30px'>
           <Heading2>Works</Heading2>
         </Box>
       </Container>
@@ -110,9 +111,11 @@ export const Works = () => {
                 </CardDescription>
                 <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
                   <Flex flexDirection="column" alignItems="flex-start">
-                    <h2>Inception for SFC</h2>
-                    <p>Inception for SFCは慶應義塾大学の湘南藤沢キャンパス - SFC -で毎年行われているOpen Research Forum (通称ORF)と呼ばれる研究展示発表会での受付システムです。</p>
-                    <p>単なる受付システムでは、面白くない。ということで、来場者が最初に感じる体験をより良いものにするためにちょっとした工夫も取り入れられています、</p>
+                    <Heading3 marginRight={0}>Inception for SFC</Heading3>
+                    <p>Inception for SFCは「ORF2019」向けに開発した来場者受付システムです。</p>
+                    <p>ORFは慶應義塾大学SFCが研究展示発表会で、企業の方から学生など様々な方が来場するイベントです。</p>
+                    <p>そんな、イベントで来場者が最初に触るのがこの受付来場システム。最初からより良い体験を創出するためテーマである「SDGs」にマッチした、またインタラクションを取り入れたアプリケーションに仕上げました。</p>
+
                   </Flex>
                 </SHModal>
               </div>

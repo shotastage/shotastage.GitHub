@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Grid, GridGlobal } from '../components/Grid';
-import { CardIcon } from '../components/Cards';
-import { Heading2 } from '../components/Typography';
+import {
+  Container,
+  Grid,
+  GridGlobal,
+  CardIcon,
+  Heading2,
+  Box
+} from '../components';
 
 const SocialButtonBase = styled.button`
   background-color: transparent;
@@ -80,13 +85,6 @@ const SocialGrid = styled(Grid)`
 `;
 
 // MARK: Skills grid layout
-const SocialGridLayoutGlobal: GridGlobal = {
-  colStart: 1,
-  colEnd: 4,
-  rowStart: 17,
-  rowEnd: 18,
-}
-
 const FooterGridLayoutGlobal: GridGlobal = {
   colStart: 1,
   colEnd: 4,
@@ -97,9 +95,9 @@ const FooterGridLayoutGlobal: GridGlobal = {
 export const SocialSection = (): JSX.Element => {
   return (
     <Container>
-      <Grid global={SocialGridLayoutGlobal}>
+      <Box marginTop='80px' marginBottom='30px'>
         <Heading2>Social</Heading2>
-      </Grid>
+      </Box>
       <SocialGrid global={FooterGridLayoutGlobal}>
         <Twitter onClick={() => window.open('https://twitter.com/shotastage', '_blank')}>
           <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/twitter.svg`} />
