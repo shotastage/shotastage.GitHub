@@ -14,12 +14,11 @@ export const GlobalStyle = `
   }
 
   .ReactModal__Body--open {
-    position: fixed;
   }
 
   .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
   }
 
   .ReactModal__Overlay--after-open{
@@ -28,5 +27,29 @@ export const GlobalStyle = `
 
   .ReactModal__Overlay--before-close{
     opacity: 0;
+  }
+
+  .SHModal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: none;
+    background: #fff;
+    overflow: auto;
+    webkit-overflow-scrolling: touch;
+    border-radius: 20px;
+    outline: none;
+    padding: 20px;
+  }
+
+  .SHModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(65, 65, 65, 0.75);
   }
 `;
