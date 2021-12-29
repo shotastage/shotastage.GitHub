@@ -5,7 +5,7 @@ export * from './Footer';
 export * from './Grid';
 export * from './Image';
 export * from './Input';
-export * from './Modal';
+export * from './SHModal';
 export * from './Navbar';
 export * from './Styler';
 export * from './Typography';

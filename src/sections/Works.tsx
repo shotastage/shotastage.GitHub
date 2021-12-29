@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Modal from 'react-modal';
 import {
   Container,
   FullContainer,
@@ -13,7 +12,7 @@ import {
   CardDescription,
   Heading2,
   RoundButton,
-  ModalClose,
+  SHModal,
 } from '../components';
 import HorizontalNoscroll from '../styles/NoneScrollBar';
 
@@ -108,12 +107,12 @@ export const Works = () => {
                 <CardDescription>
                   <CardButton onClick={() => setIsOpen(true)}>More</CardButton>
                 </CardDescription>
-                <Modal isOpen={modalIsOpen} onRequestClose={() => setIsOpen(false)} closeTimeoutMS={200}>
-                  <ModalClose onClick={() => setIsOpen(false)} />
+                <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
                   <h2>Inception for SFC</h2>
                   <p>Inception for SFCは慶應義塾大学の湘南藤沢キャンパス - SFC -で毎年行われているOpen Research Forum (通称ORF)と呼ばれる研究展示発表会での受付システムです。</p>
                   <p>単なる受付システムでは、面白くない。ということで、来場者が最初に感じる体験をより良いものにするためにちょっとした工夫も取り入れられています、</p>
-                </Modal>
+
+                </SHModal>
               </div>
             </CardBody>
           </WorkCard>
