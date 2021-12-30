@@ -33,15 +33,17 @@ export const GlobalStyle = `
   .SHModal {
     position: absolute;
     top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
+    left: 20%;
+    right: 20%;
+    bottom: 0px;
     border: none;
     background: #fff;
     overflow: auto;
     overflow-y: scroll;
     webkit-overflow-scrolling: touch;
     border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     outline: none;
     padding: 20px;
     -webkit-overflow-scrolling: touch;

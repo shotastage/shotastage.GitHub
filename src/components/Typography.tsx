@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { StylerProps } from './Styler';
 
 const textAlignment = css`
   text-align: center;
