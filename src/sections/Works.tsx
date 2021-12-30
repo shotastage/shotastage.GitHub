@@ -113,7 +113,7 @@ export const Works = () => {
                 </CardDescription>
                 <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
                   <Flex flexDirection="column" alignItems="flex-start">
-                    <Heading3 margin={0}>Inception for SFC</Heading3>
+                    <Heading3>Inception for SFC</Heading3>
                     <p>Inception for SFCは「ORF2019」向けに開発した来場者受付システムです。</p>
                     <p>ORFは慶應義塾大学SFCが研究展示発表会で、企業の方から学生など様々な方が来場するイベントです。</p>
                     <p>そんな、イベントで来場者が最初に触るのがこの受付来場システム。最初からより良い体験を創出するためテーマである「SDGs」にマッチした、またインタラクションを取り入れたアプリケーションに仕上げました。</p>
@@ -143,7 +143,7 @@ export const Works = () => {
               </CardDescription>
               <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
                 <Flex flexDirection="column" alignItems="flex-start">
-                  <Heading3 margin={0}>Django Mirage</Heading3>
+                  <Heading3>Django Mirage</Heading3>
                   <ModalText>
                     Django MirageはDjango Frameworkを使ったWebアプリケーション開発を支援する強力なコマンドラインツールです。
                     モデル定義の自動作成など、Rails並みのCLIをDjangoにもたらします。

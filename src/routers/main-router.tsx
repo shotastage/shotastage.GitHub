@@ -42,15 +42,10 @@ const Admin = React.lazy(() =>
   }))
 );
 
-const Loading: React.FC = () => {
-  return <div />;
-};
-
-const Router: React.FC = () => {
-
+const Router: React.FC<React.ReactNode> = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={Loading}>
+      <Suspense fallback={<div />}>
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/sitemap" component={Sitemap} />

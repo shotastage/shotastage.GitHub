@@ -9,7 +9,7 @@ export interface FlexProps extends StylerProps {
   center?: boolean;
 };
 
-export const Flex = (props: FlexProps) => {
+export const Flex: React.FC<FlexProps> = (props: FlexProps) => {
   return (
     <div {...props} style={{
       display: 'flex',

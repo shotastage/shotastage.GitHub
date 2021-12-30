@@ -4,7 +4,7 @@ export interface BoxProps extends StylerProps {
   center?: boolean | false;
 };
 
-export const Box = (props: BoxProps) => {
+export const Box: React.FC<BoxProps> = (props: BoxProps) => {
   const styler = Styler(props);
 
   const styles = props.center
