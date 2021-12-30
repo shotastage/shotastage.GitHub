@@ -2,14 +2,18 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   word-wrap: break-word;
   background-clip: border-box;
   background: white;
   border-radius: 20px;
-  margin: 10px;
+  padding: 1.9rem 1.9rem;
+  padding-top: 0.2rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
   transition: 0.3s;
-
   &:hover {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
@@ -51,6 +55,9 @@ export const CardIcon = styled.object`
 `;
 
 export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1.9rem 1.9rem;
   padding-top: 0.2rem;
 `;
@@ -59,6 +66,11 @@ export const CardHeading = styled.h3`
   font-size: 1.5rem;
 `;
 
-export const CardDescription = styled.p`
-  color: #333;
+export const CardDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: #333;
+  }
 `;

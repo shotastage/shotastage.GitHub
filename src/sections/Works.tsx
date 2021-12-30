@@ -4,10 +4,11 @@ import {
   Container,
   FullContainer,
   Box,
+  Spacer,
+  Flex,
   ContainerMargin,
   Image,
   Card,
-  CardBody,
   CardHeading,
   CardDescription,
   Heading2,
@@ -31,12 +32,10 @@ const WorkCardsSection = styled(Box)`
 `;
 
 const WorkCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
   min-height: 400px;
   max-height: 400px;
-  min-width: 300px;
-  max-width: 350px;
+  min-width: 250px;
+  max-width: 250px;
   margin-right: 1rem;
   margin-left: 1rem;
 
@@ -89,85 +88,76 @@ export const Works = () => {
           <ContainerMargin />
           <WarkCardTopMargin />
           <BhaaCard>
-            <CardBody>
-              <CardHeading>Bhaa on map</CardHeading>
-              <CardDescription>
-                Bhaa is a platform to create and share own maps with your friends. On this app, you can enjoy just viewing the map, or shareing it with your friends.
-              </CardDescription>
-            </CardBody>
+            <CardHeading>Bhaa on map</CardHeading>
+            <CardDescription>
+              Bhaa is a platform to create and share own maps with your friends. On this app, you can enjoy just viewing the map, or shareing it with your friends.
+            </CardDescription>
           </BhaaCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Linka</CardHeading>
-              <CardDescription>Link Shortener is basics of feature product "Linka".</CardDescription>
-            </CardBody>
+            <CardHeading>Linka</CardHeading>
+            <CardDescription>Link Shortener is basics of feature product "Linka".</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Inception for SFC</CardHeading>
-              <div>
-                <Image
-                  imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
-                  webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
-                  alt="Screen shots"
-                  imgComponent={TileImage}
-                />
-                <CardDescription>
-                  <CardButton onClick={() => setIsOpen(true)}>More</CardButton>
-                </CardDescription>
-                <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
-                  <WorksInception />
-                </SHModal>
-              </div>
-            </CardBody>
+            <CardHeading>Inception for SFC</CardHeading>
+            <Image
+              imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+              webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
+              alt="Screen shots"
+              imgComponent={TileImage}
+            />
+            <Spacer />
+            <CardDescription>
+              <p>ORF2019で使用した受付システムです</p>
+              <Flex>
+                <CardButton onClick={() => setIsOpen(true)}>More</CardButton>
+              </Flex>
+            </CardDescription>
+            <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
+              <WorksInception />
+            </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Link Shortener</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
-            </CardBody>
+            <CardHeading>Link Shortener</CardHeading>
+            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>PINNA</CardHeading>
-              <CardDescription>EOL</CardDescription>
-            </CardBody>
+            <CardHeading>PINNA</CardHeading>
+            <CardDescription>EOL</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Django Mirage</CardHeading>
-              <CardDescription>
+            <CardHeading>Django Mirage</CardHeading>
+            <Spacer />
+            <CardDescription>
+              <p>
                 Django MirageはDjango Frameworkを使ったWebアプリケーション開発を支援する強力なコマンドラインツールです。
+              </p>
+              <Flex>
                 <CardButton onClick={() => setDjModalIsOpen(true)}>More</CardButton>
-              </CardDescription>
-              <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
-                <WorksDjangoMirage />
-              </SHModal>
-            </CardBody>
+              </Flex>
+            </CardDescription>
+            <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
+              <WorksDjangoMirage />
+            </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>shotach.com</CardHeading>
-              <CardDescription>
-                <p>今、あなたが見ているこのサイトです</p>
+            <CardHeading>shotach.com</CardHeading>
+            <CardDescription>
+              <p>今、あなたが見ているこのサイトです</p>
+              <Flex>
                 <CardButton onClick={() => setSiteModalIsOpen(true)}>More</CardButton>
-              </CardDescription>
-              <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
-                <WorksShotachCom />
-              </SHModal>
-            </CardBody>
+              </Flex>
+            </CardDescription>
+            <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
+              <WorksShotachCom />
+            </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Notter</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
-            </CardBody>
+            <CardHeading>Notter</CardHeading>
+            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardBody>
-              <CardHeading>Notter</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
-            </CardBody>
+            <CardHeading>Notter</CardHeading>
+            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
           </WorkCard>
           <WarkCardTopMargin />
         </WorkCardsSection>
