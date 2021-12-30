@@ -9,13 +9,13 @@ export const Box: React.FC<BoxProps> = (props: BoxProps) => {
 
   const styles = props.center
   ? { display: "flex", alignItems: "center", justifyContent: "center", ...styler }
-  : { ...styler}
+  : { ...styler};
 
   return (
     <div {...props} style={{
-      ...styles,
       flexShrink: 1,
       flexGrow: 0,
+      ...styles,
     }}>
       {props.children}
     </div>

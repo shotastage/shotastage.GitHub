@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import styled from "styled-components";
 import {
   Container,
@@ -16,11 +16,24 @@ import {
   SHModal,
 } from '../components';
 import HorizontalNoscroll from '../styles/NoneScrollBar';
-import {
-  WorksInception,
-  WorksDjangoMirage,
-  WorksShotachCom,
-} from './contents';
+
+const WorksInception = React.lazy(() =>
+  import('./contents/WorksContents').then((module) => ({
+    default: module.WorksInception,
+  }))
+);
+
+const WorksDjangoMirage = React.lazy(() =>
+  import('./contents/WorksContents').then((module) => ({
+    default: module.WorksDjangoMirage,
+  }))
+);
+
+const WorksShotachCom = React.lazy(() =>
+  import('./contents/WorksContents').then((module) => ({
+    default: module.WorksShotachCom,
+  }))
+);
 
 const WorkCardsSection = styled(Box)`
   width: 100vw;
@@ -113,7 +126,9 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
-              <WorksInception />
+              <Suspense fallback={<div>Loading...</div>}>
+                <WorksInception />
+              </Suspense>
             </SHModal>
           </WorkCard>
           <WorkCard>
@@ -136,7 +151,9 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
-              <WorksDjangoMirage />
+              <Suspense fallback={<div>Loading...</div>}>
+                <WorksDjangoMirage />
+              </Suspense>
             </SHModal>
           </WorkCard>
           <WorkCard>
@@ -148,7 +165,9 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
-              <WorksShotachCom />
+              <Suspense fallback={<div>Loading...</div>}>
+                <WorksShotachCom />
+              </Suspense>
             </SHModal>
           </WorkCard>
           <WorkCard>

@@ -49,7 +49,7 @@ export const SHModal = (props: SHModalProps) => {
   const { children, isOpen, onClose } = props;
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={300} className='SHModal' overlayClassName='SHModalOverlay'>
+    <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={310} className='SHModal' overlayClassName='SHModalOverlay'>
       <Flex>
         <Spacer />
         <ModalClose onClick={() => onClose(false)} />
