@@ -10,6 +10,8 @@ import {
   CardBody,
   CardHeading,
   CardDescription,
+  CardSquare,
+  CardIcon,
   Heading2,
   Heading3,
   Heading4,
@@ -79,6 +81,8 @@ const CardButton = styled(RoundButton)`
 export const Works = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [djModalIsOpen, setDjModalIsOpen] = useState(false);
+  const [siteModalIsOpen, setSiteModalIsOpen] = useState(false);
+
 
   return (
     <React.Fragment>
@@ -192,8 +196,30 @@ export const Works = () => {
           </WorkCard>
           <WorkCard>
             <CardBody>
-              <CardHeading>Notter</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardHeading>shotach.com</CardHeading>
+              <CardDescription>
+                <p>今、あなたが見ているこのサイトです</p>
+                <CardButton onClick={() => setSiteModalIsOpen(true)}>More</CardButton>
+              </CardDescription>
+              <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
+                <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
+                  <Heading3>shotach.com</Heading3>
+                  <p>https://shotach.comは@shotasgaeのポートフォリオサイトです。</p>
+
+                  <Heading4>使用した技術</Heading4>
+                  <Flex justifyContent="space-around">
+                    <CardSquare>
+                      <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/react.svg`} />
+                    </CardSquare>
+                    <CardSquare>
+                      <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/typescript-icon.svg`} />
+                    </CardSquare>
+                  </Flex>
+                  <p>
+                    このサイトはReactを使用してFull-TypeScriptで記述しています。
+                  </p>
+                </Flex>
+              </SHModal>
             </CardBody>
           </WorkCard>
           <WorkCard>
