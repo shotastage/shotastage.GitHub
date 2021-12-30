@@ -10,18 +10,21 @@ export interface FlexProps extends StylerProps {
 };
 
 export const Flex: React.FC<FlexProps> = (props: FlexProps) => {
+
+  const { flexDirection, alignItems, justifyContent, colmun, center, ...rest } = props;
+
   return (
-    <div {...props} style={{
+    <div style={{
       display: 'flex',
-      flexDirection: props.flexDirection || 'row',
-      alignItems: props.alignItems || 'center',
-      justifyContent: props.justifyContent || 'space-around',
+      flexDirection: flexDirection || 'row',
+      alignItems: alignItems || 'center',
+      justifyContent: justifyContent || 'space-around',
       marginTop: props.marginTop || 0,
       marginBottom: props.marginBottom || 0,
       marginRight: props.marginRight || 0,
       marginLeft: props.marginLeft || 0,
       backgroundColor: props.backgroundColor || '#fff',
-    }}>
+    }} {...rest}>
       {props.children}
     </div>
   );

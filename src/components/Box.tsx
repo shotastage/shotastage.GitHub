@@ -5,19 +5,22 @@ export interface BoxProps extends StylerProps {
 };
 
 export const Box: React.FC<BoxProps> = (props: BoxProps) => {
-  const styler = Styler(props);
 
-  const styles = props.center
+  const { center, children, ...rest } = props;
+
+  const styler = Styler(rest);
+
+  const styles = center
   ? { display: "flex", alignItems: "center", justifyContent: "center", ...styler }
   : { ...styler};
 
   return (
-    <div {...props} style={{
+    <div style={{
       flexShrink: 1,
       flexGrow: 0,
       ...styles,
-    }}>
-      {props.children}
+    }} {...rest}>
+      {children}
     </div>
   );
 };

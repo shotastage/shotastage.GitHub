@@ -21,14 +21,14 @@ export interface StylerProps {
 };
 
 export const Styler = (props: StylerProps) => {
-  const style = {
+  return {
     height: props.height,
     width: props.width,
     maxHeight: props.maxHeight,
     maxWidth: props.maxWidth,
     minHeight: props.minHeight,
     minWidth: props.minWidth,
-    margin: props.margin,
+    margin: `${props.margin} ${props.margin} ${props.margin} ${props.margin}`,
     marginTop: props.marginTop,
     marginBottom: props.marginBottom,
     marginLeft: props.marginLeft,
@@ -40,6 +40,4 @@ export const Styler = (props: StylerProps) => {
     paddingRight: props.paddingRight,
     backgroundColor: props.backgroundColor,
   };
-
-  return style;
 };

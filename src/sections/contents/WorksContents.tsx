@@ -142,7 +142,6 @@ export const WorksShotachCom = () => {
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
       </Box>
-
     </Flex>
   );
 };
