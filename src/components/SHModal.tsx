@@ -25,6 +25,10 @@ export const ModalCloseButton = styled.button`
   align-items: center;
 `;
 
+export const ModalText = styled.p`
+  line-height: 1.7rem;
+`;
+
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
@@ -47,7 +51,7 @@ export const SHModal = (props: SHModalProps) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={300} className='SHModal' overlayClassName='SHModalOverlay'>
       <Flex>
-        <Spacer/>
+        <Spacer />
         <ModalClose onClick={() => onClose(false)} />
       </Flex>
       {children}

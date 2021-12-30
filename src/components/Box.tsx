@@ -11,8 +11,6 @@ export const Box = (props: BoxProps) => {
   ? { display: "flex", alignItems: "center", justifyContent: "center", ...styler }
   : { ...styler}
 
-  console.log(JSON.stringify(styles));
-
   return (
     <div {...props} style={{
       ...styles,
