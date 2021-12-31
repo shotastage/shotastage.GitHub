@@ -47,7 +47,7 @@ export interface SHModalProps {
 Modal.setAppElement("#root");
 
 export const SHModal = (props: SHModalProps) => {
-  const { height, width } = useDimension();
+  const { height } = useDimension();
   const { children, isOpen, onClose } = props;
 
   return (
@@ -56,7 +56,12 @@ export const SHModal = (props: SHModalProps) => {
       onRequestClose={() => onClose(false)}
       closeTimeoutMS={310}
       className='SHModal'
-      overlayClassName='SHModalOverlay'>
+      overlayClassName='SHModalOverlay'
+      style={{
+        content: {
+          height: height,
+        }
+      }}>
       <Flex>
         <Spacer />
         <ModalClose onClick={() => onClose(false)} />
