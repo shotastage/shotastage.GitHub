@@ -38,9 +38,7 @@ export const GlobalStyle = `
     bottom: 0px;
     border: none;
     background: #fff;
-    overflow: auto;
-    overflow-y: scroll;
-    webkit-overflow-scrolling: touch;
+    overflow: scroll;
     border-radius: 20px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
