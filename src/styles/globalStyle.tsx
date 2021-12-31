@@ -56,8 +56,8 @@ export const GlobalStyle = `
       left: 0;
       right: 0;
       bottom: 0;
-      height: 100vh;
-      height: -webkit-fill-available;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
     }
   }
 
