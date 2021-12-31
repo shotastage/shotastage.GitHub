@@ -88,7 +88,6 @@ export const Works = () => {
   const [djModalIsOpen, setDjModalIsOpen] = useState(false);
   const [siteModalIsOpen, setSiteModalIsOpen] = useState(false);
 
-
   return (
     <React.Fragment>
       <Container>

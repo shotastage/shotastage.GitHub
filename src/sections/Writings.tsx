@@ -28,8 +28,8 @@ export const Writings = () => {
         <Box>
           <Card>
             <CardBody>
-              <CardHeading>blog</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardHeading>Blog</CardHeading>
+              <CardDescription>@shotastageのブログ記事です</CardDescription>
             </CardBody>
           </Card>
         </Box>
@@ -37,7 +37,7 @@ export const Writings = () => {
           <Card style={{ background: "#1be31b" }}>
             <CardBody>
               <CardHeading>Qiita</CardHeading>
-              <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+              <CardDescription>@shotastageのQiita記事はこちら</CardDescription>
             </CardBody>
           </Card>
         </Box>
