@@ -66,7 +66,13 @@ export const SHModal = (props: SHModalProps) => {
         <Spacer />
         <ModalClose onClick={() => onClose(false)} />
       </Flex>
+      <div>
+        Experimental Info height: {height}
+      </div>
       {children}
+      <div>
+        Experimental Info height: {height}
+      </div>
     </Modal>
   );
 };
