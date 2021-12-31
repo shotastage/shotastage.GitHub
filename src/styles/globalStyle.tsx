@@ -62,6 +62,7 @@ export const GlobalStyle = `
     }
 
     @media screen and (max-width: 480px) {
+      height: 110vh;
       border-radius: 0;
       top: 0;
       left: 0;
