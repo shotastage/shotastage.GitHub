@@ -1,11 +1,5 @@
 export const GlobalStyle = `
-  html {
-    height: -webkit-fill-available;
-  }
-
   body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -62,8 +56,6 @@ export const GlobalStyle = `
       left: 0;
       right: 0;
       bottom: 0;
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
     }
   }
 

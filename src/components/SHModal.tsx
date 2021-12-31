@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDimension } from '../hooks';
 import styled from 'styled-components';
 import Modal from "react-modal";
 import { Flex, Spacer } from '../components';
@@ -46,10 +47,16 @@ export interface SHModalProps {
 Modal.setAppElement("#root");
 
 export const SHModal = (props: SHModalProps) => {
+  const { height, width } = useDimension();
   const { children, isOpen, onClose } = props;
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={() => onClose(false)} closeTimeoutMS={310} className='SHModal' overlayClassName='SHModalOverlay'>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={() => onClose(false)}
+      closeTimeoutMS={310}
+      className='SHModal'
+      overlayClassName='SHModalOverlay'>
       <Flex>
         <Spacer />
         <ModalClose onClick={() => onClose(false)} />
