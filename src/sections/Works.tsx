@@ -23,6 +23,12 @@ const WorksInception = React.lazy(() =>
   }))
 );
 
+const WorksLaboPortal = React.lazy(() =>
+  import('./contents/WorksContents').then((module) => ({
+    default: module.WorksLaboPortal,
+  }))
+);
+
 const WorksDjangoMirage = React.lazy(() =>
   import('./contents/WorksContents').then((module) => ({
     default: module.WorksDjangoMirage,
@@ -85,6 +91,7 @@ const CardButton = styled(RoundButton)`
 
 export const Works = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [laboPortalIsOpen, setLaboPortalIsOpen] = useState(false);
   const [djModalIsOpen, setDjModalIsOpen] = useState(false);
   const [siteModalIsOpen, setSiteModalIsOpen] = useState(false);
 
@@ -100,7 +107,7 @@ export const Works = () => {
           <ContainerMargin />
           <WarkCardTopMargin />
           <BhaaCard>
-            <CardHeading>Bhaa on map</CardHeading>
+            <CardHeading>Bhaa</CardHeading>
             <CardDescription>
               Bhaa is a platform to create and share own maps with your friends. On this app, you can enjoy just viewing the map, or shareing it with your friends.
             </CardDescription>
@@ -111,12 +118,14 @@ export const Works = () => {
           </WorkCard>
           <WorkCard>
             <CardHeading>Inception for SFC</CardHeading>
-            <Image
-              imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
-              webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
-              alt="Screen shots"
-              imgComponent={TileImage}
-            />
+            <Box center>
+              <Image
+                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+                webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
+                alt="Screen shots"
+                imgComponent={TileImage}
+              />
+            </Box>
             <Spacer />
             <CardDescription>
               <p>ORF2019で使用した受付システムです</p>
@@ -131,8 +140,27 @@ export const Works = () => {
             </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardHeading>Link Shortener</CardHeading>
-            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
+            <CardHeading>Labo Portal</CardHeading>
+            <Box center>
+              <Image
+                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media"
+                alt="Screen shots"
+                imgComponent={TileImage}
+              />
+            </Box>
+            <Spacer />
+            <CardDescription>
+              <p>研究室運営のためのWebアプリケーションポータルサイト</p>
+              <Flex>
+                <CardButton onClick={() => setLaboPortalIsOpen(true)}>More</CardButton>
+              </Flex>
+            </CardDescription>
+            <SHModal isOpen={laboPortalIsOpen} onClose={() => setLaboPortalIsOpen(false)}>
+              <Suspense fallback={<div>Loading...</div>}>
+                <WorksLaboPortal />
+              </Suspense>
+            </SHModal>
           </WorkCard>
           <WorkCard>
             <CardHeading>PINNA</CardHeading>

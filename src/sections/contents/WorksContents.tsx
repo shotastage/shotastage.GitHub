@@ -11,8 +11,11 @@ import {
   Spacer,
 } from '../../components';
 
-const ModalImage = styled.img`
-  max-width: 150px;
+const ModalImage = styled.img.attrs(props => ({
+  width: props.width || '100%',
+
+}))`
+  max-width: ${props => props.width};
   object-fit: cover;
 `;
 
@@ -26,6 +29,7 @@ export const WorksInception = () => {
           webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
           alt="Screen shots"
           imgComponent={ModalImage}
+          width="30%"
         />
       </Box>
       <p>Inception for SFCは「ORF2019」向けに開発した来場者受付システムです。</p>
@@ -65,15 +69,75 @@ export const WorksInception = () => {
 
       <Heading4>分析システム</Heading4>
       <Box width='100%' center>
-
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
           alt="Screen shots"
           imgComponent={ModalImage}
+          width="30%"
         />
       </Box>
       <p>来場者の数や、どのゲートでどれくらい入場したかのデーターをリアルタイムで表示するWebアプリケーションの作成を行いました。</p>
+    </Flex>
+  );
+};
+
+
+export const WorksLaboPortal = () => {
+  return (
+    <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
+      <Heading3>Labo Portal</Heading3>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
+      <p>Labo Portalは研究室運営を補助するポータサイト＆Webアプリケーションです。</p>
+      <p>ミーティングの管理や出席の管理などを行います。</p>
+      <Heading4>ギャラリー</Heading4>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.49.03.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.49.06.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.00.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.12.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+          webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.25.webp?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
     </Flex>
   );
 };

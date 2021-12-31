@@ -5,14 +5,19 @@ export interface ImageProps {
   webPSrc?: string;
   imgSrc: string;
   alt: string;
+  width?: string | number;
 };
 
 export const Image: React.FC<ImageProps> = (props: ImageProps) => {
   return (
-    <picture>
+    <picture style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
       { props.webPSrc && <source srcSet={props.webPSrc} type="image/webp" /> }
       { props.imgComponent
-        ? <props.imgComponent src={props.imgSrc} alt={props.alt} decoding="async" />
+        ? <props.imgComponent src={props.imgSrc} alt={props.alt} decoding="async" width={props.width}/>
         : <img src={props.imgSrc} alt={props.alt} decoding="async" />
     }
     </picture>
