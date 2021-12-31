@@ -13,6 +13,17 @@ export const GlobalStyle = `
     overflow-x: hidden;
   }
 
+  @supports (-webkit-touch-callout: none) {
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+  }
+
   .ReactModal__Body--open {
     overflow-y: hidden;
   }
