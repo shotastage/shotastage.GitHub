@@ -1,5 +1,11 @@
 export const GlobalStyle = `
+  html {
+    height: -webkit-fill-available;
+  }
+
   body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
