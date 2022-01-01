@@ -144,7 +144,7 @@ export const WorksLaboPortal = () => {
           imgComponent={ModalImage}
         />
       </Box>
-      <Box center width='100%'>
+      <Box center width='100%' marginBottom='100px'>
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.25.webp?alt=media"
@@ -219,7 +219,7 @@ export const WorksShotachCom = () => {
           ReactなどのSPAは全てindex.html１ページで提供されます。しかし、サイトの構造やUI的観点からURLやページという概念が必要な場合があります。
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
-      </Box>
+      </Box marginBottom='100px'>
     </Flex>
   );
 };
