@@ -70,3 +70,7 @@ export const SHModal = (props: SHModalProps) => {
     </Modal>
   );
 };
+
+export const SHText = styled.p`
+  letter-spacing: 0.15rem;
+`;
