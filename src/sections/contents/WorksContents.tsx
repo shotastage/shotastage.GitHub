@@ -213,13 +213,13 @@ export const WorksShotachCom = () => {
           react-modalはModalウィンドウを実装するためのシンプルなライブラリです。ちょうど、この画面もreact-modalを使って作られています。
         </p>
       </Box>
-      <Box marginTop="20px">
+      <Box marginTop="20px" marginBottom='100px'>
         <strong>react-router-dom</strong>
         <p>
           ReactなどのSPAは全てindex.html１ページで提供されます。しかし、サイトの構造やUI的観点からURLやページという概念が必要な場合があります。
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
-      </Box marginBottom='100px'>
+      </Box>
     </Flex>
   );
 };
