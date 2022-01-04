@@ -15,7 +15,6 @@ import {
 
 const ModalImage = styled.img.attrs(props => ({
   width: props.width || '100%',
-
 }))`
   max-width: ${props => props.width};
   object-fit: cover;

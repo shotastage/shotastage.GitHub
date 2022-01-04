@@ -24,13 +24,13 @@ export const Heading = styled.div`
 `;
 
 export const Heading1 = styled.h1`
-  font-size: 3rem;
+  ${HeadingBase}
+  font-size: 3.7rem;
 `;
 
 export const Heading2 = styled.h2`
   ${HeadingBase}
-  padding-left: 0.8rem;
-  font-size: 3.2rem;
+  font-size: 3.1rem;
 
   @media screen and (max-width: 480px) {
     font-size: 2rem;
@@ -38,13 +38,16 @@ export const Heading2 = styled.h2`
 `;
 
 export const Heading3 = styled.h3`
-  font-size: 2.1rem;
+  ${HeadingBase}
+  font-size: 2.6rem;
 `;
 
 export const Heading4 = styled.h4`
-  font-size: 1.9rem;
+  ${HeadingBase}
+  font-size: 2.1rem;
 `;
 
 export const Heading5 = styled.h5`
-  font-size: 1.6rem;
+  ${HeadingBase}
+  font-size: 1.8rem;
 `;

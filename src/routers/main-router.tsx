@@ -42,6 +42,12 @@ const Admin = React.lazy(() =>
   }))
 );
 
+const Components = React.lazy(() =>
+  import('../pages/Components').then((module) => ({
+    default: module.default,
+  }))
+);
+
 const Router: React.FC<React.ReactNode> = () => {
   return (
     <BrowserRouter>
@@ -53,6 +59,7 @@ const Router: React.FC<React.ReactNode> = () => {
           <Route exact path="/ske_credential" component={SKECredential} />
           <Route exact path="/exchanger" component={Exchanger} />
           <Route exact path="/admin" component={Admin} />
+          <Route exact path="/components" component={Components} />
         </Switch>
       </Suspense>
     </BrowserRouter>
