@@ -18,19 +18,19 @@ import {
 import HorizontalNoscroll from '../styles/NoneScrollBar';
 
 const WorksInception = React.lazy(() =>
-  import('./contents/WorksContents').then((module) => ({
+  import('./contents').then((module) => ({
     default: module.WorksInception,
   }))
 );
 
 const WorksLaboPortal = React.lazy(() =>
-  import('./contents/WorksContents').then((module) => ({
+  import('./contents').then((module) => ({
     default: module.WorksLaboPortal,
   }))
 );
 
 const WorksDjangoMirage = React.lazy(() =>
-  import('./contents/WorksContents').then((module) => ({
+  import('./contents').then((module) => ({
     default: module.WorksDjangoMirage,
   }))
 );

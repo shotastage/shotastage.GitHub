@@ -10,27 +10,25 @@ const ButtonBase = styled.button`
 
 export const Button = styled(ButtonBase)`
   display: inline-block;
-  min-width: 180px;
+  min-width: 100px;
   padding-left: 10px;
   padding-right: 10px;
-  height: 60px;
-  line-height: 60px;
+  height: 45px;
+  line-height: 45px;
   text-align: center;
   transition: 0.5s;
-  color: white;
-  border-radius: 15px;
-  background: #d43333;
+  color: #363636;
+  border-radius: calc(45px /2);
+  background: #c2c2c2;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   font-family: 'Roboto Condensed', sans-serif;
-  margin: 25px;
 
   &:focus {
-    outline:0;
+    outline: 0;
   }
 
   &:hover {
-    letter-spacing: 1.5px;
     background: #333;
     color: white;
   }
@@ -41,11 +39,7 @@ export const Button = styled(ButtonBase)`
   }
 
   @media screen and (max-width: 480px) {
-    min-width: 140px;
-    height: 55px;
-    line-height: 55px;
-    border-radius: 14px;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
 `;
 
