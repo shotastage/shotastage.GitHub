@@ -79,6 +79,7 @@ export const WorksInception = () => {
         />
       </Box>
       <p>来場者の数や、どのゲートでどれくらい入場したかのデーターをリアルタイムで表示するWebアプリケーションの作成を行いました。</p>
+      <Box marginBottom='100px' />
     </Flex>
   );
 };
@@ -117,7 +118,7 @@ export const WorksLaboPortal = () => {
         />
       </Box>
       <p>
-      ホームスクリーンにはお知らせが表示されます。またお知らせの重要度によって色分けができます。締め切り日などの超重要なお知らせは赤になり注意を喚起します。
+        ホームスクリーンにはお知らせが表示されます。またお知らせの重要度によって色分けができます。締め切り日などの超重要なお知らせは赤になり注意を喚起します。
       </p>
       <Box center width='100%'>
         <Image
@@ -158,6 +159,13 @@ export const WorksLaboPortal = () => {
 export const WorksDjangoMirage = () => {
   return (
     <Flex flexDirection="column" alignItems="flex-start">
+      <Box center width='100%'>
+        <Image
+          imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media"
+          alt="Screen shots"
+          imgComponent={ModalImage}
+        />
+      </Box>
       <Heading3>Django Mirage</Heading3>
       <ModalText>
         Django MirageはDjango Frameworkを使ったWebアプリケーション開発を支援する強力なコマンドラインツールです。
@@ -165,6 +173,7 @@ export const WorksDjangoMirage = () => {
         例えば、Railsには rails g model User name:string email:stringのようなコマンドがありますが、Djangoにはありません。
         そこで、Django Mirageはこれと同様のCLIを提供しています。
       </ModalText>
+      <Box marginBottom='100px' />
     </Flex>
   );
 };
@@ -219,6 +228,7 @@ export const WorksShotachCom = () => {
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
       </Box>
+      <Box marginBottom='100px' />
     </Flex>
   );
 };
