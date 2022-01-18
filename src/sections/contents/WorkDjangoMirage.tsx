@@ -35,7 +35,7 @@ export const WorksDjangoMirage = () => {
         そこで、Django Mirageはこれと同様のCLIを提供しています。
       </ModalText>
       <Button onClick={() => window.location.href = 'https://github.com/shotastage/mirage-django-lts'}>Github Repository</Button>
-      <Box marginBottom='100px' />
+      <Box marginBottom='80px' />
     </Flex>
   );
 };
