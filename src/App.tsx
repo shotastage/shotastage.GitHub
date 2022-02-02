@@ -9,6 +9,7 @@ import { TopBanner } from './components/TopPopup';
 import {
   StorySection,
   Works,
+  Holds,
   Writings,
   SkillsSection,
   SocialSection
@@ -41,6 +42,7 @@ const MemorizedComponents = React.memo(props => {
       <Works />
       <Writings />
       <SkillsSection />
+      <Holds />
       <SocialSection />
       <Footer>
         <FooterCopyright />
