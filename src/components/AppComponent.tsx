@@ -32,8 +32,8 @@ export const NameArea = styled.h1`
 `;
 
 export const Avator = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
