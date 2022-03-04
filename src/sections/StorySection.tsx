@@ -181,6 +181,7 @@ export const StorySection = () => {
 
 const stories2 = [
   {
-  }
+
+  },
 
 ]

@@ -1,7 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import { Flex, Navbar, Heading, Image, Footer, FooterCopyright } from './components';
+import {
+  Flex,
+  Navbar,
+  Heading,
+  Image,
+  Footer,
+  FooterCopyright,
+  SHModal
+} from './components';
+
+import { BizCardDetail } from './contents/BizCard';
 import { Avator, Name, UserName } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
 import styled from "styled-components";
@@ -45,7 +55,19 @@ const BizDepartment = styled.span`
 `;
 
 
+const BizCardButton = styled.button`
+  background: none;
+	border: none;
+	outline: none;
+	appearance: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+`;
+
+
 const MemorizedComponents = React.memo(props => {
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -64,12 +86,19 @@ const MemorizedComponents = React.memo(props => {
               alt="avator image"
               imgComponent={Avator}
             />
-            <Flex flexDirection='column' alignItems='flex-start' marginLeft="2em">
-              <BizDepartment>自分ソフトウェア企画本部</BizDepartment>
-              <Name>Shota Shimazu</Name>
-              <UserName onClick={userClick}>@shotastage</UserName>
+            <Flex flexDirection='column' alignItems='flex-start' marginLeft="2em" >
+              <Flex flexDirection='column' alignItems='flex-start' >
+                <BizDepartment>自分ソフトウェア企画開発本部</BizDepartment>
+                <Name>Shota Shimazu</Name>
+                <UserName onClick={userClick}>@shotastage</UserName>
+              </Flex>
+              <BizCardButton onClick={() => setIsOpen(true)}>詳しく</BizCardButton>
+              <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
+                <Suspense fallback={<div />}>
+                  <BizCardDetail />
+                </Suspense>
+              </SHModal>
             </Flex>
-            <button>詳しく</button>
           </BizCard>
         </Flex>
       </Heading>
