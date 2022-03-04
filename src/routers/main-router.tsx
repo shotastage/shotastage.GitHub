@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import {
-  BrowserRouter as Switch,
   Route,
+  Routes,
   BrowserRouter,
 } from "react-router-dom";
 
@@ -30,7 +30,7 @@ const SKECredential = React.lazy(() =>
   }))
 );
 
-const  Exchanger = React.lazy(() =>
+const Exchanger = React.lazy(() =>
   import('../pages/Exchanger').then((module) => ({
     default: module.default,
   }))
@@ -51,17 +51,43 @@ const Components = React.lazy(() =>
 const Router: React.FC<React.ReactNode> = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div />}>
-        <Switch>
-          <Route exact path="/" component={App} />
-          <Route exact path="/sitemap" component={Sitemap} />
-          <Route exact path="/ske_sys" component={SKESystem} />
-          <Route exact path="/ske_credential" component={SKECredential} />
-          <Route exact path="/exchanger" component={Exchanger} />
-          <Route exact path="/admin" component={Admin} />
-          <Route exact path="/components" component={Components} />
-        </Switch>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={
+          <Suspense fallback={<div />}>
+            <App />
+          </Suspense>
+        } />
+        <Route path="/sitemap" element={
+          <Suspense fallback={<div />}>
+            <Sitemap />
+          </Suspense>
+        } />
+        <Route path="/ske_sys" element={
+          <Suspense fallback={<div />}>
+            <SKESystem />
+          </Suspense>
+        } />
+        <Route path="/ske_credential" element={
+          <Suspense fallback={<div />}>
+            <SKECredential />
+          </Suspense>
+        } />
+        <Route path="/exchanger" element={
+          <Suspense fallback={<div />}>
+            <Exchanger />
+          </Suspense>
+        } />
+        <Route path="/admin" element={
+          <Suspense fallback={<div />}>
+            <Admin />
+          </Suspense>
+        } />
+        <Route path="/components" element={
+          <Suspense fallback={<div />}>
+            <Components />
+          </Suspense>
+        } />
+      </Routes>
     </BrowserRouter>
   );
 }
