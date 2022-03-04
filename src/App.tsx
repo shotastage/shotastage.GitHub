@@ -11,7 +11,6 @@ import {
   SHModal
 } from './components';
 
-import { BizCardDetail } from './contents/BizCard';
 import { Avator, Name, UserName } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
 import styled from "styled-components";
@@ -26,6 +25,12 @@ import {
   SocialSection
 } from './sections';
 
+
+const BizCardDetail = React.lazy(() =>
+  import('./contents/BizCard').then((module) => ({
+    default: module.BizCardDetail,
+  }))
+);
 
 const BizCard = styled.div`
   display: flex;
@@ -50,7 +55,6 @@ const BizDepartment = styled.span`
 
   @media screen and (max-width: 480px) {
     font-size: 0.7rem;
-
   }
 `;
 
@@ -62,12 +66,14 @@ const BizCardButton = styled.button`
 	appearance: none;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  margin-top: 1em;
+  font-size: 0.8rem;
+  color: #707070;
 `;
 
 
 const MemorizedComponents = React.memo(props => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const userClick = () => {
     window.location.href = 'https://twitter.com/shotastage';
@@ -79,7 +85,7 @@ const MemorizedComponents = React.memo(props => {
       <StorySection />
       <Heading style={{ display: 'flex', justifyContent: 'center' }}>
         <Flex>
-          <BizCard>
+          <BizCard onClick={() => setIsOpen(true)}>
             <Image
               imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
               webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
@@ -92,14 +98,18 @@ const MemorizedComponents = React.memo(props => {
                 <Name>Shota Shimazu</Name>
                 <UserName onClick={userClick}>@shotastage</UserName>
               </Flex>
-              <BizCardButton onClick={() => setIsOpen(true)}>詳しく</BizCardButton>
-              <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
-                <Suspense fallback={<div />}>
-                  <BizCardDetail />
-                </Suspense>
-              </SHModal>
+              <BizCardButton onClick={() => setIsOpen(true)}>
+                {
+                  (window.ontouchstart !== undefined && 0 < window.navigator.maxTouchPoints) ? 'タッチして詳細を確認' : 'クリックして詳細を確認'
+                }
+              </BizCardButton>
             </Flex>
           </BizCard>
+          <SHModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+            <Suspense fallback={<div />}>
+              <BizCardDetail />
+            </Suspense>
+          </SHModal>
         </Flex>
       </Heading>
       <Works />
