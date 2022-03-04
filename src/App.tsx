@@ -18,7 +18,10 @@ import {
 
 
 const BizCard = styled.div`
-  max-width: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 530px;
   aspect-ratio: 7 / 4;
   background: white;
   border-radius: 5px;
@@ -26,8 +29,18 @@ const BizCard = styled.div`
 
   @media screen and (max-width: 480px) {
     max-width: 400px;
+    min-width: 200px;
     margin-right: 10px;
     margin-left: 10px;
+  }
+`;
+
+const BizDepartment = styled.span`
+  font-size: 1rem;
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+
   }
 `;
 
@@ -51,8 +64,12 @@ const MemorizedComponents = React.memo(props => {
               alt="avator image"
               imgComponent={Avator}
             />
-            <Name>Shota Shimazu</Name>
-            <UserName onClick={userClick}>@shotastage</UserName>
+            <Flex flexDirection='column' alignItems='flex-start' marginLeft="2em">
+              <BizDepartment>自分ソフトウェア企画本部</BizDepartment>
+              <Name>Shota Shimazu</Name>
+              <UserName onClick={userClick}>@shotastage</UserName>
+            </Flex>
+            <button>詳しく</button>
           </BizCard>
         </Flex>
       </Heading>

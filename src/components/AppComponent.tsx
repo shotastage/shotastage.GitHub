@@ -16,14 +16,14 @@ export const Heading1 = styled.h1`
 
 
 export const Name = styled.span`
-  font-size: 4.5rem;
-  padding: 20px;
+  font-size: 2.5rem;
+  padding: 10px;
+  padding-left: 0;
   @media screen and (max-width: 480px) { font-size: 2rem; }
   @media (prefers-color-scheme: dark) { color: #333; }
 `;
 
 export const UserName = styled.span`
-  padding-left: 20px;
 `;
 
 export const NameArea = styled.h1`
