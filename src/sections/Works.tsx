@@ -134,7 +134,7 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div/>}>
                 <WorksInception />
               </Suspense>
             </SHModal>
@@ -157,7 +157,7 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={laboPortalIsOpen} onClose={() => setLaboPortalIsOpen(false)}>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div/>}>
                 <WorksLaboPortal />
               </Suspense>
             </SHModal>
@@ -178,7 +178,7 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div/>}>
                 <WorksDjangoMirage />
               </Suspense>
             </SHModal>
@@ -192,7 +192,7 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div/>}>
                 <WorksShotachCom />
               </Suspense>
             </SHModal>
