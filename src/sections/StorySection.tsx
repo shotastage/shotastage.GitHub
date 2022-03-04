@@ -1,9 +1,9 @@
 import { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
-import { Flex, Spacer } from '../components';
-import Stories, { WithSeeMore } from 'react-insta-stories'
+import Stories from 'react-insta-stories'
 import Modal from "react-modal";
+import SvgIcon from '../assets/close_button.svg';
 import { useDimension } from '../hooks';
 import { API_KEYS } from '../env-values';
 import { Image } from '../components/Image';
@@ -79,7 +79,10 @@ export interface StoryModalProps {
 
 
 export const ModalCloseButton = styled.button`
-  background-color: #e4e4e4;
+  position: absolute;
+  z-index: 1000;
+  bottom: 2em;
+  background-color: #aaaaaa;
   border: none;
   cursor: pointer;
   outline: none;
@@ -93,10 +96,16 @@ export const ModalCloseButton = styled.button`
   align-items: center;
 `;
 
+const ModalIconObjElm = styled.img`
+  width: 18px;
+  height: 18px
+  pointer-events: none;
+`;
 
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
+      <ModalIconObjElm src={SvgIcon} alt='close icon' />
     </ModalCloseButton>
   );
 };
@@ -117,10 +126,7 @@ export const StoryModal = (props: StoryModalProps) => {
           height: height,
         }
       }}>
-      <Flex>
-        <Spacer />
-        <ModalClose onClick={() => onClose(false)} />
-      </Flex>
+      <ModalClose onClick={() => onClose(false)} />
       {children}
     </Modal>
   );
@@ -174,79 +180,6 @@ export const StorySection = () => {
 
 
 const stories2 = [
-  {
-    content: ({ }) => {
-      return <div>
-        <h1>The new version is here.</h1>
-        <p>This is the new story.</p>
-        <p>Now render React components right into your stories.</p>
-        <p>Possibilities are endless, like here - here's a code block!</p>
-        <pre>
-          <code >
-            console.log('Hello, world!')
-          </code>
-        </pre>
-        <p>Or here, an image!</p>
-        <br />
-        <img src="https://images.unsplash.com/photo-1565506737357-af89222625ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></img>
-        <h3>Perfect. But there's more! →</h3>
-      </div>
-    }
-  },
-  {
-    content: ({ }) => {
-      return <div>
-        <h1>The new version is here.</h1>
-        <p>This is the new story.</p>
-        <p>Now render React components right into your stories.</p>
-        <p>Possibilities are endless, like here - here's a code block!</p>
-        <pre>
-          <code >
-            console.log('Hello, world!')
-          </code>
-        </pre>
-        <p>Or here, an image!</p>
-        <br />
-        <img src="https://images.unsplash.com/photo-1565506737357-af89222625ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></img>
-        <h3>Perfect. But there's more! →</h3>
-      </div>
-    }
-  }, {
-    content: ({ }) => {
-      return <div>
-        <h1>The new version is here.</h1>
-        <p>This is the new story.</p>
-        <p>Now render React components right into your stories.</p>
-        <p>Possibilities are endless, like here - here's a code block!</p>
-        <pre>
-          <code >
-            console.log('Hello, world!')
-          </code>
-        </pre>
-        <p>Or here, an image!</p>
-        <br />
-        <img src="https://images.unsplash.com/photo-1565506737357-af89222625ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></img>
-        <h3>Perfect. But there's more! →</h3>
-      </div>
-    }
-  }, {
-    content: ({ }) => {
-      return <div>
-        <h1>The new version is here.</h1>
-        <p>This is the new story.</p>
-        <p>Now render React components right into your stories.</p>
-        <p>Possibilities are endless, like here - here's a code block!</p>
-        <pre>
-          <code >
-            console.log('Hello, world!')
-          </code>
-        </pre>
-        <p>Or here, an image!</p>
-        <br />
-        <img src="https://images.unsplash.com/photo-1565506737357-af89222625ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></img>
-        <h3>Perfect. But there's more! →</h3>
-      </div>
-    }
-  },
+  {}
 
 ]
