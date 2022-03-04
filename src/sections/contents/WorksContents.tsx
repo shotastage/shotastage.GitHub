@@ -28,7 +28,10 @@ export const WorksShotachCom = () => {
         <Spacer />
       </Box>
       <p>
-        このサイトはReactを使用してFull-TypeScriptで記述しています。また、以下のライブラリを使用しています。
+        このサイトはReactを使用してFull-TypeScriptで記述されています。全てのページはReactを用いたSPAとして記述されており
+        表示されるコンテンツは一部REST APIにより取得し動的に表示されるのが特徴です。
+
+        また、以下のライブラリを使用しています。
       </p>
       <ul>
         <li>styled-components</li>
