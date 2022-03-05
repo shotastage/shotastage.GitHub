@@ -64,6 +64,7 @@ const WorkCard = styled(Card)`
   }
 `;
 
+/*
 const BhaaCard = styled(WorkCard)`
   background: #fc1547;
 
@@ -71,6 +72,7 @@ const BhaaCard = styled(WorkCard)`
     color: #fff;
   }
 `;
+*/
 
 const WarkCardTopMargin = styled.div`
   background: transparent;
@@ -106,18 +108,12 @@ export const Works = () => {
         <WorkCardsSection>
           <ContainerMargin />
           <WarkCardTopMargin />
-          <BhaaCard>
-            <CardHeading>Bhaa</CardHeading>
-            <CardDescription>
-              Bhaa is a platform to create and share own maps with your friends. On this app, you can enjoy just viewing the map, or shareing it with your friends.
-            </CardDescription>
-          </BhaaCard>
           <WorkCard>
-            <CardHeading>クリエイティビティを解放しろ</CardHeading>
-            <CardDescription>"作曲"という作業は長らくクリエイティビティの頂点として、一部の能力を持った人に限定された技法でした.</CardDescription>
+            <CardHeading>作曲家の雑務をふっとばす！</CardHeading>
+            <CardDescription>AI技術を用いた強力な作曲アシスタント.</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardHeading>First Impressionは大事</CardHeading>
+            <CardHeading>ファースト<br />インプレッションを<br />Sustainableに</CardHeading>
             <Box center>
               <Image
                 imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
@@ -128,19 +124,19 @@ export const Works = () => {
             </Box>
             <Spacer />
             <CardDescription>
-              <p>ORF2019で使用した受付システムです</p>
               <Flex>
                 <CardButton onClick={() => setIsOpen(true)}>More</CardButton>
               </Flex>
             </CardDescription>
             <SHModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
-              <Suspense fallback={<div/>}>
+              <Suspense fallback={<div />}>
                 <WorksInception />
               </Suspense>
             </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardHeading>Labo Portal</CardHeading>
+            <CardHeading>自分の秘書。研究室のリーダー</CardHeading>
+            <Spacer />
             <Box center>
               <Image
                 imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
@@ -157,28 +153,33 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={laboPortalIsOpen} onClose={() => setLaboPortalIsOpen(false)}>
-              <Suspense fallback={<div/>}>
+              <Suspense fallback={<div />}>
                 <WorksLaboPortal />
               </Suspense>
             </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardHeading>PINNA</CardHeading>
-            <CardDescription>EOL</CardDescription>
-          </WorkCard>
-          <WorkCard>
-            <CardHeading>Django Mirage</CardHeading>
+            <CardHeading>瞬時に開発<br />すぐに披露</CardHeading>
+            <Spacer />
+            <Box center>
+              <Image
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.webp?alt=media"
+                alt="Screen shots"
+                imgComponent={TileImage}
+              />
+            </Box>
             <Spacer />
             <CardDescription>
               <p>
-                Django MirageはDjango Frameworkを使ったWebアプリケーション開発を支援する強力なコマンドラインツールです。
+                Webバックエンド開発を瞬時に終わらせる効率化CLIのお話。
               </p>
               <Flex>
                 <CardButton onClick={() => setDjModalIsOpen(true)}>More</CardButton>
               </Flex>
             </CardDescription>
             <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
-              <Suspense fallback={<div/>}>
+              <Suspense fallback={<div />}>
                 <WorksDjangoMirage />
               </Suspense>
             </SHModal>
@@ -192,14 +193,10 @@ export const Works = () => {
               </Flex>
             </CardDescription>
             <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
-              <Suspense fallback={<div/>}>
+              <Suspense fallback={<div />}>
                 <WorksShotachCom />
               </Suspense>
             </SHModal>
-          </WorkCard>
-          <WorkCard>
-            <CardHeading>Notter</CardHeading>
-            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
           </WorkCard>
           <WarkCardTopMargin />
         </WorkCardsSection>

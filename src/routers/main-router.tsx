@@ -48,6 +48,12 @@ const Components = React.lazy(() =>
   }))
 );
 
+const SkillsDetail = React.lazy(() =>
+  import('../pages/SkillsDetail').then((module) => ({
+    default: module.default,
+  }))
+);
+
 const Router: React.FC<React.ReactNode> = () => {
   return (
     <BrowserRouter>
@@ -85,6 +91,11 @@ const Router: React.FC<React.ReactNode> = () => {
         <Route path="/components" element={
           <Suspense fallback={<div />}>
             <Components />
+          </Suspense>
+        } />
+        <Route path="/skills" element={
+          <Suspense fallback={<div />}>
+            <SkillsDetail />
           </Suspense>
         } />
       </Routes>

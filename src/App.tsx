@@ -19,7 +19,6 @@ import styled from "styled-components";
 import {
   StorySection,
   Works,
-  Holds,
   Writings,
   SkillsSection,
   SocialSection
@@ -94,7 +93,7 @@ const MemorizedComponents = React.memo(props => {
             />
             <Flex flexDirection='column' alignItems='flex-start' marginLeft="2em" >
               <Flex flexDirection='column' alignItems='flex-start' >
-                <BizDepartment>自分ソフトウェア企画開発本部</BizDepartment>
+                <BizDepartment>Solution Labo.</BizDepartment>
                 <Name>Shota Shimazu</Name>
                 <UserName onClick={userClick}>@shotastage</UserName>
               </Flex>
@@ -115,7 +114,6 @@ const MemorizedComponents = React.memo(props => {
       <Works />
       <Writings />
       <SkillsSection />
-      <Holds />
       <SocialSection />
       <Footer>
         <FooterCopyright />
