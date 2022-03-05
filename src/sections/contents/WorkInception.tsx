@@ -49,7 +49,8 @@ export const WorksInception = () => {
         <Spacer />
       </Box>
       <p>
-        このサイトはReactを使用してFull-TypeScriptで記述しています。また、以下のライブラリを使用しています。
+        開発期間が非常に短かったこともありプロトタイピングと同時にプロダクトが完成するようなもので開発したいという考えから、React Nativeを使用して開発しました。
+        従って、開発言語はJavaScriptを用いています。また、バックエンドにはFirebaseをし使用しています。
       </p>
       <Heading4>オペレーションシステム</Heading4>
       <Box width='100%' center>

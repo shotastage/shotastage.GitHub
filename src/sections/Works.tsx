@@ -113,11 +113,11 @@ export const Works = () => {
             </CardDescription>
           </BhaaCard>
           <WorkCard>
-            <CardHeading>Linka</CardHeading>
-            <CardDescription>Link Shortener is basics of feature product "Linka".</CardDescription>
+            <CardHeading>クリエイティビティを解放しろ</CardHeading>
+            <CardDescription>"作曲"という作業は長らくクリエイティビティの頂点として、一部の能力を持った人に限定された技法でした.</CardDescription>
           </WorkCard>
           <WorkCard>
-            <CardHeading>Inception for SFC</CardHeading>
+            <CardHeading>First Impressionは大事</CardHeading>
             <Box center>
               <Image
                 imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
@@ -196,10 +196,6 @@ export const Works = () => {
                 <WorksShotachCom />
               </Suspense>
             </SHModal>
-          </WorkCard>
-          <WorkCard>
-            <CardHeading>Notter</CardHeading>
-            <CardDescription>GeoTubeは散策動画を地図上にマッピングしたWebアプリケーションです</CardDescription>
           </WorkCard>
           <WorkCard>
             <CardHeading>Notter</CardHeading>
