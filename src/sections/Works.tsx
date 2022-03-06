@@ -41,6 +41,12 @@ const WorksShotachCom = React.lazy(() =>
   }))
 );
 
+const WorkAIMusic = React.lazy(() =>
+  import('./contents/WorkAIMusic').then((module) => ({
+    default: module.WorkAIMusic,
+  }))
+);
+
 const WorkCardsSection = styled(Box)`
   width: 100vw;
   display: flex;
@@ -93,6 +99,8 @@ const CardButton = styled(RoundButton)`
 
 export const Works = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [aimIsOpen, setAimIsOpen] = useState(false);
+
   const [laboPortalIsOpen, setLaboPortalIsOpen] = useState(false);
   const [djModalIsOpen, setDjModalIsOpen] = useState(false);
   const [siteModalIsOpen, setSiteModalIsOpen] = useState(false);
@@ -110,7 +118,17 @@ export const Works = () => {
           <WarkCardTopMargin />
           <WorkCard>
             <CardHeading>作曲家の雑務をふっとばす！</CardHeading>
-            <CardDescription>AI技術を用いた強力な作曲アシスタント.</CardDescription>
+            <CardDescription>
+              <p>AI技術を用いた強力な作曲アシスタント.</p>
+              <Flex>
+                <CardButton onClick={() => setAimIsOpen(true)}>More</CardButton>
+              </Flex>
+            </CardDescription>
+            <SHModal isOpen={aimIsOpen} onClose={() => setAimIsOpen(false)}>
+              <Suspense fallback={<div />}>
+                <WorkAIMusic />
+              </Suspense>
+            </SHModal>
           </WorkCard>
           <WorkCard>
             <CardHeading>ファースト<br />インプレッションを<br />Sustainableに</CardHeading>

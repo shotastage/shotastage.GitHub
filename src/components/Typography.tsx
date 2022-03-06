@@ -6,8 +6,6 @@ const textAlignment = css`
 
 const HeadingBase = css`
   margin: 0;
-  margin-top: 1em;
-  margin-bottom: 1em;
 `;
 
 export const Heading = styled.div`

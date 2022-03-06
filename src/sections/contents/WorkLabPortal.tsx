@@ -20,6 +20,7 @@ export const WorksLaboPortal = () => {
   return (
     <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
       <Heading3>Labo Portal</Heading3>
+      <p>細かい雑務をこなしてくれるWebアプリケーションです</p>
       <Box center width='100%'>
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"

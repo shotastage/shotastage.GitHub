@@ -7,7 +7,7 @@ import {
 } from '../components';
 
 const ModalText = styled.p`
-line-height: 3rem;
+  line-height: 3rem;
 `;
 
 export const BizCardDetail = () => {
@@ -15,7 +15,10 @@ export const BizCardDetail = () => {
     <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
       <Heading3>プロフィール</Heading3>
 
-      <Heading4>経歴</Heading4>
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading4>経歴</Heading4>
+      </Box>
+
       <ModalText>
         <span>オシャレCity🏙横浜🏙に程近い🌳🌳森🌳🌳の中で産声をあげる。<br /></span>
         <span>幼少期は近所の🐔ニワトリパークに散歩に行くのが日課。<br /></span>
