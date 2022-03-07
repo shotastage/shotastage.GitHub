@@ -23,13 +23,10 @@ export const Navbar = (props: Props) => {
       </NavBrandArea>
       <NavArea>
         <NavItems>
-          <NavLink to="https://github.com/shotastage">Profile</NavLink>
+          <NavLink to="/">Profile</NavLink>
         </NavItems>
         <NavItems>
-          <NavLink to="https://github.com/shotastage">Works</NavLink>
-        </NavItems>
-        <NavItems>
-          <NavLink to="https://github.com/shotastage">Skills</NavLink>
+          <NavLink to="/">Works</NavLink>
         </NavItems>
         <NavItems>
           <NavForienLink href="https://github.com/shotastage">Github</NavForienLink>

@@ -42,7 +42,7 @@ const WorksShotachCom = React.lazy(() =>
 );
 
 const WorkAIMusic = React.lazy(() =>
-  import('./contents/WorkAIMusic').then((module) => ({
+  import('./contents').then((module) => ({
     default: module.WorkAIMusic,
   }))
 );
@@ -118,6 +118,14 @@ export const Works = () => {
           <WarkCardTopMargin />
           <WorkCard>
             <CardHeading>作曲家の雑務をふっとばす！</CardHeading>
+            <Box center>
+              <Image
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.webp?alt=media"
+                alt="Screen shots"
+                imgComponent={TileImage}
+              />
+            </Box>
             <CardDescription>
               <p>AI技術を用いた強力な作曲アシスタント.</p>
               <Flex>
@@ -204,6 +212,14 @@ export const Works = () => {
           </WorkCard>
           <WorkCard>
             <CardHeading>shotach.com</CardHeading>
+            <Box center>
+              <Image
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.webp?alt=media"
+                alt="Screen shots"
+                imgComponent={TileImage}
+              />
+            </Box>
             <CardDescription>
               <p>今、あなたが見ているこのサイトです</p>
               <Flex>

@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react';
 import styled from "styled-components";
 import {
   Box,
@@ -11,26 +10,7 @@ import {
   Flex,
   Spacer,
 } from '../../components';
-import { AIMusicContent } from './WorkAIMusicContent';
-
-const BgDescript = React.lazy(() =>
-  import('./WorkAIMusicContent').then((module) => ({
-    default: module.BgDescript,
-  }))
-);
-
-const CsDescript = React.lazy(() =>
-  import('./WorkAIMusicContent').then((module) => ({
-    default: module.CsDescript,
-  }))
-);
-
-const TechDescript = React.lazy(() =>
-  import('./WorkAIMusicContent').then((module) => ({
-    default: module.TechDescript,
-  }))
-);
-
+import { AIMusicContent, BgDescript, CsDescript, TechDescript } from './WorkAIMusicContent';
 
 // Componets
 // -------------------------------------------------------
@@ -55,25 +35,21 @@ export const WorkAIMusic = () => {
           webPSrc={AIMusicContent.section1.headingImageWebP}
           alt="Screen shots"
           imgComponent={ModalImage}
-          width="30%"
+          width="70%"
         />
       </Box>
-      <Suspense fallback={<div />}>
-        <Box marginTop="3em" marginBottom="1em">
-          <Heading5>ピンと来る曲が見つからない</Heading5>
-        </Box>
-        <BgDescript />
-      </Suspense>
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading5>ピンと来る曲が見つからない</Heading5>
+      </Box>
+      <BgDescript />
 
 
-      <Suspense fallback={<div />}>
-        <Box marginTop="3em" marginBottom="1em">
-          <Heading5 style={{ transform: 'rotate(-5deg)' }}>作曲は</Heading5>
-          <Heading5 style={{ marginLeft: "2.5em", transform: 'rotate(-15deg)' }}>すっごく</Heading5>
-          <Heading5 style={{ marginLeft: "7em", transform: 'rotate(-5deg)' }}>難しい</Heading5>
-        </Box>
-        <CsDescript />
-      </Suspense>
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading5 style={{ transform: 'rotate(-5deg)' }}>作曲は</Heading5>
+        <Heading5 style={{ marginLeft: "2.5em", transform: 'rotate(-15deg)' }}>すっごく</Heading5>
+        <Heading5 style={{ marginLeft: "7em", transform: 'rotate(-5deg)' }}>難しい</Heading5>
+      </Box>
+      <CsDescript />
 
 
 
@@ -115,9 +91,44 @@ export const WorkAIMusic = () => {
         </CardSquare>
         <Spacer />
       </Box>
-      <Suspense fallback={<div />}>
-        <TechDescript />
-      </Suspense>
+      <TechDescript />
+
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading5>Basic RNN</Heading5>
+      </Box>
+      <p>
+        まずは、最も基本的なReccurent Neural Network (RNN)アルゴリズムで実験を行いました。RNNは、翻訳など時系列データの学習に長けた機械学習アルゴリズムの一つです。
+      </p>
+
+      <audio controls src='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media'>
+        お使いのブラウザは<code>audio</code> 要素をサポートしていません.
+      </audio>
+
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading5>Lookback RNN</Heading5>
+      </Box>
+      <p>
+        Lookback RNNは通常のRNNに1, 2章節前のイベントを繰り返すかどうかという要素を与えた学習モデルです。上述した基本的なRNNと比べて、メロディーの小説毎の繰り返しを学習することができます。
+      </p>
+
+      <audio controls src='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media'>
+        お使いのブラウザは<code>audio</code> 要素をサポートしていません.
+      </audio>
+
+
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading5>まとめと展望</Heading5>
+      </Box>
+      <p>
+        機械学習を用いた自動作曲は一定程度のメロディーを作ることができます。<br />
+        最終的に出来上がった曲に関してもダンジョンゲームのBGMには使えそうです。<br />
+      </p>
+      <p>
+        ただ、シンフォニーのようなパートの多い楽曲を一度に作ることができなかったり学習と生成にかかるコンピューティングリソースが膨大になるという課題もあります。<br />
+        (今回もMac Pro相当のスペックを持つLinux Machineを同時に５台動かしています)<br />
+        これらの問題は、並列処理が可能なCNNを時系列データに適用する手法などで解決できる余地があります。
+      </p>
+
       <Box marginBottom='100px' />
     </Flex>
   );

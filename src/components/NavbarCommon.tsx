@@ -69,7 +69,7 @@ export const NavArea = styled.div`
   align-items: center;
   flex-direction: row;
   @media screen and (max-width: 480px) {
-    margin: 5px;
+    display: none;
   }
 `;
 
@@ -96,13 +96,6 @@ export const NavLink = styled(Link)`
     padding: 0.5em;
     border-radius: 0.3em;
   }
-  @media (prefers-color-scheme: dark) {
-    color: white;
-    &:hover {
-      background: #fff;
-      color: #333;
-    }
-  }
 `;
 
 
@@ -118,13 +111,6 @@ export const NavForienLink = styled.a`
   @media screen and (max-width: 480px) {
     padding: 0.5em;
     border-radius: 0.3em;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: white;
-    &:hover {
-      background: #fff;
-      color: #333;
-    }
   }
 `;
 
