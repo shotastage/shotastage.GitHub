@@ -9,22 +9,19 @@ export interface FlexProps extends StylerProps {
   center?: boolean;
 };
 
-export const Flex: React.FC<FlexProps> = (props: FlexProps) => {
-
-  const { flexDirection, alignItems, justifyContent, colmun, center, ...rest } = props;
-
+export const Flex = (props: FlexProps) => {
   return (
-    <div style={{
+    <div {...props} style={{
       display: 'flex',
-      flexDirection: flexDirection || 'row',
-      alignItems: alignItems || 'center',
-      justifyContent: justifyContent || 'space-around',
+      flexDirection: props.flexDirection || 'row',
+      alignItems: props.alignItems || 'center',
+      justifyContent: props.justifyContent || 'space-around',
       marginTop: props.marginTop || 0,
       marginBottom: props.marginBottom || 0,
       marginRight: props.marginRight || 0,
       marginLeft: props.marginLeft || 0,
       backgroundColor: props.backgroundColor || '#fff',
-    }} {...rest}>
+    }}>
       {props.children}
     </div>
   );
@@ -33,11 +30,11 @@ export const Flex: React.FC<FlexProps> = (props: FlexProps) => {
 export interface SpacerProps extends StylerProps {
 };
 
-export const Spacer = (props: SpacerProps) => {
+export const Spacer = () => {
   return (
     <div style={{
       flex: 1,
       alignSelf: "stretch",
-    }} />
+    }}/>
   );
 };

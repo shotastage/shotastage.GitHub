@@ -7,6 +7,7 @@ import {
   NavArea,
   NavItems,
   NavLink,
+  NavForienLink,
 } from "./NavbarCommon";
 
 type Props = {
@@ -22,7 +23,16 @@ export const Navbar = (props: Props) => {
       </NavBrandArea>
       <NavArea>
         <NavItems>
-          <NavLink to="/">🥺</NavLink>
+          <NavLink to="https://github.com/shotastage">Profile</NavLink>
+        </NavItems>
+        <NavItems>
+          <NavLink to="https://github.com/shotastage">Works</NavLink>
+        </NavItems>
+        <NavItems>
+          <NavLink to="https://github.com/shotastage">Skills</NavLink>
+        </NavItems>
+        <NavItems>
+          <NavForienLink href="https://github.com/shotastage">Github</NavForienLink>
         </NavItems>
       </NavArea>
     </Navigation>

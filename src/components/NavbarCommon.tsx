@@ -104,3 +104,27 @@ export const NavLink = styled(Link)`
     }
   }
 `;
+
+
+export const NavForienLink = styled.a`
+  text-decoration: none;
+  color: #000;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 0.5em;
+    border-radius: 0.3em;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: white;
+    &:hover {
+      background: #fff;
+      color: #333;
+    }
+  }
+`;
+
