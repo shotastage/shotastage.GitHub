@@ -13,6 +13,14 @@ export const WorksShotachCom = () => {
     <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
       <Heading3>shotach.com</Heading3>
       <p>https://shotach.comは@shotasgaeのポートフォリオサイトです。</p>
+      <Box>
+        <Heading4>背景と要求</Heading4>
+      </Box>
+      <p>このポートフォリオサイトは以下のような要求を達成したいと考えました。</p>
+      <ul>
+        <li>資金や労力を使わずにサイトを開発・維持できること</li>
+        <li>低価格でレスポンスの高いWebページを構築すること</li>
+      </ul>
       <Heading4>使用した技術</Heading4>
       <Box center width='100%'>
         <Spacer />
