@@ -44,11 +44,6 @@ export const Navigation = styled.nav`
     height: 60px;
   }
 `;
-// @media (prefers-color-scheme: dark) {
-//  color: white;
-//  background: #232423;
-//  filter: drop-shadow(0px 0px 1px rgb(70, 70, 70));
-// }
 
 export const NavBrand = styled.h1`
   font-family: "Futura", serif;
@@ -113,4 +108,3 @@ export const NavForienLink = styled.a`
     border-radius: 0.3em;
   }
 `;
-

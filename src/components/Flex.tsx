@@ -1,4 +1,3 @@
-import React from 'react';
 import { StylerProps } from './Styler';
 
 export interface FlexProps extends StylerProps {
