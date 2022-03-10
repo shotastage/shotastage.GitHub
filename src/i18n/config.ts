@@ -23,18 +23,18 @@ const detector = new LanguageDetector(null, {
 });
 
 i18n
-  .use(LanguageDetector)
+  .use(detector)
   .use(initReactI18next)
   .init({
+    fallbackLng: "en",
     resources,
-    lng: "ja",
+    debug: true,
     interpolation: {
       escapeValue: false,
     },
     react: {
       useSuspense: true,
     },
-    fallbackLng: "en",
   });
 
 export default i18n;
