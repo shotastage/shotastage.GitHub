@@ -1,6 +1,10 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+// import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+
 import translation_en from "./en_US.json";
 import translation_ja from "./ja_JP.json";
 
@@ -13,13 +17,22 @@ const resources = {
   }
 };
 
+const detector = new LanguageDetector(null, {
+  order: ['querystring', 'cookie',  'navigator', 'localStorage', 'htmlTag'],
+  htmlTag: document.documentElement,
+});
+
 i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     lng: "ja",
     interpolation: {
       escapeValue: false,
+    },
+    react: {
+      useSuspense: true,
     },
     fallbackLng: "en",
   });
