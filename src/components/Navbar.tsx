@@ -10,12 +10,6 @@ import {
   NavForienLink,
 } from "./NavbarCommon";
 
-const NavPullDown = styled.div`
-position: absolute;
-background: red;
-height: 100px;
-width: 200px;
-`;
 
 type Props = {
   children: React.ReactNode;
