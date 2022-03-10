@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 import Router from "./routers/main-router";
 import NormalizeCSS from 'normalize-css.ts';
 import { GlobalStyle } from "./styles/globalStyle";
+import "./i18n/config";
 import reportWebVitals from './reportWebVitals';
 
 const GlobalStyles = createGlobalStyle`
