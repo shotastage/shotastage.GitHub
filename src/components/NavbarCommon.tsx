@@ -69,12 +69,15 @@ export const NavArea = styled.div`
 `;
 
 export const NavItems = styled.div`
-  min-width: 150px;
   font-weight: bold;
   font-size: 1.2rem;
   text-align: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   @media screen and (max-width: 480px) {
-    min-width: 100px;
+    font-size: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 

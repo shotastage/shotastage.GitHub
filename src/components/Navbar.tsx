@@ -1,5 +1,5 @@
 import React from "react";
-
+import styled from "styled-components";
 import {
   NavBrandArea,
   Navigation,
@@ -9,6 +9,13 @@ import {
   NavLink,
   NavForienLink,
 } from "./NavbarCommon";
+
+const NavPullDown = styled.div`
+position: absolute;
+background: red;
+height: 100px;
+width: 200px;
+`;
 
 type Props = {
   children: React.ReactNode;
@@ -30,6 +37,9 @@ export const Navbar = (props: Props) => {
         </NavItems>
         <NavItems>
           <NavForienLink href="https://github.com/shotastage">Github</NavForienLink>
+        </NavItems>
+        <NavItems>
+          <NavForienLink href="">🌏 en</NavForienLink>
         </NavItems>
       </NavArea>
     </Navigation>
