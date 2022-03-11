@@ -1,4 +1,3 @@
-export * from "./Holds";
 export * from "./Skills";
 export * from "./SocialSection";
 export * from "./StorySection";
