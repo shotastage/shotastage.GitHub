@@ -66,7 +66,7 @@ const MemorizedComponents = React.memo(props => {
               </Flex>
               <BizCardButton onClick={() => setIsOpen(true)}>
                 {
-                  (window.ontouchstart !== undefined && 0 < window.navigator.maxTouchPoints) ? 'タッチして詳細を確認' : 'クリックして詳細を確認'
+                  (window.ontouchstart !== undefined && 0 < window.navigator.maxTouchPoints) ? t("bizCard.touch") : t("bizCard.click")
                 }
               </BizCardButton>
             </Flex>

@@ -1,8 +1,11 @@
 {
   "bizCard": {
-    "department": "Solution Lab."
+    "department": "Solution Lab.",
+    "click": "Click me to open",
+    "touch": "Touch here to open"
   },
   "profile": {
-    "title": "Profile"
+    "title": "Profile",
+    "heading1": "Antecedentes"
   }
 }

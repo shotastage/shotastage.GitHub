@@ -1,8 +1,11 @@
 {
   "bizCard": {
-    "department": "ソリューションラボ"
+    "department": "ソリューションラボ",
+    "click": "クリックして詳細を確認",
+    "touch": "タッチして詳細を確認"
   },
   "profile": {
-    "title": "プロフィール"
+    "title": "プロフィール",
+    "heading1": "経歴"
   }
 }

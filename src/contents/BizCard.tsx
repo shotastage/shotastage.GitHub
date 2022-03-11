@@ -59,7 +59,7 @@ export const BizCardDetail = () => {
       <Heading3>{t("profile.title")}</Heading3>
 
       <Box marginTop="3em" marginBottom="1em">
-        <Heading4>経歴</Heading4>
+        <Heading4>{t("profile.heading1")}</Heading4>
       </Box>
 
       <ModalText>
