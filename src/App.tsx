@@ -41,10 +41,6 @@ const MemorizedComponents = React.memo(props => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const userClick = () => {
-    window.location.href = 'https://twitter.com/shotastage';
-  };
-
   return (
     <React.Fragment>
       <Navbar>@bout shota</Navbar>
@@ -62,7 +58,7 @@ const MemorizedComponents = React.memo(props => {
               <Flex flexDirection='column' alignItems='flex-start' >
                 <BizDepartment>{t("bizCard.department")}</BizDepartment>
                 <Name>Shota Shimazu</Name>
-                <UserName onClick={userClick}>@shotastage</UserName>
+                <UserName>@shotastage</UserName>
               </Flex>
               <BizCardButton onClick={() => setIsOpen(true)}>
                 {
