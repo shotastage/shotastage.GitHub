@@ -18,7 +18,7 @@ export const BizCard = styled.div`
   min-width: 530px;
   aspect-ratio: 7 / 4;
   background: white;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 6px 12px -3px rgba(0,0,0,.3);
 
   @media screen and (max-width: 480px) {

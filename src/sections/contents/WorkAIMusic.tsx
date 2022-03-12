@@ -43,16 +43,12 @@ export const WorkAIMusic = () => {
       </Box>
       <BgDescript />
 
-
       <Box marginTop="3em" marginBottom="1em">
         <Heading5 style={{ transform: 'rotate(-5deg)' }}>作曲は</Heading5>
         <Heading5 style={{ marginLeft: "2.5em", transform: 'rotate(-15deg)' }}>すっごく</Heading5>
         <Heading5 style={{ marginLeft: "7em", transform: 'rotate(-5deg)' }}>難しい</Heading5>
       </Box>
       <CsDescript />
-
-
-
       <Box marginTop="3em" marginBottom="1em">
         <Heading5>ならば<span style={{
           fontSize: '3rem',
@@ -67,9 +63,7 @@ export const WorkAIMusic = () => {
       </Box>
       <p>人間ができないのであれば、機械にやって貰えばいいのです。</p>
       <p>そこで、機械学習モデルを用いて自動作曲ができないか研究に取り組むことにしました。</p>
-
       <p>詳細をお話しする前にAIで作ったメロディーから作成した楽曲をお聞きください。</p>
-
       <audio controls src={AIMusicContent.section2.audio}>
         お使いのブラウザは<code>audio</code> 要素をサポートしていません.
       </audio>
@@ -125,7 +119,7 @@ export const WorkAIMusic = () => {
       </p>
       <p>
         ただ、シンフォニーのようなパートの多い楽曲を一度に作ることができなかったり学習と生成にかかるコンピューティングリソースが膨大になるという課題もあります。<br />
-        (今回もMac Pro相当のスペックを持つLinux Machineを同時に５台動かしています)<br />
+        (今回もMac Pro相当のスペックを持つLinux Machineを同時に5台動かしています)<br />
         これらの問題は、並列処理が可能なCNNを時系列データに適用する手法などで解決できる余地があります。
       </p>
 
