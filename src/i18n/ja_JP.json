@@ -7,5 +7,12 @@
   "profile": {
     "title": "プロフィール",
     "heading1": "経歴"
+  },
+  "aim": {
+    "title": "AI作曲システム",
+    "heading1": "ピンと来る曲が見つからない",
+    "heading21": "作曲は",
+    "heading22": "すっごく",
+    "heading23": "難しい"
   }
 }

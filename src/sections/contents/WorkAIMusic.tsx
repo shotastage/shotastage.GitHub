@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   Image,
@@ -24,10 +25,12 @@ const ModalImage = styled.img.attrs(props => ({
 // Main Page
 // -------------------------------------------------------
 export const WorkAIMusic = () => {
+  const { t } = useTranslation();
+
   return (
     <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
       <Box marginBottom="2em">
-        <Heading3>AI作曲システム</Heading3>
+        <Heading3>{t("aim.title")}</Heading3>
       </Box>
       <Box center width='100%'>
         <Image
@@ -39,14 +42,14 @@ export const WorkAIMusic = () => {
         />
       </Box>
       <Box marginTop="3em" marginBottom="1em">
-        <Heading5>ピンと来る曲が見つからない</Heading5>
+        <Heading5>{t("aim.heading1")}</Heading5>
       </Box>
       <BgDescript />
 
       <Box marginTop="3em" marginBottom="1em">
-        <Heading5 style={{ transform: 'rotate(-5deg)' }}>作曲は</Heading5>
-        <Heading5 style={{ marginLeft: "2.5em", transform: 'rotate(-15deg)' }}>すっごく</Heading5>
-        <Heading5 style={{ marginLeft: "7em", transform: 'rotate(-5deg)' }}>難しい</Heading5>
+        <Heading5 style={{ transform: 'rotate(-5deg)' }}>{t("aim.heading21")}</Heading5>
+        <Heading5 style={{ marginLeft: "2.5em", transform: 'rotate(-15deg)' }}>{t("aim.heading22")}</Heading5>
+        <Heading5 style={{ marginLeft: "7em", transform: 'rotate(-5deg)' }}>{t("aim.heading23")}</Heading5>
       </Box>
       <CsDescript />
       <Box marginTop="3em" marginBottom="1em">
