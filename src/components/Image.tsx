@@ -15,11 +15,11 @@ export const Image: React.FC<ImageProps> = (props: ImageProps) => {
       justifyContent: "center",
       alignItems: "center",
     }}>
-      { props.webPSrc && <source srcSet={props.webPSrc} type="image/webp" /> }
-      { props.imgComponent
-        ? <props.imgComponent src={props.imgSrc} alt={props.alt} decoding="async" width={props.width}/>
-        : <img src={props.imgSrc} alt={props.alt} decoding="async" />
-    }
+      {props.webPSrc && <source srcSet={props.webPSrc} type="image/webp" />}
+      {props.imgComponent
+        ? <props.imgComponent src={props.imgSrc} alt={props.alt} decoding="async" loading="lazy" width={props.width} />
+        : <img src={props.imgSrc} alt={props.alt} decoding="async" loading="lazy" />
+      }
     </picture>
   );
 };
