@@ -15,10 +15,11 @@ import { BizCard, BizCardButton, BizDepartment } from './contents/BizCard';
 const BizCardDetail = React.lazy(() =>
   import('./contents/BizCard').then((module) => ({
     default: module.BizCardDetail,
-  }))
+  })),
 );
 
-const MemorizedComponents = React.memo((props) => {
+/* eslint react/display-name: 0 */
+const MemorizedComponents = React.memo(() => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +32,13 @@ const MemorizedComponents = React.memo((props) => {
         <Flex>
           <BizCard onClick={() => setIsOpen(true)}>
             <Image
-              imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
-              webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
-              alt="avator image"
+              imgSrc='https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg'
+              webPSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp'
+              alt='avator image'
               imgComponent={Avator}
             />
-            <Flex flexDirection="column" alignItems="flex-start" marginLeft="2em">
-              <Flex flexDirection="column" alignItems="flex-start">
+            <Flex flexDirection='column' alignItems='flex-start' marginLeft='2em'>
+              <Flex flexDirection='column' alignItems='flex-start'>
                 <BizDepartment>{t('bizCard.department')}</BizDepartment>
                 <Name>Shota Shimazu</Name>
                 <UserName>@shotastage</UserName>

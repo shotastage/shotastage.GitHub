@@ -1,3 +1,4 @@
+import React from 'react';
 import { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
@@ -104,7 +105,7 @@ const ModalIconObjElm = styled.img`
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
-      <ModalIconObjElm src={SvgIcon} alt="close icon" />
+      <ModalIconObjElm src={SvgIcon} alt='close icon' />
     </ModalCloseButton>
   );
 };
@@ -118,8 +119,8 @@ export const StoryModal = (props: StoryModalProps) => {
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
       closeTimeoutMS={310}
-      className="StoryModal"
-      overlayClassName="StoryModalOverlay"
+      className='StoryModal'
+      overlayClassName='StoryModalOverlay'
       style={{
         content: {
           height: height,
@@ -152,11 +153,11 @@ export const StorySection = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    ApiClient.GET('https://shota-folio.microcms.io/api/v1/story', [['X-MICROCMS-API-KEY', API_KEYS.microCMSKey]]).then(
-      (data: any) => {
-        setStories(data.contents);
-      }
-    );
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/story', [
+      ['X-MICROCMS-API-KEY', API_KEYS.microCMSKey],
+    ]).then((data: any) => {
+      setStories(data.contents);
+    });
   }, []);
 
   return (

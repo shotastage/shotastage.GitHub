@@ -48,10 +48,10 @@ export const BizCardDetail = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
+    <Flex flexDirection='column' alignItems='flex-start' marginRight='15px' marginLeft='15px'>
       <Heading3>{t('profile.title')}</Heading3>
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading4>{t('profile.heading1')}</Heading4>
       </Box>
 
@@ -79,7 +79,7 @@ export const BizCardDetail = () => {
         <br />
       </ModalText>
 
-      <Heading4>SHOTA's Philosophy</Heading4>
+      <Heading4>SHOTA&apos;s Philosophy</Heading4>
       <p>自分がソフトウェアを開発する理由はただ一つ</p>
       <p>「おもしろい」から</p>
       <p>テクノロジーを用いて使ってる人に驚きを届けられると思うからです。</p>
@@ -88,7 +88,7 @@ export const BizCardDetail = () => {
         <li>ユーザー視点に立った仕様の策定</li>
         <li>使っているだけで楽しさを体験できる工夫</li>
       </ul>
-      <Box marginBottom="100px" />
+      <Box marginBottom='100px' />
     </Flex>
   );
 };

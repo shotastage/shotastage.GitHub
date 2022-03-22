@@ -126,6 +126,7 @@ interface GridObjects {
   mobile?: GridMobile;
 }
 
+/* eslint indent: 0 */
 export const Grid = styled.div<GridObjects>`
   ${(props) =>
     props.global.colStart &&

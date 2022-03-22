@@ -29,8 +29,6 @@ export const Flex = (props: FlexProps) => {
   );
 };
 
-export interface SpacerProps extends StylerProps {}
-
 export const Spacer = () => {
   return (
     <div

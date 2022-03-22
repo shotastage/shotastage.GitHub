@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { Container, Grid, GridGlobal, CardIcon, Heading2, Box } from '../components';
 
@@ -50,7 +51,14 @@ const Instagram = styled(SocialButtonBase)`
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
   background: #f09433;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
 `;
 
 const Github = styled(SocialButtonBase)`
@@ -87,18 +95,18 @@ const FooterGridLayoutGlobal: GridGlobal = {
 export const SocialSection = (): JSX.Element => {
   return (
     <Container>
-      <Box marginTop="80px" marginBottom="30px">
+      <Box marginTop='80px' marginBottom='30px'>
         <Heading2>Social</Heading2>
       </Box>
       <SocialGrid global={FooterGridLayoutGlobal}>
         <Twitter onClick={() => window.open('https://twitter.com/shotastage', '_blank')}>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/twitter.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/twitter.svg`} />
         </Twitter>
         <Instagram onClick={() => window.open('https://instagram.com/shotastage', '_blank')}>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/instagram.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/instagram.svg`} />
         </Instagram>
         <Github onClick={() => window.open('https://github.com/shotastage', '_blank')}>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/github.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/github.svg`} />
         </Github>
       </SocialGrid>
     </Container>

@@ -17,6 +17,7 @@ export const TopPopup = styled.div`
   }
 `;
 
+/* eslint @typescript-eslint/ban-types: 0 */
 export const TopBanner = (props: React.PropsWithChildren<{}>) => {
   return (
     <TopPopup>

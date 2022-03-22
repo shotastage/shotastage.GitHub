@@ -1,8 +1,9 @@
+import React from 'react';
 import { Box, CardSquare, CardIcon, Heading3, Heading4, Flex, Spacer } from '../../components';
 
 export const WorksShotachCom = () => {
   return (
-    <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
+    <Flex flexDirection='column' alignItems='flex-start' marginRight='15px' marginLeft='15px'>
       <Heading3>shotach.com</Heading3>
       <p>https://shotach.comは@shotasgaeのポートフォリオサイトです。</p>
       <Box>
@@ -14,16 +15,19 @@ export const WorksShotachCom = () => {
         <li>低価格でレスポンスの高いWebページを構築すること</li>
       </ul>
       <Heading4>使用した技術</Heading4>
-      <Box center width="100%">
+      <Box center width='100%'>
         <Spacer />
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/react.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/react.svg`} />
         </CardSquare>
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/typescript-icon.svg`} />
+          <CardIcon
+            type='image/svg+xml'
+            data={`${process.env.PUBLIC_URL}/assets/typescript-icon.svg`}
+          />
         </CardSquare>
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/html-5.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/html-5.svg`} />
         </CardSquare>
         <Spacer />
       </Box>
@@ -38,7 +42,7 @@ export const WorksShotachCom = () => {
         <li>react-router-dom</li>
       </ul>
 
-      <Box marginTop="20px">
+      <Box marginTop='20px'>
         <strong>styled-components</strong>
         <p>
           styled-componentsは、CSSをJSで書くことができるライブラリです。ReactなどのJavaScriptベースで画面を組み立てるフレームワークでは、CSSの記述をJSON形式で行うため今までのCSSと比較して可読性に難がありました。
@@ -47,20 +51,20 @@ export const WorksShotachCom = () => {
           しかし、styled-componentsは、CSSの構文を崩すことなくJSインラインで記述が可能でありReactのコンポーネントとして値を返却するのでpropsに応じて変化させるなどの動的な挙動を実現しやすくしています。
         </p>
       </Box>
-      <Box marginTop="20px">
+      <Box marginTop='20px'>
         <strong>react-modal</strong>
         <p>
           react-modalはModalウィンドウを実装するためのシンプルなライブラリです。ちょうど、この画面もreact-modalを使って作られています。
         </p>
       </Box>
-      <Box marginTop="20px" marginBottom="100px">
+      <Box marginTop='20px' marginBottom='100px'>
         <strong>react-router-dom</strong>
         <p>
           ReactなどのSPAは全てindex.html１ページで提供されます。しかし、サイトの構造やUI的観点からURLやページという概念が必要な場合があります。
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
       </Box>
-      <Box marginBottom="80px" />
+      <Box marginBottom='80px' />
     </Flex>
   );
 };

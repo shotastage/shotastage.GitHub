@@ -1,6 +1,17 @@
+import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { Box, Image, CardSquare, CardIcon, Heading3, Heading4, Heading5, Flex, Spacer } from '../../components';
+import {
+  Box,
+  Image,
+  CardSquare,
+  CardIcon,
+  Heading3,
+  Heading4,
+  Heading5,
+  Flex,
+  Spacer,
+} from '../../components';
 import { AIMusicContent, BgDescript, CsDescript, TechDescript } from './WorkAIMusicContent';
 
 // Componets
@@ -18,31 +29,35 @@ export const WorkAIMusic = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
-      <Box marginBottom="2em">
+    <Flex flexDirection='column' alignItems='flex-start' marginRight='15px' marginLeft='15px'>
+      <Box marginBottom='2em'>
         <Heading3>{t('aim.title')}</Heading3>
       </Box>
-      <Box center width="100%">
+      <Box center width='100%'>
         <Image
           imgSrc={AIMusicContent.section1.headingImagePng}
           webPSrc={AIMusicContent.section1.headingImageWebP}
-          alt="Screen shots"
+          alt='Screen shots'
           imgComponent={ModalImage}
-          width="70%"
+          width='70%'
         />
       </Box>
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5>{t('aim.heading1')}</Heading5>
       </Box>
       <BgDescript />
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5 style={{ transform: 'rotate(-5deg)' }}>{t('aim.heading21')}</Heading5>
-        <Heading5 style={{ marginLeft: '2.5em', transform: 'rotate(-15deg)' }}>{t('aim.heading22')}</Heading5>
-        <Heading5 style={{ marginLeft: '7em', transform: 'rotate(-5deg)' }}>{t('aim.heading23')}</Heading5>
+        <Heading5 style={{ marginLeft: '2.5em', transform: 'rotate(-15deg)' }}>
+          {t('aim.heading22')}
+        </Heading5>
+        <Heading5 style={{ marginLeft: '7em', transform: 'rotate(-5deg)' }}>
+          {t('aim.heading23')}
+        </Heading5>
       </Box>
       <CsDescript />
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5>
           ならば
           <span
@@ -70,26 +85,29 @@ export const WorkAIMusic = () => {
         お使いのブラウザは<code>audio</code> 要素をサポートしていません.
       </audio>
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading4>使用した技術</Heading4>
       </Box>
 
-      <Box center width="100%">
+      <Box center width='100%'>
         <Spacer />
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/tensorflow.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/tensorflow.svg`} />
         </CardSquare>
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/python.svg`} />
+          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/python.svg`} />
         </CardSquare>
         <CardSquare>
-          <CardIcon type="image/svg+xml" data={`https://upload.wikimedia.org/wikipedia/commons/a/a0/MIDI_LOGO.svg`} />
+          <CardIcon
+            type='image/svg+xml'
+            data='https://upload.wikimedia.org/wikipedia/commons/a/a0/MIDI_LOGO.svg'
+          />
         </CardSquare>
         <Spacer />
       </Box>
       <TechDescript />
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5>Basic RNN</Heading5>
       </Box>
       <p>
@@ -99,12 +117,12 @@ export const WorkAIMusic = () => {
 
       <audio
         controls
-        src="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media"
+        src='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media'
       >
         お使いのブラウザは<code>audio</code> 要素をサポートしていません.
       </audio>
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5>Lookback RNN</Heading5>
       </Box>
       <p>
@@ -114,12 +132,12 @@ export const WorkAIMusic = () => {
 
       <audio
         controls
-        src="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media"
+        src='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2FBasic%20RNN%20Music.mp3?alt=media'
       >
         お使いのブラウザは<code>audio</code> 要素をサポートしていません.
       </audio>
 
-      <Box marginTop="3em" marginBottom="1em">
+      <Box marginTop='3em' marginBottom='1em'>
         <Heading5>まとめと展望</Heading5>
       </Box>
       <p>
@@ -136,7 +154,7 @@ export const WorkAIMusic = () => {
         これらの問題は、並列処理が可能なCNNを時系列データに適用する手法などで解決できる余地があります。
       </p>
 
-      <Box marginBottom="100px" />
+      <Box marginBottom='100px' />
     </Flex>
   );
 };
