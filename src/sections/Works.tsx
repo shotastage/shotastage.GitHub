@@ -1,6 +1,6 @@
-import React, { Suspense, useState } from "react";
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
+import React, { Suspense, useState } from 'react';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import {
   Container,
   FullContainer,
@@ -111,7 +111,7 @@ export const Works = () => {
   return (
     <React.Fragment>
       <Container>
-        <Box marginTop='80px' marginBottom='30px'>
+        <Box marginTop="80px" marginBottom="30px">
           <Heading2>Works</Heading2>
         </Box>
       </Container>
@@ -120,7 +120,7 @@ export const Works = () => {
           <ContainerMargin />
           <WarkCardTopMargin />
           <WorkCard>
-            <CardHeading>{t("aim.cardTitle")}</CardHeading>
+            <CardHeading>{t('aim.cardTitle')}</CardHeading>
             <Box center>
               <Image
                 imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media"
@@ -142,7 +142,13 @@ export const Works = () => {
             </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardHeading>ファースト<br />インプレッションを<br />Sustainableに</CardHeading>
+            <CardHeading>
+              ファースト
+              <br />
+              インプレッションを
+              <br />
+              Sustainableに
+            </CardHeading>
             <Box center>
               <Image
                 imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
@@ -188,7 +194,11 @@ export const Works = () => {
             </SHModal>
           </WorkCard>
           <WorkCard>
-            <CardHeading>瞬時に開発<br />すぐに披露</CardHeading>
+            <CardHeading>
+              瞬時に開発
+              <br />
+              すぐに披露
+            </CardHeading>
             <Spacer />
             <Box center>
               <Image
@@ -200,9 +210,7 @@ export const Works = () => {
             </Box>
             <Spacer />
             <CardDescription>
-              <p>
-                Webバックエンド開発を瞬時に終わらせる効率化CLIのお話。
-              </p>
+              <p>Webバックエンド開発を瞬時に終わらせる効率化CLIのお話。</p>
               <Flex>
                 <CardButton onClick={() => setDjModalIsOpen(true)}>More</CardButton>
               </Flex>
@@ -240,4 +248,4 @@ export const Works = () => {
       </FullContainer>
     </React.Fragment>
   );
-}
+};

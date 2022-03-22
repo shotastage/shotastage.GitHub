@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
-import { Box, Heading3, Heading4, Flex } from "../components";
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { Box, Heading3, Heading4, Flex } from '../components';
 
 const ModalText = styled.p`
   line-height: 3rem;
@@ -48,39 +48,34 @@ export const BizCardDetail = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex
-      flexDirection="column"
-      alignItems="flex-start"
-      marginRight="15px"
-      marginLeft="15px"
-    >
-      <Heading3>{t("profile.title")}</Heading3>
+    <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
+      <Heading3>{t('profile.title')}</Heading3>
 
       <Box marginTop="3em" marginBottom="1em">
-        <Heading4>{t("profile.heading1")}</Heading4>
+        <Heading4>{t('profile.heading1')}</Heading4>
       </Box>
 
       <ModalText>
         <span>
-          {t("profile.desc001")}
+          {t('profile.desc001')}
           <br />
-          {t("profile.desc002")}
+          {t('profile.desc002')}
         </span>
       </ModalText>
 
       <ModalText>
-        <span>{t("profile.desc101")}</span>
+        <span>{t('profile.desc101')}</span>
       </ModalText>
 
       <ModalText>
         <span>
-          {t("profile.desc003")}
+          {t('profile.desc003')}
           <br />
         </span>
       </ModalText>
 
       <ModalText>
-        {t("profile.desc004")}
+        {t('profile.desc004')}
         <br />
       </ModalText>
 

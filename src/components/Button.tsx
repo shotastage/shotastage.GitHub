@@ -18,7 +18,7 @@ export const Button = styled(ButtonBase)`
   text-align: center;
   transition: 0.5s;
   color: #363636;
-  border-radius: calc(45px /2);
+  border-radius: calc(45px / 2);
   background: #c2c2c2;
   font-weight: bold;
   font-size: 0.75rem;
@@ -43,7 +43,6 @@ export const Button = styled(ButtonBase)`
   }
 `;
 
-
 export const CopyButton = styled(Button)`
   height: 40px;
   line-height: 40px;
@@ -63,7 +62,6 @@ export const CopyButton = styled(Button)`
   }
 `;
 
-
 export const RoundButton = styled(ButtonBase)`
   display: inline-block;
   min-width: 100px;
@@ -74,14 +72,14 @@ export const RoundButton = styled(ButtonBase)`
   text-align: center;
   transition: 0.5s;
   color: #363636;
-  border-radius: calc(45px /2);
+  border-radius: calc(45px / 2);
   background: #c2c2c2;
   font-weight: bold;
   font-size: 0.75rem;
   font-family: 'Roboto Condensed', sans-serif;
 
   &:focus {
-    outline:0;
+    outline: 0;
   }
 
   &:hover {

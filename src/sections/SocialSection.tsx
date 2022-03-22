@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import {
-  Container,
-  Grid,
-  GridGlobal,
-  CardIcon,
-  Heading2,
-  Box
-} from '../components';
+import { Container, Grid, GridGlobal, CardIcon, Heading2, Box } from '../components';
 
 const SocialButtonBase = styled.button`
   background-color: transparent;
@@ -41,7 +34,7 @@ const Twitter = styled(SocialButtonBase)`
   justify-content: center;
   word-wrap: break-word;
   background-clip: border-box;
-  background: #00ACEE;
+  background: #00acee;
   border-radius: 20px;
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
@@ -57,7 +50,7 @@ const Instagram = styled(SocialButtonBase)`
   margin: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
   background: #f09433;
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 `;
 
 const Github = styled(SocialButtonBase)`
@@ -89,12 +82,12 @@ const FooterGridLayoutGlobal: GridGlobal = {
   colEnd: 4,
   rowStart: 19,
   rowEnd: 20,
-}
+};
 
 export const SocialSection = (): JSX.Element => {
   return (
     <Container>
-      <Box marginTop='80px' marginBottom='30px'>
+      <Box marginTop="80px" marginBottom="30px">
         <Heading2>Social</Heading2>
       </Box>
       <SocialGrid global={FooterGridLayoutGlobal}>
@@ -110,4 +103,4 @@ export const SocialSection = (): JSX.Element => {
       </SocialGrid>
     </Container>
   );
-}
+};

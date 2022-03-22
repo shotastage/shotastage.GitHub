@@ -5,12 +5,12 @@ import { Navbar, Heading, Container, Footer, FooterCopyright } from '../componen
 import { Name, UserName, NameArea } from '../components/AppComponent';
 
 const SKESystem = () => {
-
   useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
-    .then((data: any) => {
-      //setStories(data.contents);
-    });
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/story', [['X-MICROCMS-API-KEY', API_KEYS.microCMSKey]]).then(
+      (data: any) => {
+        //setStories(data.contents);
+      }
+    );
   }, []);
 
   const userClick = () => {
@@ -26,13 +26,12 @@ const SKESystem = () => {
           <UserName onClick={userClick}>@shotastage</UserName>
         </NameArea>
       </Heading>
-      <Container>
-      </Container>
+      <Container></Container>
       <Footer>
         <FooterCopyright />
       </Footer>
     </React.Fragment>
   );
-}
+};
 
 export default SKESystem;

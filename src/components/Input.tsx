@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Input = styled.input`
   appearance: none;
@@ -25,7 +25,7 @@ export const Input = styled.input`
     border: solid 3px #3b79ff;
   }
 
-  @media screen and (max-width: 480px ) {
+  @media screen and (max-width: 480px) {
     width: 80%;
   }
 `;

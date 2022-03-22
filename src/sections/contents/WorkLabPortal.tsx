@@ -1,18 +1,10 @@
-import styled from "styled-components";
-import {
-  Box,
-  Image,
-  Heading3,
-  Heading4,
-  Heading5,
-  SHText,
-  Flex,
-} from '../../components';
+import styled from 'styled-components';
+import { Box, Image, Heading3, Heading4, Heading5, SHText, Flex } from '../../components';
 
-const ModalImage = styled.img.attrs(props => ({
+const ModalImage = styled.img.attrs((props) => ({
   width: props.width || '100%',
 }))`
-  max-width: ${props => props.width};
+  max-width: ${(props) => props.width};
   object-fit: cover;
 `;
 
@@ -21,7 +13,7 @@ export const WorksLaboPortal = () => {
     <Flex flexDirection="column" alignItems="flex-start" marginRight="15px" marginLeft="15px">
       <Heading3>Labo Portal</Heading3>
       <p>細かい雑務をこなしてくれるWebアプリケーションです</p>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media"
@@ -41,7 +33,7 @@ export const WorksLaboPortal = () => {
       <Heading4>ギャラリー</Heading4>
 
       <Heading5>ホームスクリーン</Heading5>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.49.03.webp?alt=media"
@@ -52,7 +44,7 @@ export const WorksLaboPortal = () => {
       <p>
         ホームスクリーンにはお知らせが表示されます。またお知らせの重要度によって色分けができます。締め切り日などの超重要なお知らせは赤になり注意を喚起します。
       </p>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.49.06.webp?alt=media"
@@ -60,7 +52,7 @@ export const WorksLaboPortal = () => {
           imgComponent={ModalImage}
         />
       </Box>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.00.webp?alt=media"
@@ -68,7 +60,7 @@ export const WorksLaboPortal = () => {
           imgComponent={ModalImage}
         />
       </Box>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.12.webp?alt=media"
@@ -76,7 +68,7 @@ export const WorksLaboPortal = () => {
           imgComponent={ModalImage}
         />
       </Box>
-      <Box center width='100%' marginBottom='100px'>
+      <Box center width="100%" marginBottom="100px">
         <Image
           imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
           webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.25.webp?alt=media"

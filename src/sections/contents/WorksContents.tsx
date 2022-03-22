@@ -1,12 +1,4 @@
-import {
-  Box,
-  CardSquare,
-  CardIcon,
-  Heading3,
-  Heading4,
-  Flex,
-  Spacer,
-} from '../../components';
+import { Box, CardSquare, CardIcon, Heading3, Heading4, Flex, Spacer } from '../../components';
 
 export const WorksShotachCom = () => {
   return (
@@ -22,7 +14,7 @@ export const WorksShotachCom = () => {
         <li>低価格でレスポンスの高いWebページを構築すること</li>
       </ul>
       <Heading4>使用した技術</Heading4>
-      <Box center width='100%'>
+      <Box center width="100%">
         <Spacer />
         <CardSquare>
           <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/react.svg`} />
@@ -38,7 +30,6 @@ export const WorksShotachCom = () => {
       <p>
         このサイトはReactを使用してFull-TypeScriptで記述されています。全てのページはReactを用いたSPAとして記述されており
         表示されるコンテンツは一部REST APIにより取得し動的に表示されるのが特徴です。
-
         また、以下のライブラリを使用しています。
       </p>
       <ul>
@@ -62,14 +53,14 @@ export const WorksShotachCom = () => {
           react-modalはModalウィンドウを実装するためのシンプルなライブラリです。ちょうど、この画面もreact-modalを使って作られています。
         </p>
       </Box>
-      <Box marginTop="20px" marginBottom='100px'>
+      <Box marginTop="20px" marginBottom="100px">
         <strong>react-router-dom</strong>
         <p>
           ReactなどのSPAは全てindex.html１ページで提供されます。しかし、サイトの構造やUI的観点からURLやページという概念が必要な場合があります。
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
       </Box>
-      <Box marginBottom='80px' />
+      <Box marginBottom="80px" />
     </Flex>
   );
 };

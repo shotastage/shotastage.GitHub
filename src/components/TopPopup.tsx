@@ -20,9 +20,7 @@ export const TopPopup = styled.div`
 export const TopBanner = (props: React.PropsWithChildren<{}>) => {
   return (
     <TopPopup>
-      <p>
-        {props.children}
-      </p>
+      <p>{props.children}</p>
     </TopPopup>
   );
 };

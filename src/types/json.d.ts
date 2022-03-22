@@ -1,4 +1,4 @@
-declare module "*.json" {
+declare module '*.json' {
   type JSONType = {
     [key: string]: any;
   };

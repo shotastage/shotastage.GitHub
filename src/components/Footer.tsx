@@ -19,12 +19,8 @@ type Props = {
 };
 
 export const Footer = (props: Props) => {
-  return (
-    <FooterArea>
-      {props.children}
-    </FooterArea>
-  );
-}
+  return <FooterArea>{props.children}</FooterArea>;
+};
 
 const CopyrightText = styled.p`
   font-family: 'Roboto', sans-serif;
@@ -43,7 +39,11 @@ export const FooterCopyright = () => {
 
   return (
     <CopyrightText>
-      Copyright © {currentDate} <FooterLink href="https://twitter.com/shotastage" target="_blank" rel="noopener noreferrer">Shota Shimazu</FooterLink>, All rights reserved.
+      Copyright © {currentDate}{' '}
+      <FooterLink href="https://twitter.com/shotastage" target="_blank" rel="noopener noreferrer">
+        Shota Shimazu
+      </FooterLink>
+      , All rights reserved.
     </CopyrightText>
   );
-}
+};

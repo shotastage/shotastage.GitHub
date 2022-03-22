@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDimension } from '../hooks';
 import styled from 'styled-components';
-import Modal from "react-modal";
+import Modal from 'react-modal';
 import { Flex, Spacer } from '../components';
 import SvgIcon from '../assets/close_button.svg';
 
@@ -33,7 +33,7 @@ export const ModalText = styled.p`
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
-      <ModalIconObjElm src={SvgIcon} alt='close icon' />
+      <ModalIconObjElm src={SvgIcon} alt="close icon" />
     </ModalCloseButton>
   );
 };
@@ -44,7 +44,7 @@ export interface SHModalProps {
   onClose(initialState: boolean): void;
 }
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 export const SHModal = (props: SHModalProps) => {
   const { height } = useDimension();
@@ -55,13 +55,14 @@ export const SHModal = (props: SHModalProps) => {
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
       closeTimeoutMS={310}
-      className='SHModal'
-      overlayClassName='SHModalOverlay'
+      className="SHModal"
+      overlayClassName="SHModalOverlay"
       style={{
         content: {
           height: height,
-        }
-      }}>
+        },
+      }}
+    >
       <Flex>
         <Spacer />
         <ModalClose onClick={() => onClose(false)} />

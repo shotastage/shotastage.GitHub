@@ -1,6 +1,5 @@
-
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NavBrandArea = styled.a`
   text-decoration: none;
@@ -46,7 +45,7 @@ export const Navigation = styled.nav`
 `;
 
 export const NavBrand = styled.h1`
-  font-family: "Futura", serif;
+  font-family: 'Futura', serif;
   font-size: 1.5rem;
   margin: 0;
   padding-left: 25px;
@@ -95,7 +94,6 @@ export const NavLink = styled(Link)`
     border-radius: 0.3em;
   }
 `;
-
 
 export const NavForienLink = styled.a`
   text-decoration: none;

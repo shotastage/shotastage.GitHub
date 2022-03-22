@@ -113,7 +113,6 @@ export interface GridTablet {
   rowEnd?: number;
 }
 
-
 export interface GridMobile {
   colStart?: number;
   colEnd?: number;
@@ -128,23 +127,71 @@ interface GridObjects {
 }
 
 export const Grid = styled.div<GridObjects>`
-  ${ props => props.global.colStart && css`grid-column-start: ${props.global.colStart};`}
-  ${ props => props.global.colEnd && css`grid-column-end: ${props.global.colEnd};`}
-  ${ props => props.global.rowStart && css`grid-row-start: ${props.global.rowStart};`}
-  ${ props => props.global.rowEnd && css`grid-row-end: ${props.global.rowEnd};`}
+  ${(props) =>
+    props.global.colStart &&
+    css`
+      grid-column-start: ${props.global.colStart};
+    `}
+  ${(props) =>
+    props.global.colEnd &&
+    css`
+      grid-column-end: ${props.global.colEnd};
+    `}
+  ${(props) =>
+    props.global.rowStart &&
+    css`
+      grid-row-start: ${props.global.rowStart};
+    `}
+  ${(props) =>
+    props.global.rowEnd &&
+    css`
+      grid-row-end: ${props.global.rowEnd};
+    `}
 
   @media screen and (max-width: 1360px) {
-    ${ props => props.tablet?.colStart && css`grid-column-start: ${props.tablet?.colStart};`}
-    ${ props => props.tablet?.colEnd && css`grid-column-end: ${props.tablet?.colEnd};`}
-    ${ props => props.tablet?.rowStart && css`grid-row-start: ${props.tablet?.rowStart};`}
-    ${ props => props.tablet?.rowEnd && css`grid-row-end: ${props.tablet?.rowEnd};`}
+    ${(props) =>
+      props.tablet?.colStart &&
+      css`
+        grid-column-start: ${props.tablet?.colStart};
+      `}
+    ${(props) =>
+      props.tablet?.colEnd &&
+      css`
+        grid-column-end: ${props.tablet?.colEnd};
+      `}
+    ${(props) =>
+      props.tablet?.rowStart &&
+      css`
+        grid-row-start: ${props.tablet?.rowStart};
+      `}
+    ${(props) =>
+      props.tablet?.rowEnd &&
+      css`
+        grid-row-end: ${props.tablet?.rowEnd};
+      `}
   }
 
   @media screen and (max-width: 480px) {
-    ${ props => props.mobile?.colStart && css`grid-column-start: ${props.mobile?.colStart};`}
-    ${ props => props.mobile?.colEnd && css`grid-column-end: ${props.mobile?.colEnd};`}
-    ${ props => props.mobile?.rowStart && css`grid-row-start: ${props.mobile?.rowStart};`}
-    ${ props => props.mobile?.rowEnd && css`grid-row-end: ${props.mobile?.rowEnd};`}
+    ${(props) =>
+      props.mobile?.colStart &&
+      css`
+        grid-column-start: ${props.mobile?.colStart};
+      `}
+    ${(props) =>
+      props.mobile?.colEnd &&
+      css`
+        grid-column-end: ${props.mobile?.colEnd};
+      `}
+    ${(props) =>
+      props.mobile?.rowStart &&
+      css`
+        grid-row-start: ${props.mobile?.rowStart};
+      `}
+    ${(props) =>
+      props.mobile?.rowEnd &&
+      css`
+        grid-row-end: ${props.mobile?.rowEnd};
+      `}
   }
 `;
 
@@ -158,6 +205,14 @@ interface MarginProps {
 }
 
 export const Margin = styled.div<MarginProps>`
-  ${ props => props.height && css`height: ${props.height};`}
-  ${ props => props.width && css`width: ${props.width};`}
+  ${(props) =>
+    props.height &&
+    css`
+      height: ${props.height};
+    `}
+  ${(props) =>
+    props.width &&
+    css`
+      width: ${props.width};
+    `}
 `;

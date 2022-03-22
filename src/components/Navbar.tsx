@@ -1,21 +1,11 @@
-import React from "react";
-import {
-  NavBrandArea,
-  Navigation,
-  NavBrand,
-  NavArea,
-  NavItems,
-  NavLink,
-  NavForienLink,
-} from "./NavbarCommon";
-
+import React from 'react';
+import { NavBrandArea, Navigation, NavBrand, NavArea, NavItems, NavLink, NavForienLink } from './NavbarCommon';
 
 type Props = {
   children: React.ReactNode;
 };
 
 export const Navbar = (props: Props) => {
-
   return (
     <Navigation>
       <NavBrandArea href="/">
@@ -37,4 +27,4 @@ export const Navbar = (props: Props) => {
       </NavArea>
     </Navigation>
   );
-}
+};

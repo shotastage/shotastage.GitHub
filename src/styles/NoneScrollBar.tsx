@@ -1,5 +1,4 @@
-import { css } from "styled-components";
-
+import { css } from 'styled-components';
 
 const HorizontalNoscroll = css`
   overflow-x: scroll;

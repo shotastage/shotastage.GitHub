@@ -4,7 +4,6 @@ import { Navbar, Input, Button, Footer, FooterCopyright } from '../components';
 // import { auth } from '../firebaseInitl';
 // import { EmailAuthProvider, User, UserCredential, signInWithEmailAndPassword } from 'firebase/auth';
 
-
 const AuthCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,15 +22,15 @@ const AuthCard = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-
-  @media screen and (max-width: 480px ) {
+  @media screen and (max-width: 480px) {
     width: 80%;
     min-height: 400px;
   }
 `;
 
 const AuthCardHeadings = styled.div`
-  h1, p {
+  h1,
+  p {
     font-weight: bold;
     text-align: center;
   }
@@ -48,7 +47,6 @@ const ErrorMessage = styled.p`
 */
 
 const SKECredential = () => {
-
   /*
   const provider = new EmailAuthProvider();
 
@@ -63,20 +61,20 @@ const SKECredential = () => {
   return (
     <React.Fragment>
       <Navbar>SKE System</Navbar>
-        <AuthCard>
-          <AuthCardHeadings>
-            <h1>Access Code</h1>
-            <p>アクセスIDと認証コードを入力してください</p>
-          </AuthCardHeadings>
-          <Input placeholder="アクセスID"/>
-          <Input placeholder="認証コード"/>
-          <Button>認証</Button>
-        </AuthCard>
+      <AuthCard>
+        <AuthCardHeadings>
+          <h1>Access Code</h1>
+          <p>アクセスIDと認証コードを入力してください</p>
+        </AuthCardHeadings>
+        <Input placeholder="アクセスID" />
+        <Input placeholder="認証コード" />
+        <Button>認証</Button>
+      </AuthCard>
       <Footer>
         <FooterCopyright />
       </Footer>
     </React.Fragment>
   );
-}
+};
 
 export default SKECredential;

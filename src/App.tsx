@@ -1,34 +1,16 @@
 import React, { useEffect, useState, Suspense } from 'react';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from './env-values';
-import {
-  Flex,
-  Navbar,
-  Heading,
-  Image,
-  Footer,
-  FooterCopyright,
-  SHModal
-} from './components';
+import { Flex, Navbar, Heading, Image, Footer, FooterCopyright, SHModal } from './components';
 
 import { Avator, Name, UserName } from './components/AppComponent';
 import { TopBanner } from './components/TopPopup';
 
 // Page Sections
-import {
-  StorySection,
-  Works,
-  Writings,
-  SkillsSection,
-  SocialSection
-} from './sections';
+import { StorySection, Works, Writings, SkillsSection, SocialSection } from './sections';
 
-import {
-  BizCard,
-  BizCardButton,
-  BizDepartment
-} from './contents/BizCard';
+import { BizCard, BizCardButton, BizDepartment } from './contents/BizCard';
 
 const BizCardDetail = React.lazy(() =>
   import('./contents/BizCard').then((module) => ({
@@ -36,7 +18,7 @@ const BizCardDetail = React.lazy(() =>
   }))
 );
 
-const MemorizedComponents = React.memo(props => {
+const MemorizedComponents = React.memo((props) => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -54,16 +36,16 @@ const MemorizedComponents = React.memo(props => {
               alt="avator image"
               imgComponent={Avator}
             />
-            <Flex flexDirection='column' alignItems='flex-start' marginLeft="2em" >
-              <Flex flexDirection='column' alignItems='flex-start' >
-                <BizDepartment>{t("bizCard.department")}</BizDepartment>
+            <Flex flexDirection="column" alignItems="flex-start" marginLeft="2em">
+              <Flex flexDirection="column" alignItems="flex-start">
+                <BizDepartment>{t('bizCard.department')}</BizDepartment>
                 <Name>Shota Shimazu</Name>
                 <UserName>@shotastage</UserName>
               </Flex>
               <BizCardButton onClick={() => setIsOpen(true)}>
-                {
-                  (window.ontouchstart !== undefined && 0 < window.navigator.maxTouchPoints) ? t("bizCard.touch") : t("bizCard.click")
-                }
+                {window.ontouchstart !== undefined && 0 < window.navigator.maxTouchPoints
+                  ? t('bizCard.touch')
+                  : t('bizCard.click')}
               </BizCardButton>
             </Flex>
           </BizCard>
@@ -89,10 +71,11 @@ const App = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/main_contents", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
-      .then((data: any) => {
-        setMessage(data.contents);
-      });
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/main_contents', [
+      ['X-MICROCMS-API-KEY', API_KEYS.microCMSKey],
+    ]).then((data: any) => {
+      setMessage(data.contents);
+    });
   }, []);
 
   return (
@@ -101,6 +84,6 @@ const App = () => {
       <MemorizedComponents />
     </React.Fragment>
   );
-}
+};
 
 export default App;

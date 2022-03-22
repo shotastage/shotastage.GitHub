@@ -1,1 +1,1 @@
-export * from "./demensions";
+export * from './demensions';

@@ -1,8 +1,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import { ApiClient } from 'mini-apiclient';
 import styled from 'styled-components';
-import Stories from 'react-insta-stories'
-import Modal from "react-modal";
+import Stories from 'react-insta-stories';
+import Modal from 'react-modal';
 import SvgIcon from '../assets/close_button.svg';
 import { useDimension } from '../hooks';
 import { API_KEYS } from '../env-values';
@@ -66,8 +66,8 @@ const StoryCircleBlank = styled.span`
 
 interface StoryCircleProps {
   webpImageUrl?: string;
-  imageUrl: string
-  altText: string
+  imageUrl: string;
+  altText: string;
   onClick: () => void;
 }
 
@@ -76,7 +76,6 @@ export interface StoryModalProps {
   isOpen: boolean | false;
   onClose(initialState: boolean): void;
 }
-
 
 export const ModalCloseButton = styled.button`
   position: absolute;
@@ -105,7 +104,7 @@ const ModalIconObjElm = styled.img`
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
-      <ModalIconObjElm src={SvgIcon} alt='close icon' />
+      <ModalIconObjElm src={SvgIcon} alt="close icon" />
     </ModalCloseButton>
   );
 };
@@ -119,50 +118,66 @@ export const StoryModal = (props: StoryModalProps) => {
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
       closeTimeoutMS={310}
-      className='StoryModal'
-      overlayClassName='StoryModalOverlay'
+      className="StoryModal"
+      overlayClassName="StoryModalOverlay"
       style={{
         content: {
           height: height,
-        }
-      }}>
+        },
+      }}
+    >
       <ModalClose onClick={() => onClose(false)} />
       {children}
     </Modal>
   );
 };
 
-
 const StoryCircle = (props: StoryCircleProps) => {
   return (
     <StoryCircleBase onClick={props.onClick}>
       <Suspense fallback={<StoryCircleBlank />}>
-        <Image alt={props.altText} webPSrc={props.webpImageUrl} imgSrc={props.imageUrl} imgComponent={StoryCircleImage} />
+        <Image
+          alt={props.altText}
+          webPSrc={props.webpImageUrl}
+          imgSrc={props.imageUrl}
+          imgComponent={StoryCircleImage}
+        />
       </Suspense>
     </StoryCircleBase>
   );
-}
+};
 
 export const StorySection = () => {
-
   const [stories, setStories] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/story", [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]])
-      .then((data: any) => {
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/story', [['X-MICROCMS-API-KEY', API_KEYS.microCMSKey]]).then(
+      (data: any) => {
         setStories(data.contents);
-      });
+      }
+    );
   }, []);
 
   return (
     <Story>
-      <div style={{ height: "1px", width: "30px" }} />
+      <div style={{ height: '1px', width: '30px' }} />
       {stories.map((value) => {
-        return (
-          value['headlineMinified']
-            ? <StoryCircle onClick={() => setIsOpen(true)} key={value['id']} altText={value['story_id']} webpImageUrl={value['headlineMinified']['url']} imageUrl={value['headline']['url']} />
-            : <StoryCircle onClick={() => setIsOpen(true)} key={value['id']} altText={value['story_id']} imageUrl={value['headline']['url']} />
+        return value['headlineMinified'] ? (
+          <StoryCircle
+            onClick={() => setIsOpen(true)}
+            key={value['id']}
+            altText={value['story_id']}
+            webpImageUrl={value['headlineMinified']['url']}
+            imageUrl={value['headline']['url']}
+          />
+        ) : (
+          <StoryCircle
+            onClick={() => setIsOpen(true)}
+            key={value['id']}
+            altText={value['story_id']}
+            imageUrl={value['headline']['url']}
+          />
         );
       })}
       <StoryModal isOpen={modalIsOpen} onClose={() => setIsOpen(false)}>
@@ -176,12 +191,6 @@ export const StorySection = () => {
       </StoryModal>
     </Story>
   );
-}
+};
 
-
-const stories2 = [
-  {
-
-  },
-
-]
+const stories2 = [{}];

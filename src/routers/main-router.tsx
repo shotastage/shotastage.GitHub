@@ -1,51 +1,51 @@
-import React, { Suspense } from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import React, { Suspense } from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // Import pages
 const App = React.lazy(() =>
-  import("../App").then((module) => ({
+  import('../App').then((module) => ({
     default: module.default,
   }))
 );
 
 const Sitemap = React.lazy(() =>
-  import("../pages/Sitemap").then((module) => ({
+  import('../pages/Sitemap').then((module) => ({
     default: module.default,
   }))
 );
 
 const SKESystem = React.lazy(() =>
-  import("../pages/SKESystem").then((module) => ({
+  import('../pages/SKESystem').then((module) => ({
     default: module.default,
   }))
 );
 
 const SKECredential = React.lazy(() =>
-  import("../pages/SKECredential").then((module) => ({
+  import('../pages/SKECredential').then((module) => ({
     default: module.default,
   }))
 );
 
 const Exchanger = React.lazy(() =>
-  import("../pages/Exchanger").then((module) => ({
+  import('../pages/Exchanger').then((module) => ({
     default: module.default,
   }))
 );
 
 const Admin = React.lazy(() =>
-  import("../pages/Admin").then((module) => ({
+  import('../pages/Admin').then((module) => ({
     default: module.default,
   }))
 );
 
 const Components = React.lazy(() =>
-  import("../pages/Components").then((module) => ({
+  import('../pages/Components').then((module) => ({
     default: module.default,
   }))
 );
 
 const SkillsDetail = React.lazy(() =>
-  import("../pages/SkillsDetail").then((module) => ({
+  import('../pages/SkillsDetail').then((module) => ({
     default: module.default,
   }))
 );

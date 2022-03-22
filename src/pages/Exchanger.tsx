@@ -1,4 +1,4 @@
-import React, { /* useState, */ useEffect} from 'react';
+import React, { /* useState, */ useEffect } from 'react';
 import styled from 'styled-components';
 import { ApiClient } from 'mini-apiclient';
 import { API_KEYS } from '../env-values';
@@ -10,7 +10,6 @@ const QRImage = styled.img`
   object-fit: cover;
 `;
 */
-
 
 const AuthCard = styled.div`
   display: flex;
@@ -30,15 +29,15 @@ const AuthCard = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-
-  @media screen and (max-width: 480px ) {
+  @media screen and (max-width: 480px) {
     width: 80%;
     min-height: 400px;
   }
 `;
 
 const AuthCardHeadings = styled.div`
-  h1, p {
+  h1,
+  p {
     font-weight: bold;
     text-align: center;
   }
@@ -48,17 +47,15 @@ const AuthCardHeadings = styled.div`
   }
 `;
 
-const RequestHeader = [["X-MICROCMS-API-KEY", API_KEYS.microCMSKey]];
+const RequestHeader = [['X-MICROCMS-API-KEY', API_KEYS.microCMSKey]];
 
 const Exchanger = () => {
-
   // States
   // const [images, setImages] = useState([]);
   // const [accessCode, setAccessCode] = useState('');
 
   useEffect(() => {
-    ApiClient.GET("https://shota-folio.microcms.io/api/v1/img_objects", RequestHeader)
-    .then((data: any) => {
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/img_objects', RequestHeader).then((data: any) => {
       // setImages(data.contents);
       console.log();
     });
@@ -80,20 +77,20 @@ const Exchanger = () => {
     <React.Fragment>
       <Navbar>@shotastage</Navbar>
       <AuthCard>
-          <AuthCardHeadings>
-            <h1>Access Code</h1>
-            <p>アクセスコードを入力してください</p>
-          </AuthCardHeadings>
-          <Input placeholder="パスコード"/>
-          <Button>認証</Button>
-        </AuthCard>
+        <AuthCardHeadings>
+          <h1>Access Code</h1>
+          <p>アクセスコードを入力してください</p>
+        </AuthCardHeadings>
+        <Input placeholder="パスコード" />
+        <Button>認証</Button>
+      </AuthCard>
 
       <Footer>
         <FooterCopyright />
       </Footer>
     </React.Fragment>
   );
-}
+};
 
 export default Exchanger;
 

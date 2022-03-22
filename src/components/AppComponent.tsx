@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   width: 100%;
@@ -14,17 +14,19 @@ export const Heading1 = styled.h1`
   font-weight: 300;
 `;
 
-
 export const Name = styled.span`
   font-size: 2.5rem;
   padding: 10px;
   padding-left: 0;
-  @media screen and (max-width: 480px) { font-size: 2rem; }
-  @media (prefers-color-scheme: dark) { color: #333; }
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: #333;
+  }
 `;
 
-export const UserName = styled.span`
-`;
+export const UserName = styled.span``;
 
 export const NameArea = styled.h1`
   display: flex;
@@ -38,8 +40,8 @@ export const Avator = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform .7s ease-in-out;
-  @media screen and (max-width: 480px ){
+  transition: transform 0.7s ease-in-out;
+  @media screen and (max-width: 480px) {
     width: 100px;
     height: 100px;
   }
