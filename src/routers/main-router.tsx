@@ -1,106 +1,134 @@
 import React, { Suspense } from "react";
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-} from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 // Import pages
 const App = React.lazy(() =>
-  import('../App').then((module) => ({
+  import("../App").then((module) => ({
     default: module.default,
   }))
 );
 
 const Sitemap = React.lazy(() =>
-  import('../pages/Sitemap').then((module) => ({
+  import("../pages/Sitemap").then((module) => ({
     default: module.default,
   }))
 );
 
 const SKESystem = React.lazy(() =>
-  import('../pages/SKESystem').then((module) => ({
+  import("../pages/SKESystem").then((module) => ({
     default: module.default,
   }))
 );
 
 const SKECredential = React.lazy(() =>
-  import('../pages/SKECredential').then((module) => ({
+  import("../pages/SKECredential").then((module) => ({
     default: module.default,
   }))
 );
 
 const Exchanger = React.lazy(() =>
-  import('../pages/Exchanger').then((module) => ({
+  import("../pages/Exchanger").then((module) => ({
     default: module.default,
   }))
 );
 
 const Admin = React.lazy(() =>
-  import('../pages/Admin').then((module) => ({
+  import("../pages/Admin").then((module) => ({
     default: module.default,
   }))
 );
 
 const Components = React.lazy(() =>
-  import('../pages/Components').then((module) => ({
+  import("../pages/Components").then((module) => ({
     default: module.default,
   }))
 );
 
 const SkillsDetail = React.lazy(() =>
-  import('../pages/SkillsDetail').then((module) => ({
+  import("../pages/SkillsDetail").then((module) => ({
     default: module.default,
   }))
 );
+
+type Props = {
+  children: React.ReactNode;
+};
+
+const RoutePage = (props: Props) => {
+  return <Suspense fallback={<div />}>{props.children}</Suspense>;
+};
 
 const Router: React.FC<React.ReactNode> = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
-          <Suspense fallback={<div />}>
-            <App />
-          </Suspense>
-        } />
-        <Route path="/sitemap" element={
-          <Suspense fallback={<div />}>
-            <Sitemap />
-          </Suspense>
-        } />
-        <Route path="/ske_sys" element={
-          <Suspense fallback={<div />}>
-            <SKESystem />
-          </Suspense>
-        } />
-        <Route path="/ske_credential" element={
-          <Suspense fallback={<div />}>
-            <SKECredential />
-          </Suspense>
-        } />
-        <Route path="/exchanger" element={
-          <Suspense fallback={<div />}>
-            <Exchanger />
-          </Suspense>
-        } />
-        <Route path="/admin" element={
-          <Suspense fallback={<div />}>
-            <Admin />
-          </Suspense>
-        } />
-        <Route path="/components" element={
-          <Suspense fallback={<div />}>
-            <Components />
-          </Suspense>
-        } />
-        <Route path="/skills" element={
-          <Suspense fallback={<div />}>
-            <SkillsDetail />
-          </Suspense>
-        } />
+        <Route
+          path="/"
+          element={
+            <RoutePage>
+              <App />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/sitemap"
+          element={
+            <RoutePage>
+              <Sitemap />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/ske_sys"
+          element={
+            <RoutePage>
+              <SKESystem />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/ske_credential"
+          element={
+            <RoutePage>
+              <SKECredential />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/exchanger"
+          element={
+            <RoutePage>
+              <Exchanger />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <RoutePage>
+              <Admin />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/components"
+          element={
+            <RoutePage>
+              <Components />
+            </RoutePage>
+          }
+        />
+        <Route
+          path="/skills"
+          element={
+            <RoutePage>
+              <SkillsDetail />
+            </RoutePage>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default Router;
