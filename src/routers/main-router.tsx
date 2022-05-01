@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import { render } from 'react-dom';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // Import pages
