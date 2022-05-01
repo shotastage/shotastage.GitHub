@@ -1,53 +1,54 @@
 import React, { Suspense } from 'react';
+import { render } from 'react-dom';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // Import pages
 const App = React.lazy(() =>
   import('../App').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const Sitemap = React.lazy(() =>
   import('../pages/Sitemap').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const SKESystem = React.lazy(() =>
   import('../pages/SKESystem').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const SKECredential = React.lazy(() =>
   import('../pages/SKECredential').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const Exchanger = React.lazy(() =>
   import('../pages/Exchanger').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const Admin = React.lazy(() =>
   import('../pages/Admin').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const Components = React.lazy(() =>
   import('../pages/Components').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 const SkillsDetail = React.lazy(() =>
   import('../pages/SkillsDetail').then((module) => ({
     default: module.default,
-  }))
+  })),
 );
 
 type Props = {
@@ -58,12 +59,12 @@ const RoutePage = (props: Props) => {
   return <Suspense fallback={<div />}>{props.children}</Suspense>;
 };
 
-const Router: React.FC<React.ReactNode> = () => {
+function MainRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <RoutePage>
               <App />
@@ -71,7 +72,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/sitemap"
+          path='/sitemap'
           element={
             <RoutePage>
               <Sitemap />
@@ -79,7 +80,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/ske_sys"
+          path='/ske_sys'
           element={
             <RoutePage>
               <SKESystem />
@@ -87,7 +88,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/ske_credential"
+          path='/ske_credential'
           element={
             <RoutePage>
               <SKECredential />
@@ -95,7 +96,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/exchanger"
+          path='/exchanger'
           element={
             <RoutePage>
               <Exchanger />
@@ -103,7 +104,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/admin"
+          path='/admin'
           element={
             <RoutePage>
               <Admin />
@@ -111,7 +112,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/components"
+          path='/components'
           element={
             <RoutePage>
               <Components />
@@ -119,7 +120,7 @@ const Router: React.FC<React.ReactNode> = () => {
           }
         />
         <Route
-          path="/skills"
+          path='/skills'
           element={
             <RoutePage>
               <SkillsDetail />
@@ -129,6 +130,6 @@ const Router: React.FC<React.ReactNode> = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
-export default Router;
+export default MainRouter;

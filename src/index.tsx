@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';
-import Router from './routers/main-router';
+import MainRouter from './routers/main-router';
 import NormalizeCSS from 'normalize-css.ts';
 import { GlobalStyle } from './styles/globalStyle';
 import './i18n/config';
@@ -12,12 +12,13 @@ const GlobalStyles = createGlobalStyle`
   ${GlobalStyle}
 `;
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
   <React.StrictMode>
     <GlobalStyles />
-    <Router />
+    <MainRouter />
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
