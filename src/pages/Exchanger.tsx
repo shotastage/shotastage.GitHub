@@ -55,10 +55,12 @@ const Exchanger = () => {
   // const [accessCode, setAccessCode] = useState('');
 
   useEffect(() => {
-    ApiClient.GET('https://shota-folio.microcms.io/api/v1/img_objects', RequestHeader).then((data: any) => {
-      // setImages(data.contents);
-      console.log();
-    });
+    ApiClient.GET('https://shota-folio.microcms.io/api/v1/img_objects', RequestHeader).then(
+      (data) => {
+        // setImages(data.contents);
+        console.log(data);
+      },
+    );
   }, []);
 
   /*
@@ -81,7 +83,7 @@ const Exchanger = () => {
           <h1>Access Code</h1>
           <p>アクセスコードを入力してください</p>
         </AuthCardHeadings>
-        <Input placeholder="パスコード" />
+        <Input placeholder='パスコード' />
         <Button>認証</Button>
       </AuthCard>
 

@@ -74,8 +74,8 @@ const App = () => {
   useEffect(() => {
     ApiClient.GET('https://shota-folio.microcms.io/api/v1/main_contents', [
       ['X-MICROCMS-API-KEY', API_KEYS.microCMSKey],
-    ]).then((data: any) => {
-      setMessage(data.contents);
+    ]).then((data) => {
+      setMessage(Object(data).contents);
     });
   }, []);
 
