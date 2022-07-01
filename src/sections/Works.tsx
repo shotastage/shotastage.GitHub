@@ -21,31 +21,31 @@ import HorizontalNoscroll from '../styles/NoneScrollBar';
 const WorksInception = React.lazy(() =>
   import('./contents').then((module) => ({
     default: module.WorksInception,
-  }))
+  })),
 );
 
 const WorksLaboPortal = React.lazy(() =>
   import('./contents').then((module) => ({
     default: module.WorksLaboPortal,
-  }))
+  })),
 );
 
 const WorksDjangoMirage = React.lazy(() =>
   import('./contents').then((module) => ({
     default: module.WorksDjangoMirage,
-  }))
+  })),
 );
 
 const WorksShotachCom = React.lazy(() =>
   import('./contents/WorksContents').then((module) => ({
     default: module.WorksShotachCom,
-  }))
+  })),
 );
 
 const WorkAIMusic = React.lazy(() =>
   import('./contents').then((module) => ({
     default: module.WorkAIMusic,
-  }))
+  })),
 );
 
 const WorkCardsSection = styled(Box)`
@@ -91,7 +91,6 @@ const WarkCardTopMargin = styled.div`
 const TileImage = styled.img`
   max-width: 150px;
   object-fit: cover;
-  margin-left: calc((100% - 150px) / 2);
 `;
 
 const CardButton = styled(RoundButton)`
@@ -111,7 +110,7 @@ export const Works = () => {
   return (
     <React.Fragment>
       <Container>
-        <Box marginTop="80px" marginBottom="30px">
+        <Box marginTop='80px' marginBottom='30px'>
           <Heading2>Works</Heading2>
         </Box>
       </Container>
@@ -123,9 +122,9 @@ export const Works = () => {
             <CardHeading>{t('aim.cardTitle')}</CardHeading>
             <Box center>
               <Image
-                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media"
-                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.webp?alt=media"
-                alt="Screen shots"
+                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media'
+                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.webp?alt=media'
+                alt='Screen shots'
                 imgComponent={TileImage}
               />
             </Box>
@@ -151,9 +150,9 @@ export const Works = () => {
             </CardHeading>
             <Box center>
               <Image
-                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
-                webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
-                alt="Screen shots"
+                imgSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg'
+                webPSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp'
+                alt='Screen shots'
                 imgComponent={TileImage}
               />
             </Box>
@@ -174,9 +173,9 @@ export const Works = () => {
             <Spacer />
             <Box center>
               <Image
-                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
-                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media"
-                alt="Screen shots"
+                imgSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg'
+                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media'
+                alt='Screen shots'
                 imgComponent={TileImage}
               />
             </Box>
@@ -202,9 +201,9 @@ export const Works = () => {
             <Spacer />
             <Box center>
               <Image
-                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media"
-                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.webp?alt=media"
-                alt="Screen shots"
+                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media'
+                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.webp?alt=media'
+                alt='Screen shots'
                 imgComponent={TileImage}
               />
             </Box>
@@ -225,9 +224,9 @@ export const Works = () => {
             <CardHeading>shotach.com</CardHeading>
             <Box center>
               <Image
-                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.png?alt=media"
-                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.webp?alt=media"
-                alt="Screen shots"
+                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.png?alt=media'
+                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.webp?alt=media'
+                alt='Screen shots'
                 imgComponent={TileImage}
               />
             </Box>
