@@ -1,5 +1,13 @@
 import React from 'react';
-import { NavBrandArea, Navigation, NavBrand, NavArea, NavItems, NavLink, NavForienLink } from './NavbarCommon';
+import {
+  NavBrandArea,
+  Navigation,
+  NavBrand,
+  NavArea,
+  NavItems,
+  NavLink,
+  NavForienLink,
+} from './NavbarCommon';
 
 type Props = {
   children: React.ReactNode;
@@ -8,21 +16,21 @@ type Props = {
 export const Navbar = (props: Props) => {
   return (
     <Navigation>
-      <NavBrandArea href="/">
+      <NavBrandArea href='/'>
         <NavBrand>{props.children}</NavBrand>
       </NavBrandArea>
       <NavArea>
         <NavItems>
-          <NavLink to="/">Profile</NavLink>
+          <NavLink to='/'>Profile</NavLink>
         </NavItems>
         <NavItems>
-          <NavLink to="/">Works</NavLink>
+          <NavLink to='/'>Works</NavLink>
         </NavItems>
         <NavItems>
-          <NavForienLink href="https://github.com/shotastage">Github</NavForienLink>
+          <NavForienLink href='https://github.com/shotastage'>Github</NavForienLink>
         </NavItems>
         <NavItems>
-          <NavForienLink href="">🌏 en</NavForienLink>
+          <NavForienLink href=''>🌏 en</NavForienLink>
         </NavItems>
       </NavArea>
     </Navigation>
