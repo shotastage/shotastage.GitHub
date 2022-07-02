@@ -26,6 +26,14 @@ export const Writings = () => {
           </Card>
         </Box>
         <Box margin='1em'>
+          <Card onClick={() => (window.location.href = 'https://zenn.dev/shotastage')}>
+            <CardBody>
+              <CardHeading>Zenn</CardHeading>
+              <CardDescription>テックブログ記事は主にZennに記述しています。</CardDescription>
+            </CardBody>
+          </Card>
+        </Box>
+        <Box margin='1em'>
           <Card onClick={() => (window.location.href = 'https://tipstock.net')}>
             <CardBody>
               <CardIcon

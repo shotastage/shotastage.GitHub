@@ -64,6 +64,8 @@ export const WorksShotachCom = () => {
           react-routerは、Reactで作られたSPAに対して、このページとルーティングを行います。
         </p>
       </Box>
+      <Heading4>インフラ</Heading4>
+      <p>このWebサイトはGithubにプッシュされるとNetlifyを使用して自動でデプロイを行います。</p>
       <Box marginBottom='80px' />
     </Flex>
   );

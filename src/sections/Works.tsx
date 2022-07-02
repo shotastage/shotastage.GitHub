@@ -231,7 +231,7 @@ export const Works = () => {
               />
             </Box>
             <CardDescription>
-              <p>今、あなたが見ているこのサイトです</p>
+              <p>@shotastageのポートフォリオサイト遂に公開</p>
               <Flex>
                 <CardButton onClick={() => setSiteModalIsOpen(true)}>More</CardButton>
               </Flex>
