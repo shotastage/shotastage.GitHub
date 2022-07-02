@@ -50,11 +50,9 @@ export const BizCardDetail = () => {
   return (
     <Flex flexDirection='column' alignItems='flex-start' marginRight='15px' marginLeft='15px'>
       <Heading3>{t('profile.title')}</Heading3>
-
       <Box marginTop='3em' marginBottom='1em'>
         <Heading4>{t('profile.heading1')}</Heading4>
       </Box>
-
       <ModalText>
         <span>
           {t('profile.desc001')}
@@ -62,23 +60,19 @@ export const BizCardDetail = () => {
           {t('profile.desc002')}
         </span>
       </ModalText>
-
       <ModalText>
         <span>{t('profile.desc101')}</span>
       </ModalText>
-
       <ModalText>
         <span>
           {t('profile.desc003')}
           <br />
         </span>
       </ModalText>
-
       <ModalText>
         {t('profile.desc004')}
         <br />
       </ModalText>
-
       <Heading4>SHOTA&apos;s Philosophy</Heading4>
       <p>自分がソフトウェアを開発する理由はただ一つ</p>
       <p>「おもしろい」から</p>
