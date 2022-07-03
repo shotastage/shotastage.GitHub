@@ -74,6 +74,9 @@ export const GlobalStyle = `
     border-bottom-right-radius: 0px;
     outline: none;
     padding: 20px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     &::-webkit-scrollbar {
@@ -83,6 +86,9 @@ export const GlobalStyle = `
     @media screen and (max-width: 1100px) {
       left: 10%;
       right: 10%;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     @media screen and (max-width: 480px) {
