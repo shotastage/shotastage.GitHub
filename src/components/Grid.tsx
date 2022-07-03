@@ -32,8 +32,8 @@ export const Container = styled(ContainerStyleBase)<ContainerProps>`
   }
 
   @media screen and (max-width: 480px) {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 `;
 
