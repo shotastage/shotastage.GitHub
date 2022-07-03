@@ -42,6 +42,14 @@ export const WorksLaboPortal = () => {
           imgComponent={ModalImage}
         />
       </Box>
+      <Box center width='100%'>
+        <Image
+          imgSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg'
+          webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.51.00.webp?alt=media'
+          alt='Screen shots'
+          imgComponent={ModalImage}
+        />
+      </Box>
       <p>
         ホームスクリーンにはお知らせが表示されます。またお知らせの重要度によって色分けができます。締め切り日などの超重要なお知らせは赤になり注意を喚起します。
       </p>
