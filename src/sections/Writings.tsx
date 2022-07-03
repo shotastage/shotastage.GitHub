@@ -4,7 +4,6 @@ import {
   Box,
   Heading2,
   Card,
-  CardIcon,
   CardBody,
   CardHeading,
   CardDescription,
