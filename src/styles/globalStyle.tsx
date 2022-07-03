@@ -80,6 +80,11 @@ export const GlobalStyle = `
       display: none;
     }
 
+    @media screen and (max-width: 1100px) {
+      left: 10%;
+      right: 10%;
+    }
+
     @media screen and (max-width: 480px) {
       border-radius: 0;
       top: 0;
