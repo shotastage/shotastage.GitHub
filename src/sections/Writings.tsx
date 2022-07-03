@@ -34,20 +34,6 @@ export const Writings = () => {
           </Card>
         </Box>
         <Box margin='1em'>
-          <Card onClick={() => (window.location.href = 'https://tipstock.net')}>
-            <CardBody>
-              <CardIcon
-                type='image/svg+xml'
-                data={`${process.env.PUBLIC_URL}/assets/tipstock.svg`}
-                style={{ width: '100%' }}
-              />
-              <CardDescription>
-                TIPSTOCK!はITに関するTIPSやニュースをプログラマーやエンジニアの方を含め多くの方にお届けするメディアです.
-              </CardDescription>
-            </CardBody>
-          </Card>
-        </Box>
-        <Box margin='1em'>
           <Card
             style={{ background: '#1be31b' }}
             onClick={() => (window.location.href = 'https://qiita.com/shotastage')}
