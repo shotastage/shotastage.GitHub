@@ -66,8 +66,8 @@ const Admin = () => {
           <h1>Access Code</h1>
           <p>アクセスIDと認証コードを入力してください</p>
         </AuthCardHeadings>
-        <Input placeholder="アクセスID" />
-        <Input placeholder="認証コード" />
+        <Input placeholder='アクセスID' />
+        <Input placeholder='認証コード' />
         <Button>認証</Button>
       </AuthCard>
       <Footer>

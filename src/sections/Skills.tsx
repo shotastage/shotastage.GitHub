@@ -24,7 +24,7 @@ const SkillGridLayout: GridGlobal = {
 const SkillMaker = (name: string, dataPath: string) => {
   return (
     <CardSquare>
-      <CardIcon type="image/svg+xml" data={`${process.env.PUBLIC_URL}/assets/${dataPath}`} />
+      <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/${dataPath}`} />
     </CardSquare>
   );
 };
@@ -32,7 +32,7 @@ const SkillMaker = (name: string, dataPath: string) => {
 export const SkillsSection = (): JSX.Element => {
   return (
     <Container>
-      <Box marginTop="80px" marginBottom="30px">
+      <Box marginTop='80px' marginBottom='30px'>
         <Heading2>Skills & Experiences</Heading2>
       </Box>
       <SkillsGrid global={SkillGridLayout}>

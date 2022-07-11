@@ -44,7 +44,7 @@ export const CombinedStyler = (props: StylerProps, specified?: object) => {
       color: props.color,
     },
     props.sx,
-    specified
+    specified,
   );
 
   return style;

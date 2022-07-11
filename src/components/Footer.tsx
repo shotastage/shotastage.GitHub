@@ -40,7 +40,7 @@ export const FooterCopyright = () => {
   return (
     <CopyrightText>
       Copyright © {currentDate}{' '}
-      <FooterLink href="https://twitter.com/shotastage" target="_blank" rel="noopener noreferrer">
+      <FooterLink href='https://twitter.com/shotastage' target='_blank' rel='noopener noreferrer'>
         Shota Shimazu
       </FooterLink>
       , All rights reserved.
