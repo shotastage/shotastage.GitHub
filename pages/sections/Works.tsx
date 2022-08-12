@@ -18,35 +18,13 @@ import {
 } from '../../components';
 import HorizontalNoscroll from '../../styles/NoneScrollBar';
 
-const WorksInception = React.lazy(() =>
-  import('./contents').then((module) => ({
-    default: module.WorksInception,
-  })),
-);
+import { WorksInception } from './contents';
+import { WorksLaboPortal } from './contents';
+import { WorksDjangoMirage } from './contents';
+import { WorksShotachCom } from './contents';
+import { WorkAIMusic } from './contents';
 
-const WorksLaboPortal = React.lazy(() =>
-  import('./contents').then((module) => ({
-    default: module.WorksLaboPortal,
-  })),
-);
 
-const WorksDjangoMirage = React.lazy(() =>
-  import('./contents').then((module) => ({
-    default: module.WorksDjangoMirage,
-  })),
-);
-
-const WorksShotachCom = React.lazy(() =>
-  import('./contents/WorksContents').then((module) => ({
-    default: module.WorksShotachCom,
-  })),
-);
-
-const WorkAIMusic = React.lazy(() =>
-  import('./contents').then((module) => ({
-    default: module.WorkAIMusic,
-  })),
-);
 
 const WorkCardsSection = styled(Box)`
   width: 100vw;
