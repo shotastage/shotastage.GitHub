@@ -1,17 +1,12 @@
-import "normalize.css";
 import type { AppProps } from "next/app";
-import { createGlobalStyle } from "styled-components";
-import { GlobalStyle } from "../styles/globalStyle";
+import "normalize.css";
+import "../styles/global.scss";
 
-const GlobalStyles = createGlobalStyle`
-  ${GlobalStyle}
-`;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Component {...pageProps}>
       {" "}
-      <GlobalStyles />
     </Component>
   );
 }
