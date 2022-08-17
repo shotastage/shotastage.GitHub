@@ -148,7 +148,6 @@ const StoryCircle = (props: StoryCircleProps) => {
   );
 };
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 interface DataProps {
   stories?: Array<any>;
@@ -185,28 +184,3 @@ export const StorySection: NextPage<DataProps> = ({ stories }) => {
 };
 
 const stories2 = [{}];
-
-
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query StoryQuery {
-        storyContentsAPIPlural {
-          id
-          image {
-            fileName
-            url
-          }
-          url
-          isStatic
-        }
-      }
-    `,
-  });
-
-  return {
-    props: {
-      stories: data?.storyContentsAPIPlural,
-    },
-  };
-}

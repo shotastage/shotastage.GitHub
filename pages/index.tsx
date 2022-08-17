@@ -38,7 +38,7 @@ import {
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Home: NextPage<Props> = ({ message }) => {
+const Home: NextPage<Props> = ({ message, stories }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -50,7 +50,7 @@ const Home: NextPage<Props> = ({ message }) => {
       </Head>
       {message !== "" && <TopBanner>{message}</TopBanner>}
       <Navbar>@bout shota</Navbar>
-      <StorySection />
+      <StorySection stories={stories}/>
       <Heading style={{ display: "flex", justifyContent: "center" }}>
         <Flex>
           <BizCard onClick={() => setIsOpen(true)}>
@@ -91,8 +91,35 @@ const Home: NextPage<Props> = ({ message }) => {
   );
 };
 
-export async function getStaticProps() {
+
+
+export async function getStaticPropsN() {
   const { data } = await client.query({
+    query: gql`
+      query StoryQuery {
+        storyContentsAPIPlural {
+          id
+          image {
+            fileName
+            url
+          }
+          url
+          isStatic
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      stories: data?.storyContentsAPIPlural,
+    },
+  };
+}
+
+
+export async function getStaticProps() {
+  const { data: messages } = await client.query({
     query: gql`
       query HeadMessage {
         headingMessages {
@@ -103,9 +130,27 @@ export async function getStaticProps() {
     `,
   });
 
+  const { data: stories } = await client.query({
+    query: gql`
+      query StoryQuery {
+        storyContentsAPIPlural {
+          id
+          image {
+            fileName
+            url
+          }
+          url
+          isStatic
+        }
+      }
+    `,
+  });
+
+
   return {
     props: {
-      message: data?.headingMessages[0]?.message,
+      message: messages?.headingMessages[0]?.message,
+      stories: stories?.storyContentsAPIPlural,
     },
   };
 }
