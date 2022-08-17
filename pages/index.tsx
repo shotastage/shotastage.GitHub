@@ -1,11 +1,12 @@
-import type { NextPage } from "next";
+import type { NextPage, InferGetStaticPropsType } from "next";
+import React, { useState, Suspense } from "react";
 import Head from "next/head";
 //import Image from 'next/image'
+import { gql } from "@apollo/client";
+import client from "../libs/apollo-client";
+
 import styles from "../styles/Home.module.scss";
 
-
-import React, { useEffect, useState, Suspense } from "react";
-import { API_KEYS } from "../env-values";
 import {
   Flex,
   Navbar,
@@ -35,9 +36,10 @@ import {
   BizCardDetail,
 } from "./subpages/BizCard";
 
-const Home: NextPage = () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Home: NextPage<Props> = ({ message }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState("GraphQL API");
 
   return (
     <div>
@@ -88,5 +90,24 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query HeadMessage {
+        headingMessages {
+          id
+          message
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      message: data?.headingMessages[0]?.message,
+    },
+  };
+}
 
 export default Home;

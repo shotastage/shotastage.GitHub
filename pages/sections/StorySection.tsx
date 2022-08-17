@@ -1,11 +1,13 @@
 import React from 'react';
-import { Suspense, useEffect, useState } from 'react';
+import type { NextPage, InferGetStaticPropsType } from "next";
+import { Suspense, useState } from "react";
 import styled from 'styled-components';
 import Stories from 'react-insta-stories';
 import Modal from 'react-modal';
-import { getWindowSize } from '../../hooks';
-import { API_KEYS } from '../../env-values';
+import { getWindowSize } from "../../hooks";
 import { SFImage } from '../../components/Image';
+import { gql } from "@apollo/client";
+import client from "../../libs/apollo-client";
 
 const Story = styled.div`
   display: flex;
@@ -146,28 +148,26 @@ const StoryCircle = (props: StoryCircleProps) => {
   );
 };
 
-export const StorySection = () => {
-  const [stories, setStories] = useState([]);
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+interface DataProps {
+  stories?: Array<any>;
+}
+
+export const StorySection: NextPage<DataProps> = ({ stories }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   return (
     <Story>
       <div style={{ height: '1px', width: '30px' }} />
-      {stories.map((value) => {
-        return value['headlineMinified'] ? (
+      {stories?.map((value: any) => {
+        return (
           <StoryCircle
             onClick={() => setIsOpen(true)}
-            key={value['id']}
-            altText={value['story_id']}
-            webpImageUrl={value['headlineMinified']['url']}
-            imageUrl={value['headline']['url']}
-          />
-        ) : (
-          <StoryCircle
-            onClick={() => setIsOpen(true)}
-            key={value['id']}
-            altText={value['story_id']}
-            imageUrl={value['headline']['url']}
+            key={value?.id}
+            altText={value?.id}
+            webpImageUrl={value?.image?.url}
+            imageUrl={value?.image?.url}
           />
         );
       })}
@@ -185,3 +185,28 @@ export const StorySection = () => {
 };
 
 const stories2 = [{}];
+
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query StoryQuery {
+        storyContentsAPIPlural {
+          id
+          image {
+            fileName
+            url
+          }
+          url
+          isStatic
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      stories: data?.storyContentsAPIPlural,
+    },
+  };
+}
