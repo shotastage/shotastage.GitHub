@@ -105,13 +105,13 @@ export const WorkAIMusic = () => {
         <CardSquare>
           <CardIcon
             type="image/svg+xml"
-            data={`${process.env.PUBLIC_URL}/assets/tensorflow.svg`}
+            data="/assets/tensorflow.svg"
           />
         </CardSquare>
         <CardSquare>
           <CardIcon
             type="image/svg+xml"
-            data={`${process.env.PUBLIC_URL}/assets/python.svg`}
+            data="/assets/python.svg"
           />
         </CardSquare>
         <CardSquare>

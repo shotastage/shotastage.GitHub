@@ -18,16 +18,16 @@ export const WorksShotachCom = () => {
       <Box center width='100%'>
         <Spacer />
         <CardSquare>
-          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/react.svg`} />
+          <CardIcon type='image/svg+xml' data="/assets/react.svg" />
         </CardSquare>
         <CardSquare>
           <CardIcon
             type='image/svg+xml'
-            data={`${process.env.PUBLIC_URL}/assets/typescript-icon.svg`}
+            data="/assets/typescript-icon.svg"
           />
         </CardSquare>
         <CardSquare>
-          <CardIcon type='image/svg+xml' data={`${process.env.PUBLIC_URL}/assets/html-5.svg`} />
+          <CardIcon type='image/svg+xml' data="/assets/html-5.svg" />
         </CardSquare>
         <Spacer />
       </Box>

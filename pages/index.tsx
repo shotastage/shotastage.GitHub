@@ -5,7 +5,6 @@ import styles from "../styles/Home.module.scss";
 
 
 import React, { useEffect, useState, Suspense } from "react";
-import { useTranslation } from "react-i18next";
 import { API_KEYS } from "../env-values";
 import {
   Flex,
@@ -37,12 +36,8 @@ import {
 } from "./subpages/BizCard";
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
-
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("GraphQL API");
-
-
 
   return (
     <div>

@@ -7,8 +7,6 @@ import Image from 'next/image';
 
 
 const ModalIconObjElm = styled(Image)`
-  width: 18px;
-  height: 18px
   pointer-events: none;
 `;
 
