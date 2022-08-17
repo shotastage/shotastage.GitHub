@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
-import { Box, Heading3, Heading4, Flex } from '../../components';
+import styled from "styled-components";
+import { Box, Heading3, Heading4, Flex } from "../../components";
 
 const ModalText = styled.p`
   line-height: 3rem;
@@ -45,32 +44,39 @@ export const BizCardButton = styled.button`
 `;
 
 export const BizCardDetail = () => {
-  const { t } = useTranslation();
-
   return (
-    <Flex flexDirection='column' alignItems='flex-start' marginRight='15px' marginLeft='15px'>
-      <Heading3>{t('profile.title')}</Heading3>
-      <Box marginTop='3em' marginBottom='1em'>
-        <Heading4>{t('profile.heading1')}</Heading4>
+    <Flex
+      flexDirection="column"
+      alignItems="flex-start"
+      marginRight="15px"
+      marginLeft="15px"
+    >
+      <Heading3>プロフィール</Heading3>
+      <Box marginTop="3em" marginBottom="1em">
+        <Heading4>経歴</Heading4>
       </Box>
       <ModalText>
         <span>
-          {t('profile.desc001')}
+          2020年に同大学大学院に進学。クラウドシステムの設計・実装やiOSプラットフォームの開発に従事。
           <br />
-          {t('profile.desc002')}
+          研究では、主に自律分散型モバイルアプリケーションプラットフォームの研究に取り組んでいる。
         </span>
-      </ModalText>
-      <ModalText>
-        <span>{t('profile.desc101')}</span>
       </ModalText>
       <ModalText>
         <span>
-          {t('profile.desc003')}
+          大学２年の時に新規サービスの立ち上げと事業化を思い立つ。路上アーティストに特化したライブ配信サービスを企画し、設計開発に取り組み起業するが資金不足で断念。
+        </span>
+      </ModalText>
+      <ModalText>
+        <span>
+          中高を得て2016年に慶應義塾大学SFC
+          環境情報学部に進学。同年秋学期に研究室に所属し機械学習による自動作曲の研究に取り組むとともに、Webアプリケーションからモバイルアプリケーションなど開発分野の手を広げる。
           <br />
         </span>
       </ModalText>
       <ModalText>
-        {t('profile.desc004')}
+        中学生の時にビックカメラに置いてあったMacBook
+        Airのデザインに惹かれLinuxのカスタマイズやツールの開発、OSSへのコントリビューションを始める。
         <br />
       </ModalText>
       <Heading4>SHOTA&apos;s Philosophy</Heading4>
@@ -82,7 +88,7 @@ export const BizCardDetail = () => {
         <li>ユーザー視点に立った仕様の策定</li>
         <li>使っているだけで楽しさを体験できる工夫</li>
       </ul>
-      <Box marginBottom='100px' />
+      <Box marginBottom="100px" />
     </Flex>
   );
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import { getWindowSize } from '../hooks';
 import styled from 'styled-components';
 import Modal from 'react-modal';

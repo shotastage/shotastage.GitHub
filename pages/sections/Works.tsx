@@ -1,6 +1,5 @@
 import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
-import { useTranslation } from 'react-i18next';
 import {
   Container,
   FullContainer,
@@ -76,7 +75,6 @@ const CardButton = styled(RoundButton)`
 `;
 
 export const Works = () => {
-  const { t } = useTranslation();
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [aimIsOpen, setAimIsOpen] = useState(false);
@@ -97,7 +95,7 @@ export const Works = () => {
           <ContainerMargin />
           <WarkCardTopMargin />
           <WorkCard>
-            <CardHeading>{t('aim.cardTitle')}</CardHeading>
+            <CardHeading>作曲家の雑務をふっとばす！</CardHeading>
             <Box center>
               <SFImage
                 imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media'
