@@ -1,13 +1,11 @@
-import React from 'react';
-import type { NextPage, InferGetStaticPropsType } from "next";
-import { Suspense, useState } from "react";
-import styled from 'styled-components';
-import Stories from 'react-insta-stories';
-import Modal from 'react-modal';
+import React, { useState } from "react";
+import type { NextPage } from "next";
+import Image from "next/image";
+import styled from "styled-components";
+import Stories from "react-insta-stories";
+import Modal from "react-modal";
 import { getWindowSize } from "../hooks";
-import { SFImage } from '../components/Image';
-import { gql } from "@apollo/client";
-import client from "../libs/apollo-client";
+import styles from "../styles/Story.module.scss";
 
 const Story = styled.div`
   display: flex;
@@ -51,22 +49,7 @@ const StoryCircleBase = styled.div`
   }
 `;
 
-const StoryCircleImage = styled.img`
-  width: 66px !important;
-  height: 66px !important;
-  object-fit: cover;
-  border-radius: calc(66px / 2);
-`;
-
-const StoryCircleBlank = styled.span`
-  width: 66px;
-  height: 66px;
-  background: pink;
-  border-radius: calc(66px / 2);
-`;
-
 interface StoryCircleProps {
-  webpImageUrl?: string;
   imageUrl: string;
   altText: string;
   onClick: () => void;
@@ -105,7 +88,7 @@ const ModalIconObjElm = styled.img`
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
-      <ModalIconObjElm src='/assets/close_button.svg' alt='close icon' />
+      <ModalIconObjElm src="/assets/close_button.svg" alt="close icon" />
     </ModalCloseButton>
   );
 };
@@ -119,8 +102,8 @@ export const StoryModal = (props: StoryModalProps) => {
       isOpen={isOpen}
       onRequestClose={() => onClose(false)}
       closeTimeoutMS={310}
-      className='StoryModal'
-      overlayClassName='StoryModalOverlay'
+      className="StoryModal"
+      overlayClassName="StoryModalOverlay"
       style={{
         content: {
           height: height,
@@ -136,18 +119,17 @@ export const StoryModal = (props: StoryModalProps) => {
 const StoryCircle = (props: StoryCircleProps) => {
   return (
     <StoryCircleBase onClick={props.onClick}>
-      <Suspense fallback={<StoryCircleBlank />}>
-        <SFImage
-          alt={props.altText}
-          webPSrc={props.webpImageUrl}
-          imgSrc={props.imageUrl}
-          imgComponent={StoryCircleImage}
-        />
-      </Suspense>
+      <Image
+        className={styles.StoryCircleImage}
+        alt={props.altText}
+        src={props.imageUrl}
+        width="66px"
+        height="66px"
+        objectFit="cover"
+      />
     </StoryCircleBase>
   );
 };
-
 
 interface DataProps {
   stories?: Array<any>;
@@ -158,14 +140,13 @@ export const StorySection: NextPage<DataProps> = ({ stories }) => {
 
   return (
     <Story>
-      <div style={{ height: '1px', width: '30px' }} />
+      <div style={{ height: "1px", width: "30px" }} />
       {stories?.map((value: any) => {
         return (
           <StoryCircle
             onClick={() => setIsOpen(true)}
             key={value?.id}
             altText={value?.id}
-            webpImageUrl={value?.image?.url}
             imageUrl={value?.image?.url}
           />
         );
@@ -176,7 +157,7 @@ export const StorySection: NextPage<DataProps> = ({ stories }) => {
           keyboardNavigation
           defaultInterval={8000}
           stories={stories2}
-          storyContainerStyles={{ borderRadius: 8, overflow: 'hidden' }}
+          storyContainerStyles={{ borderRadius: 8, overflow: "hidden" }}
         />
       </StoryModal>
     </Story>

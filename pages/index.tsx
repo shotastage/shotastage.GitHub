@@ -4,7 +4,6 @@ import Head from "next/head";
 //import Image from 'next/image'
 import { gql } from "@apollo/client";
 import client from "../libs/apollo-client";
-
 import styles from "../styles/Home.module.scss";
 
 import {
@@ -34,7 +33,8 @@ import {
   BizCardButton,
   BizDepartment,
   BizCardDetail,
-} from "../subpages/BizCard";
+} from "../sections/BizCard";
+
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
