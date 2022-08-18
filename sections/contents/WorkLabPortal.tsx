@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, SFImage, Heading3, Heading4, Heading5, SHText, Flex } from '../../../components';
+import { Box, SFImage, Heading3, Heading4, Heading5, SHText, Flex } from '../../components';
 
 const ModalImage = styled.img.attrs((props) => ({
   width: props.width || '100%',

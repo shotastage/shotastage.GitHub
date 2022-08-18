@@ -4,10 +4,10 @@ import { Suspense, useState } from "react";
 import styled from 'styled-components';
 import Stories from 'react-insta-stories';
 import Modal from 'react-modal';
-import { getWindowSize } from "../../hooks";
-import { SFImage } from '../../components/Image';
+import { getWindowSize } from "../hooks";
+import { SFImage } from '../components/Image';
 import { gql } from "@apollo/client";
-import client from "../../libs/apollo-client";
+import client from "../libs/apollo-client";
 
 const Story = styled.div`
   display: flex;

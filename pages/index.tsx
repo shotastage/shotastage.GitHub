@@ -27,14 +27,14 @@ import {
   Writings,
   SkillsSection,
   SocialSection,
-} from "./sections";
+} from "../sections";
 
 import {
   BizCard,
   BizCardButton,
   BizDepartment,
   BizCardDetail,
-} from "./subpages/BizCard";
+} from "../subpages/BizCard";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -90,32 +90,6 @@ const Home: NextPage<Props> = ({ message, stories }) => {
     </div>
   );
 };
-
-
-
-export async function getStaticPropsN() {
-  const { data } = await client.query({
-    query: gql`
-      query StoryQuery {
-        storyContentsAPIPlural {
-          id
-          image {
-            fileName
-            url
-          }
-          url
-          isStatic
-        }
-      }
-    `,
-  });
-
-  return {
-    props: {
-      stories: data?.storyContentsAPIPlural,
-    },
-  };
-}
 
 
 export async function getStaticProps() {

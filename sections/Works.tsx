@@ -14,8 +14,8 @@ import {
   Heading2,
   RoundButton,
   SHModal,
-} from '../../components';
-import HorizontalNoscroll from '../../styles/NoneScrollBar';
+} from '../components';
+import HorizontalNoscroll from '../styles/NoneScrollBar';
 
 import { WorksInception } from './contents';
 import { WorksLaboPortal } from './contents';

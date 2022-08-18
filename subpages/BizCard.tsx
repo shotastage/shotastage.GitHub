@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Box, Heading3, Heading4, Flex } from "../../components";
+import { Box, Heading3, Heading4, Flex } from "../components";
 
 const ModalText = styled.p`
   line-height: 3rem;
