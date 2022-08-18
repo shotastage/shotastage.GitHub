@@ -102,7 +102,7 @@ export async function getStaticProps() {
         }
       }
     `,
-  });
+  }) || {};
 
   const { data: stories } = await client.query({
     query: gql`
@@ -118,7 +118,7 @@ export async function getStaticProps() {
         }
       }
     `,
-  });
+  }) || {};
 
 
   return {
