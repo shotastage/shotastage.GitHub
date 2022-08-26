@@ -22,7 +22,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: ['media.graphassets.com'],
+    domains: ['media.graphassets.com', 'firebasestorage.googleapis.com', 'images.microcms-assets.io'],
   },
 }
 

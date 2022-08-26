@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-  NavBrandArea,
-  Navigation,
   NavBrand,
   NavArea,
   NavItems,
   NavLink,
   NavForienLink,
 } from './NavbarCommon';
+import styles from '../styles/component/Navbar.module.scss';
 
 type Props = {
   children: React.ReactNode;
@@ -15,10 +14,10 @@ type Props = {
 
 export const Navbar = (props: Props) => {
   return (
-    <Navigation>
-      <NavBrandArea href='/'>
-        <NavBrand>{props.children}</NavBrand>
-      </NavBrandArea>
+    <nav className={styles.navbar}>
+      <a className={styles.brandArea} href='/'>
+        <h1 className={styles.navBrand}>{props.children}</h1>
+      </a>
       <NavArea>
         <NavItems>
           <NavLink href='/'>Profile</NavLink>
@@ -33,6 +32,6 @@ export const Navbar = (props: Props) => {
           <NavForienLink href=''>🌏 en</NavForienLink>
         </NavItems>
       </NavArea>
-    </Navigation>
+    </nav>
   );
 };
