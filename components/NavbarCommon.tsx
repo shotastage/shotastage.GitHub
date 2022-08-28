@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const NavBrandArea = styled.a`
-
-`;
-
 export const NavBrandLogo = styled.object`
   width: 40px;
   height: 40px;
@@ -13,38 +9,6 @@ export const NavBrandLogo = styled.object`
   transition: transform 0.8s ease-in-out;
   &:hover {
     transform: rotate(360deg);
-  }
-`;
-
-export const Navigation = styled.nav`
-
-`;
-
-export const NavBrand = styled.h1`
-
-`;
-
-export const NavArea = styled.div`
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  @media screen and (max-width: 480px) {
-    display: none;
-  }
-`;
-
-export const NavItems = styled.div`
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  @media screen and (max-width: 480px) {
-    font-size: 1rem;
-    margin-left: 0;
-    margin-right: 0;
   }
 `;
 

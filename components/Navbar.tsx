@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  NavBrand,
-  NavArea,
-  NavItems,
   NavLink,
   NavForienLink,
 } from './NavbarCommon';
@@ -18,20 +15,20 @@ export const Navbar = (props: Props) => {
       <a className={styles.brandArea} href='/'>
         <h1 className={styles.navBrand}>{props.children}</h1>
       </a>
-      <NavArea>
-        <NavItems>
+      <div className={styles.navArea}>
+        <div className={styles.navItems}>
           <NavLink href='/'>Profile</NavLink>
-        </NavItems>
-        <NavItems>
+        </div>
+        <div className={styles.navItems}>
           <NavLink href='/'>Works</NavLink>
-        </NavItems>
-        <NavItems>
+        </div>
+        <div className={styles.navItems}>
           <NavForienLink href='https://github.com/shotastage'>Github</NavForienLink>
-        </NavItems>
-        <NavItems>
+        </div>
+        <div className={styles.navItems}>
           <NavForienLink href=''>🌏 en</NavForienLink>
-        </NavItems>
-      </NavArea>
+          </div>
+      </div>
     </nav>
   );
 };
