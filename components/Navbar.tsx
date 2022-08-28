@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-  NavLink,
-  NavForienLink,
-} from './NavbarCommon';
 import styles from '../styles/component/Navbar.module.scss';
 
 type Props = {
@@ -17,17 +13,17 @@ export const Navbar = (props: Props) => {
       </a>
       <div className={styles.navArea}>
         <div className={styles.navItems}>
-          <NavLink href='/'>Profile</NavLink>
+          <a className={styles.navLink} href='/'>Profile</a>
         </div>
         <div className={styles.navItems}>
-          <NavLink href='/'>Works</NavLink>
+          <a className={styles.navLink} href='/'>Works</a>
         </div>
         <div className={styles.navItems}>
-          <NavForienLink href='https://github.com/shotastage'>Github</NavForienLink>
+          <a className={styles.navForienLink} href='https://github.com/shotastage'>Github</a>
         </div>
         <div className={styles.navItems}>
-          <NavForienLink href=''>🌏 en</NavForienLink>
-          </div>
+          <a className={styles.navForienLink} href=''>🌏 en</a>
+        </div>
       </div>
     </nav>
   );
