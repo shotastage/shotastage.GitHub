@@ -15,7 +15,16 @@ type ObjectProps = {
 
 export const Card = (props: Props) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={props?.style}>
+      {props.children}
+    </div>
+  );
+};
+
+
+export const WorkCard = (props: Props) => {
+  return (
+    <div className={styles.workCard} style={props?.style}>
       {props.children}
     </div>
   );

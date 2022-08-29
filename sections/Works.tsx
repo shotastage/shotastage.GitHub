@@ -1,5 +1,5 @@
-import React, { Suspense, useState } from 'react';
-import styled from 'styled-components';
+import React, { Suspense, useState } from "react";
+import styled from "styled-components";
 import {
   Container,
   FullContainer,
@@ -8,22 +8,21 @@ import {
   Flex,
   ContainerMargin,
   SFImage,
-  Card,
+  WorkCard,
   CardHeading,
   CardDescription,
   Heading2,
   RoundButton,
   SHModal,
-} from '../components';
-import HorizontalNoscroll from '../styles/NoneScrollBar';
+} from "../components";
+import styles from "../styles/section/Works.module.scss";
+import HorizontalNoscroll from "../styles/NoneScrollBar";
 
-import { WorksInception } from './contents';
-import { WorksLaboPortal } from './contents';
-import { WorksDjangoMirage } from './contents';
-import { WorksShotachCom } from './contents';
-import { WorkAIMusic } from './contents';
-
-
+import { WorksInception } from "./contents";
+import { WorksLaboPortal } from "./contents";
+import { WorksDjangoMirage } from "./contents";
+import { WorksShotachCom } from "./contents";
+import { WorkAIMusic } from "./contents";
 
 const WorkCardsSection = styled(Box)`
   width: 100vw;
@@ -34,48 +33,15 @@ const WorkCardsSection = styled(Box)`
   ${HorizontalNoscroll}
 `;
 
-const WorkCard = styled(Card)`
-  min-height: 400px;
-  max-height: 400px;
-  min-width: 250px;
-  max-width: 250px;
-  margin-right: 1rem;
-  margin-left: 1rem;
-
-  @media (max-width: 480px) {
-    margin-right: 0.7rem;
-    margin-left: 0.7rem;
-  }
-`;
-
-/*
-const BhaaCard = styled(WorkCard)`
-  background: #fc1547;
-
-  * {
-    color: #fff;
-  }
-`;
-*/
-
-const WarkCardTopMargin = styled.div`
-  background: transparent;
-  @media (max-width: 480px) {
-    min-width: 1rem;
-  }
-`;
-
-const TileImage = styled.img`
-  max-width: 150px;
-  object-fit: cover;
-`;
-
 const CardButton = styled(RoundButton)`
   height: 100%;
 `;
 
-export const Works = () => {
+const TileImage = () => {
+  return <img className={styles.tileImage} />;
+};
 
+export const Works = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [aimIsOpen, setAimIsOpen] = useState(false);
 
@@ -86,21 +52,21 @@ export const Works = () => {
   return (
     <React.Fragment>
       <Container>
-        <Box marginTop='80px' marginBottom='30px'>
+        <Box marginTop="80px" marginBottom="30px">
           <Heading2>Works</Heading2>
         </Box>
       </Container>
       <FullContainer>
         <WorkCardsSection>
           <ContainerMargin />
-          <WarkCardTopMargin />
+          <div className={styles.warkCardTopMargin} />
           <WorkCard>
             <CardHeading>作曲家の雑務をふっとばす！</CardHeading>
             <Box center>
               <SFImage
-                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media'
-                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.webp?alt=media'
-                alt='Screen shots'
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Faim_header.webp?alt=media"
+                alt="Screen shots"
                 imgComponent={TileImage}
               />
             </Box>
@@ -126,9 +92,9 @@ export const Works = () => {
             </CardHeading>
             <Box center>
               <SFImage
-                imgSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg'
-                webPSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp'
-                alt='Screen shots'
+                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+                webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/e07658fa88aa4483837cc2e2c8356b27/reception_heading_cmprs.webp"
+                alt="Screen shots"
                 imgComponent={TileImage}
               />
             </Box>
@@ -149,9 +115,9 @@ export const Works = () => {
             <Spacer />
             <Box center>
               <SFImage
-                imgSrc='https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg'
-                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media'
-                alt='Screen shots'
+                imgSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/9af9c467705d45fd8c22c7c2b4a1cdf2/2019-11-21_10-52-07_800.jpg"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Flaboportal%2FScreen-Shot-2020-06-15-at-19.54.02.webp?alt=media"
+                alt="Screen shots"
                 imgComponent={TileImage}
               />
             </Box>
@@ -159,10 +125,15 @@ export const Works = () => {
             <CardDescription>
               <p>研究室運営のためのWebアプリケーションポータルサイト</p>
               <Flex>
-                <CardButton onClick={() => setLaboPortalIsOpen(true)}>More</CardButton>
+                <CardButton onClick={() => setLaboPortalIsOpen(true)}>
+                  More
+                </CardButton>
               </Flex>
             </CardDescription>
-            <SHModal isOpen={laboPortalIsOpen} onClose={() => setLaboPortalIsOpen(false)}>
+            <SHModal
+              isOpen={laboPortalIsOpen}
+              onClose={() => setLaboPortalIsOpen(false)}
+            >
               <Suspense fallback={<div />}>
                 <WorksLaboPortal />
               </Suspense>
@@ -177,9 +148,9 @@ export const Works = () => {
             <Spacer />
             <Box center>
               <SFImage
-                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media'
-                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.webp?alt=media'
-                alt='Screen shots'
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fdjmirage%2Fdjmirage_logo.webp?alt=media"
+                alt="Screen shots"
                 imgComponent={TileImage}
               />
             </Box>
@@ -187,10 +158,15 @@ export const Works = () => {
             <CardDescription>
               <p>Webバックエンド開発を瞬時に終わらせる効率化CLIのお話。</p>
               <Flex>
-                <CardButton onClick={() => setDjModalIsOpen(true)}>More</CardButton>
+                <CardButton onClick={() => setDjModalIsOpen(true)}>
+                  More
+                </CardButton>
               </Flex>
             </CardDescription>
-            <SHModal isOpen={djModalIsOpen} onClose={() => setDjModalIsOpen(false)}>
+            <SHModal
+              isOpen={djModalIsOpen}
+              onClose={() => setDjModalIsOpen(false)}
+            >
               <Suspense fallback={<div />}>
                 <WorksDjangoMirage />
               </Suspense>
@@ -200,25 +176,30 @@ export const Works = () => {
             <CardHeading>shotach.com</CardHeading>
             <Box center>
               <SFImage
-                imgSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.png?alt=media'
-                webPSrc='https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.webp?alt=media'
-                alt='Screen shots'
+                imgSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.png?alt=media"
+                webPSrc="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Faimusic%2Fshotach_hd.webp?alt=media"
+                alt="Screen shots"
                 imgComponent={TileImage}
               />
             </Box>
             <CardDescription>
               <p>@shotastageのポートフォリオサイト遂に公開</p>
               <Flex>
-                <CardButton onClick={() => setSiteModalIsOpen(true)}>More</CardButton>
+                <CardButton onClick={() => setSiteModalIsOpen(true)}>
+                  More
+                </CardButton>
               </Flex>
             </CardDescription>
-            <SHModal isOpen={siteModalIsOpen} onClose={() => setSiteModalIsOpen(false)}>
+            <SHModal
+              isOpen={siteModalIsOpen}
+              onClose={() => setSiteModalIsOpen(false)}
+            >
               <Suspense fallback={<div />}>
                 <WorksShotachCom />
               </Suspense>
             </SHModal>
           </WorkCard>
-          <WarkCardTopMargin />
+          <div className={styles.warkCardTopMargin} />
         </WorkCardsSection>
       </FullContainer>
     </React.Fragment>
