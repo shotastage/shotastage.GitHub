@@ -5,6 +5,12 @@ type Props = {
   children: React.ReactNode;
 };
 
+type ObjectProps = {
+  children: React.ReactNode;
+  type: string;
+  data: string;
+};
+
 export const Card = (props: Props) => {
   return (
     <div className={styles.card}>
@@ -22,7 +28,7 @@ export const CardSquare = (props: Props) => {
 };
 
 
-export const CardIcon = (props: Props) => {
+export const CardIcon = (props: ObjectProps) => {
   return (
     <object className={styles.cardIcon}>
       {props.children}
