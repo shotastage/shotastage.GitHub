@@ -6,9 +6,9 @@ type Props = {
 };
 
 type ObjectProps = {
-  children: React.ReactNode;
-  type: string;
-  data: string;
+  children?: React.ReactNode;
+  type?: string;
+  data?: string;
 };
 
 export const Card = (props: Props) => {
