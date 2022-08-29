@@ -4,6 +4,7 @@ import styles from '../styles/component/Card.module.scss';
 type Props = {
   children?: React.ReactNode;
   onClick?: () => string;
+  style?: React.CSSProperties;
 };
 
 type ObjectProps = {
