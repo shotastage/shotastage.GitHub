@@ -1,76 +1,57 @@
-import styled from 'styled-components';
+import styles from '../styles/component/Card.module.scss';
 
-export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  word-wrap: break-word;
-  background-clip: border-box;
-  background: white;
-  border-radius: 20px;
-  padding: 1.9rem 1.9rem;
-  padding-top: 0.2rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
-  transition: 0.3s;
-  &:hover {
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  }
-`;
 
-export const CardSquare = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-clip: border-box;
-  background: white;
-  border-radius: 30px;
-  margin: 10px;
-  min-width: 150px;
-  min-height: 150px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
+type Props = {
+  children: React.ReactNode;
+};
 
-  @media screen and (max-width: 1360px) {
-    min-width: 130px;
-    min-height: 130px;
-  }
+export const Card = (props: Props) => {
+  return (
+    <div className={styles.card}>
+      {props.children}
+    </div>
+  );
+};
 
-  @media screen and (max-width: 480px) {
-    min-width: 100px;
-    min-height: 100px;
-    border-radius: 20px;
-  }
-`;
+export const CardSquare = (props: Props) => {
+  return (
+    <div className={styles.cardSquare}>
+      {props.children}
+    </div>
+  );
+};
 
-export const CardIcon = styled.object`
-  pointer-events: none;
-  width: 80px;
-  height: 80px;
 
-  @media screen and (max-width: 480px) {
-    width: 55px;
-    height: 55px;
-  }
-`;
+export const CardIcon = (props: Props) => {
+  return (
+    <object className={styles.cardIcon}>
+      {props.children}
+    </object>
+  );
+};
 
-export const CardBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.9rem 1.9rem;
-  padding-top: 0.2rem;
-`;
+export const CardBody = (props: Props) => {
+  return (
+    <div className={styles.cardBody}>
+      {props.children}
+    </div>
+  );
+};
 
-export const CardHeading = styled.h3`
-  font-size: 1.5rem;
-`;
 
-export const CardDescription = styled.div`
-  display: flex;
-  flex-direction: column;
+export const CardHeading = (props: Props) => {
+  return (
+    <h3 className={styles.cardHeading}>
+      {props.children}
+    </h3>
+  );
+};
 
-  p {
-    color: #333;
-  }
-`;
+
+export const CardDescription = (props: Props) => {
+  return (
+    <div className={styles.cardDescription}>
+      {props.children}
+    </div>
+  );
+};
