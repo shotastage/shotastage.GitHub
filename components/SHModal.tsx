@@ -4,30 +4,24 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 import { Flex, Spacer } from '../components';
 import Image from 'next/image';
+import styles from '../styles/component/SHModal.module.scss';
 
 
 const ModalIconObjElm = styled(Image)`
   pointer-events: none;
 `;
 
-export const ModalCloseButton = styled.button`
-  background-color: #e4e4e4;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+export const ModalCloseButton = ({ ...props }) => {
+  return (
+    <button className={styles.modalCloseButton} { ...props }>{props?.children}</button>
+  );
+};
 
-export const ModalText = styled.p`
-  line-height: 1.7rem;
-`;
+export const ModalText = ({ ...props }) => {
+  return (
+    <p className={styles.modalText} {...props}>{props?.children}</p>
+  );
+};
 
 export const ModalClose = ({ ...props }) => {
   return (

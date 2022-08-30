@@ -39,10 +39,10 @@ export const CardSquare = (props: Props) => {
 };
 
 
-export const CardIcon = (props: ObjectProps) => {
+export const CardIcon = ({ ...props }) => {
   return (
-    <object className={styles.cardIcon}>
-      {props.children}
+    <object className={styles.cardIcon} { ...props }>
+      {props?.children}
     </object>
   );
 };
