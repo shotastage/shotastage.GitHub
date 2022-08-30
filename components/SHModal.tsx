@@ -23,6 +23,12 @@ export const ModalText = ({ ...props }) => {
   );
 };
 
+export const SHText = ({ ...props }) => {
+  return (
+    <p className={styles.shText} {...props}>{props?.children}</p>
+  );
+};
+
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
@@ -64,7 +70,3 @@ export const SHModal = (props: SHModalProps) => {
     </Modal>
   );
 };
-
-export const SHText = styled.p`
-  letter-spacing: 0.15rem;
-`;
