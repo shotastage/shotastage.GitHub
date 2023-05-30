@@ -1,7 +1,9 @@
+import React, { CSSProperties } from 'react';
+
 export interface StylerProps {
   children?: React.ReactNode;
   height?: string | number;
-  width?: string | number | '100%';
+  width?: string | number;
   maxHeight?: string | number;
   maxWidth?: string | number;
   minHeight?: string | number;
@@ -16,42 +18,22 @@ export interface StylerProps {
   paddingBottom?: string | number;
   paddingRight?: string | number;
   paddingLeft?: string | number;
-  backgroundColor?: string | '#ffffff';
+  backgroundColor?: string;
   color?: string;
   sx?: object;
+  style?: CSSProperties;
 }
 
 export const CombinedStyler = (props: StylerProps, specified?: object) => {
-  const style = Object.assign(
-    {
-      height: props.height,
-      width: props.width,
-      maxHeight: props.maxHeight,
-      maxWidth: props.maxWidth,
-      minHeight: props.minHeight,
-      minWidth: props.minWidth,
-      margin: props.margin,
-      marginTop: props.marginTop,
-      marginBottom: props.marginBottom,
-      marginLeft: props.marginLeft,
-      marginRight: props.marginRight,
-      padding: props.padding,
-      paddingTop: props.paddingTop,
-      paddingBottom: props.paddingBottom,
-      paddingLeft: props.paddingLeft,
-      paddingRight: props.paddingRight,
-      backgroundColor: props.backgroundColor,
-      color: props.color,
-    },
-    props.sx,
-    specified,
-  );
+  const style = {
+    ...props,
+    ...props.sx,
+    ...specified
+  };
 
   return style;
 };
 
-export const cssCompute = (style: StylerProps) => Object.assign({}, style);
-
 export const Styler = (props: StylerProps) => {
-  return cssCompute(props);
+  return CombinedStyler(props);
 };

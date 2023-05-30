@@ -1,6 +1,8 @@
-import type { NextPage, InferGetStaticPropsType } from "next";
-import React from "react";
-import Head from "next/head";
+"use client"
+
+import NextPage from "next"
+import React from "react"
+import Head from "next/head"
 //import Image from 'next/image'
 
 
