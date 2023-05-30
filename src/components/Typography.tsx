@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 import styles from './Typography.module.scss';
 
-export const Heading: React.FC = (props) => {
-  return <div className={styles.heading} {...props} />;
-};
+interface HeadingProps {
+  children?: ReactNode;
+  style?: CSSProperties;
+}
+
+export const Heading: React.FC<HeadingProps> = ({ children, style }) => {
+  return <div className={styles.heading} style={style}>{children}</div>;
+};  
 
 export const Heading1: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return <h1 className={styles.heading1}>{children}</h1>;

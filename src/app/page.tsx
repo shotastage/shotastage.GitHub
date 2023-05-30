@@ -1,5 +1,5 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
-import React, { Suspense } from "react";
+import React from "react";
 import Head from "next/head";
 //import Image from 'next/image'
 
@@ -10,6 +10,7 @@ import {
   Heading,
   Footer,
   FooterCopyright,
+  SFImage
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -25,6 +26,7 @@ import {
   SkillsSection,
   SocialSection,
 } from "@/sections";
+*/
 
 import {
   BizCard,
@@ -32,7 +34,7 @@ import {
   BizDepartment,
   BizCardDetail,
 } from "@/sections/BizCard";
-*/
+
 
 
 
@@ -50,8 +52,8 @@ const Home: NextPage = () => {
       { /* <StorySection stories={stories}/> */ }
       <Heading style={{ display: "flex", justifyContent: "center" }}>
         <Flex>
-          { /*
-          <BizCard onClick={() => setIsOpen(true)}>
+        
+          <BizCard>
             <SFImage
               imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
               webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
@@ -68,10 +70,11 @@ const Home: NextPage = () => {
                 <Name>Shota Shimazu</Name>
                 <UserName>@shotastage</UserName>
               </Flex>
-              <BizCardButton onClick={() => setIsOpen(true)}></BizCardButton>
+              <BizCardButton>クリックして詳細を閲覧</BizCardButton>
             </Flex>
           </BizCard>
           
+          { /*
           <SHModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
             <Suspense fallback={<div />}>
               <BizCardDetail />
