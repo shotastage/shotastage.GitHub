@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
+import { Button } from '@/components/Button';
 
 type Props = {
   children: ReactNode;
@@ -45,14 +46,14 @@ export const PopupModal = ({ isOpen, children, title, onClose }: Props) => {
                     {title}
                   </Dialog.Title>
                   {children}
+
+
                   <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    <Button                    
                       onClick={onClose}
                     >
                       閉じる
-                    </button>
+                    </Button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

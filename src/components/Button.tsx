@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './Button.module.scss';
 
-export const Button: React.FC = (props) => {
+interface ButtonProps {
+  children?: ReactNode;
+  onClick?: () => void;
+}
+
+export const Button: React.FC<ButtonProps> = (props) => {
   return <button className={styles.button} {...props} />;
 };
 
-export const CopyButton: React.FC = (props) => {
+export const CopyButton: React.FC<ButtonProps> = (props) => {
   return <button className={styles.copyButton} {...props} />;
 };
 
-export const RoundButton: React.FC = (props) => {
+export const RoundButton: React.FC<ButtonProps> = (props) => {
   return <button className={styles.roundButton} {...props} />;
 };

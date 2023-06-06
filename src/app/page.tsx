@@ -37,8 +37,6 @@ import {
 
 export default function Home() {
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
   return (
     <div>
       <Head>
@@ -49,17 +47,7 @@ export default function Home() {
       <TopBanner>現在このWebページは開発中です。</TopBanner>
       <Navbar>Shota's Portfolio</Navbar>
       { /* <StorySection stories={stories}/> */}
-      <Heading style={{ display: "flex", justifyContent: "center" }}>
-        <Flex>
-          { /*
-          <SHModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-            <Suspense fallback={<div />}>
-              <BizCardDetail />
-            </Suspense>
-          </SHModal>
-          */ }
-        </Flex>
-      </Heading>
+      
       { /*
       <Works />
       <Writings />
