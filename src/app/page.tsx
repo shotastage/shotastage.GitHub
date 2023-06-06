@@ -21,17 +21,10 @@ import { TopBanner } from "@/components/TopPopup";
 
 // Page Sections
 
-/*
+
 import {
-  StorySection,
-  Works,
-  Writings,
-  SkillsSection,
-  SocialSection,
+  ProfileCard
 } from "@/sections";
-*/
-
-
 
 
 
@@ -45,7 +38,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopBanner>現在このWebページは開発中です。</TopBanner>
-      <Navbar>Shota's Portfolio</Navbar>
+      <Navbar>Shota's Portfolio</Navbar>      
+      <div className="container mx-auto">
+      <ProfileCard>
+        <h1>Shota Shimazu</h1>
+      </ProfileCard>
+      </div>
       { /* <StorySection stories={stories}/> */}
       
       { /*
