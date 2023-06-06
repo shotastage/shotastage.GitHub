@@ -41,7 +41,7 @@ import {
 
 
 
-const Home: NextPage = () => {
+export default function Home() {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -104,4 +104,3 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
