@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import {
   PopupModal
 } from "@/components";
-import styles from './Toppopup.module.scss';
+import styles from './TopPopup.module.scss';
 
 export const TopBanner: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
