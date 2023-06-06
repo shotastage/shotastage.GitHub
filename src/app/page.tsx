@@ -1,7 +1,7 @@
 "use client"
 
 import NextPage from "next"
-import React from "react"
+import React, { useState } from "react"
 import Head from "next/head"
 //import Image from 'next/image'
 
@@ -12,7 +12,8 @@ import {
   Heading,
   Footer,
   FooterCopyright,
-  SFImage
+  SFImage,
+  PopupModal
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -42,6 +43,8 @@ import {
 
 const Home: NextPage = () => {
 
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <div>
       <Head>
@@ -51,10 +54,10 @@ const Home: NextPage = () => {
       </Head>
       <TopBanner>現在このWebページは開発中です。</TopBanner>
       <Navbar>Shota's Portfolio</Navbar>
-      { /* <StorySection stories={stories}/> */ }
+      { /* <StorySection stories={stories}/> */}
       <Heading style={{ display: "flex", justifyContent: "center" }}>
         <Flex>
-        
+
           <BizCard>
             <SFImage
               imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
@@ -72,10 +75,13 @@ const Home: NextPage = () => {
                 <Name>Shota Shimazu</Name>
                 <UserName>@shotastage</UserName>
               </Flex>
-              <BizCardButton>クリックして詳細を閲覧</BizCardButton>
+              <BizCardButton onClick={() => setIsOpen(true)}>クリックして詳細を閲覧</BizCardButton>
+              <PopupModal title="ただいま開発中" isOpen={isOpen} onClose={() => setIsOpen(false)}>              
+                <p>テストモーダル</p>
+              </PopupModal>
             </Flex>
           </BizCard>
-          
+
           { /*
           <SHModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
             <Suspense fallback={<div />}>

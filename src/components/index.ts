@@ -9,3 +9,5 @@ export * from './Input';
 export * from './Navbar';
 export * from './Styler';
 export * from './Typography';
+export * from './Modal';
+export * from './PopupModal';
