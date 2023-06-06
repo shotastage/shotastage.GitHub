@@ -31,12 +31,6 @@ import {
 } from "@/sections";
 */
 
-import {
-  BizCard,
-  BizCardButton,
-  BizDepartment,
-  BizCardDetail,
-} from "@/sections/BizCard";
 
 
 
@@ -57,31 +51,6 @@ export default function Home() {
       { /* <StorySection stories={stories}/> */}
       <Heading style={{ display: "flex", justifyContent: "center" }}>
         <Flex>
-
-          <BizCard>
-            <SFImage
-              imgSrc="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
-              webPSrc="https://images.microcms-assets.io/assets/fdaf42be86754887af86a7af30ad514d/b96412c26fe9490296ad05db23a692e4/IMG_0086.webp"
-              alt="avator image"
-              imgComponent={Avator}
-            />
-            <Flex
-              flexDirection="column"
-              alignItems="flex-start"
-              marginLeft="2em"
-            >
-              <Flex flexDirection="column" alignItems="flex-start">
-                <BizDepartment>ソリューションラボ</BizDepartment>
-                <Name>Shota Shimazu</Name>
-                <UserName>@shotastage</UserName>
-              </Flex>
-              <BizCardButton onClick={() => setIsOpen(true)}>クリックして詳細を閲覧</BizCardButton>
-              <PopupModal title="ただいま開発中" isOpen={isOpen} onClose={() => setIsOpen(false)}>              
-                <p>テストモーダル</p>
-              </PopupModal>
-            </Flex>
-          </BizCard>
-
           { /*
           <SHModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
             <Suspense fallback={<div />}>
