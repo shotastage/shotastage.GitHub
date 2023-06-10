@@ -7,12 +7,6 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-type ObjectProps = {
-  children?: React.ReactNode;
-  type?: string;
-  data?: string;
-};
-
 export const Card = (props: Props) => {
   return (
     <div className={styles.card} style={props?.style}>
