@@ -13,6 +13,7 @@ import {
   FooterCopyright,
   SFImage,
   PopupModal,
+  Heading2
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -20,7 +21,8 @@ import { TopBanner } from "@/components/TopPopup";
 
 // Page Sections
 
-import { ProfileCard } from "@/sections";
+import { ProfileCard, WorkCardsContainer } from "@/sections";
+import { WorkCard } from "@/sections";
 
 export default function Home() {
   return (
@@ -44,7 +46,20 @@ export default function Home() {
             <h1>Shota Shimazu</h1>
           </ProfileCard>{" "}
         </div>
-        <h2 className="prose-h2">Works</h2>
+        <Heading2>Works</Heading2>
+        <WorkCardsContainer>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+          <WorkCard></WorkCard>
+
+        </WorkCardsContainer>
       </div>
       {/* <StorySection stories={stories}/> */}
 

@@ -1,0 +1,53 @@
+@use "../components/mixins.scss";
+
+.workContainer {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.workCards {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  height: 400px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.workCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 340px;
+  height: 350px;
+  border-radius: 20px;
+  padding: 2em 1.2em;
+  margin-right: 20px;
+
+  @include mixins.light-glass-bg;
+}
+
+.profileName {
+  font: {
+    weight: bold;
+    size: 2rem;
+  }
+}
+
+.profileImage {
+  border-radius: 50%;
+  height: 50%;
+  max-height: 200px;
+}
+
+.profileButton {
+  $btn-size: 60px;
+
+  background: rgb(223, 223, 223);
+  content: "→";
+  width: $btn-size;
+  height: $btn-size;
+  border-radius: 50%;
+  bottom: 20px;
+}
