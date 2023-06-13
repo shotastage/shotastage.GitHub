@@ -11,7 +11,7 @@
   display: flex;
   justify-content: flex-start;
   overflow-x: scroll;
-  height: 400px;
+  min-height: 440px;
   padding-top: 25px;
   padding-bottom: 25px;
   &::-webkit-scrollbar {
@@ -35,10 +35,9 @@
 
 .workCard {
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  width: 340px;
-  height: 350px;
+  min-width: 340px;
+  min-height: 420px;
   border-radius: 20px;
   padding: 2em 1.2em;
   margin-right: 20px;

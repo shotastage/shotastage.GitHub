@@ -48,18 +48,34 @@ export default function Home() {
         </div>
         <Heading2>Works</Heading2>
         <WorkCardsContainer>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-          <WorkCard></WorkCard>
-
+          <WorkCard
+          cardTitle="Portfolio Site"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="ファースト
+          インプレッションを
+          Sustainableに"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="自分の秘書。研究室のリーダー"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="瞬時に開発すぐに披露"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="Portfolio Site"
+          ></WorkCard>
+           <WorkCard
+          cardTitle="Portfolio Site"
+          ></WorkCard>
+         
         </WorkCardsContainer>
+        <Heading2>Writings</Heading2>
+        <Heading2>Skills & Experiences</Heading2>
+        <Heading2>Social</Heading2>
       </div>
       {/* <StorySection stories={stories}/> */}
 
