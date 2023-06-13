@@ -7,12 +7,30 @@
 }
 
 .workCards {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   overflow-x: scroll;
   height: 400px;
   padding-top: 25px;
   padding-bottom: 25px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    pointer-events: none;
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+  }
 }
 
 .workCard {
