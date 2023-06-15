@@ -3,6 +3,7 @@
 import NextPage from "next";
 import React, { useState } from "react";
 import Head from "next/head";
+import layout from "@/components/Layout.module.scss";
 //import Image from 'next/image'
 
 import {
@@ -13,7 +14,7 @@ import {
   FooterCopyright,
   SFImage,
   PopupModal,
-  Heading2
+  Heading2,
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -35,7 +36,7 @@ export default function Home() {
       <TopBanner>
         現在このWebページは開発中です。詳細はこちらをタップ。
       </TopBanner>
-      <div className="container mx-auto px-20">
+      <div className={layout.container}>
         <Navbar>Shota's Portfolio</Navbar>
         <div className="grid grid-cols-2 gap-4 grid-flow-row auto-rows-max md:auto-rows-min">
           <ProfileCard className="w-16 md:w-32 "></ProfileCard>
@@ -48,30 +49,17 @@ export default function Home() {
         </div>
         <Heading2>Works</Heading2>
         <WorkCardsContainer>
+          <WorkCard cardTitle="Portfolio Site"></WorkCard>
+          <WorkCard cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"></WorkCard>
           <WorkCard
-          cardTitle="Portfolio Site"
-          ></WorkCard>
-           <WorkCard
-          cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"
-          ></WorkCard>
-           <WorkCard
-          cardTitle="ファースト
+            cardTitle="ファースト
           インプレッションを
           Sustainableに"
           ></WorkCard>
-           <WorkCard
-          cardTitle="自分の秘書。研究室のリーダー"
-          ></WorkCard>
-           <WorkCard
-          cardTitle="瞬時に開発すぐに披露"
-          ></WorkCard>
-           <WorkCard
-          cardTitle="Portfolio Site"
-          ></WorkCard>
-           <WorkCard
-          cardTitle="Portfolio Site"
-          ></WorkCard>
-         
+          <WorkCard cardTitle="自分の秘書。研究室のリーダー"></WorkCard>
+          <WorkCard cardTitle="瞬時に開発すぐに披露"></WorkCard>
+          <WorkCard cardTitle="Portfolio Site"></WorkCard>
+          <button>Show more</button>
         </WorkCardsContainer>
         <Heading2>Writings</Heading2>
         <Heading2>Skills & Experiences</Heading2>
