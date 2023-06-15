@@ -1,5 +1,12 @@
 @use "../components/mixins.scss";
 
+// Variables
+$btn-size: 60px;
+$padding-left-lg: 10em;
+$padding-left-md: 5em;
+$padding-left-sm: 2em;
+$padding-left-xs: 1em;
+
 .workContainer {
   display: flex;
   width: 100%;
@@ -12,11 +19,24 @@
   justify-content: flex-start;
   overflow-x: scroll;
   min-height: 440px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding: 25px 0;
   &::-webkit-scrollbar {
     display: none;
-  }  
+  }
+
+  padding-left: $padding-left-lg;
+
+  @media screen and (max-width: 1500px) {
+    padding-left: $padding-left-md;
+  }
+
+  @media screen and (max-width: 1150px) {
+    padding-left: $padding-left-sm;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-left: $padding-left-xs;
+  }
 }
 
 .workCard {
@@ -45,8 +65,6 @@
 }
 
 .profileButton {
-  $btn-size: 60px;
-
   background: rgb(223, 223, 223);
   content: "→";
   width: $btn-size;

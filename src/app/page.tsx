@@ -48,6 +48,7 @@ export default function Home() {
           </ProfileCard>{" "}
         </div>
         <Heading2>Works</Heading2>
+      </div>
         <WorkCardsContainer>
           <WorkCard cardTitle="Portfolio Site"></WorkCard>
           <WorkCard cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"></WorkCard>
@@ -61,6 +62,8 @@ export default function Home() {
           <WorkCard cardTitle="Portfolio Site"></WorkCard>
           <button>Show more</button>
         </WorkCardsContainer>
+        <div className={layout.container}>
+
         <Heading2>Writings</Heading2>
         <Heading2>Skills & Experiences</Heading2>
         <Heading2>Social</Heading2>
