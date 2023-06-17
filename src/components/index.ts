@@ -11,3 +11,4 @@ export * from './Styler';
 export * from './Typography';
 export * from './Modal';
 export * from './PopupModal';
+export * from './NModal';

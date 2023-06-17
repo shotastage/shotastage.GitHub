@@ -12,7 +12,7 @@ export const ProfileCard = (props: Props) => {
       <div className="flex flex-row justify-start items-center flex-initial w-64">
         <img
           className={styles.profileImage}
-          src="https://pbs.twimg.com/profile_images/1414945557999665161/W_ccWI58_400x400.jpg"
+          src="https://firebasestorage.googleapis.com/v0/b/shota-folio.appspot.com/o/assets%2Fimages%2Fprofile_photo.jpeg?alt=media&token=7358a8b5-34b9-4a9e-aa24-ea9c978ea017"
         />
       </div>
       <div className="flex-initial w-42">

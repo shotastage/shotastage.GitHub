@@ -15,6 +15,7 @@ import {
   SFImage,
   PopupModal,
   Heading2,
+  NModal,
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -26,6 +27,8 @@ import { ProfileCard, WorkCardsContainer } from "@/sections";
 import { WorkCard } from "@/sections";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <Head>
@@ -49,21 +52,24 @@ export default function Home() {
         </div>
         <Heading2>Works</Heading2>
       </div>
-        <WorkCardsContainer>
-          <WorkCard cardTitle="Portfolio Site"></WorkCard>
-          <WorkCard cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"></WorkCard>
-          <WorkCard
-            cardTitle="ファースト
+      <WorkCardsContainer>
+        <WorkCard cardTitle="Portfolio Site" moreEvent={() => setIsOpen(true)}>
+          <NModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+            <h1>AAAAAA</h1>
+          </NModal>
+        </WorkCard>
+        <WorkCard cardTitle="自動作曲AI - 作曲家の雑務をふっとばす！"></WorkCard>
+        <WorkCard
+          cardTitle="ファースト
           インプレッションを
           Sustainableに"
-          ></WorkCard>
-          <WorkCard cardTitle="自分の秘書。研究室のリーダー"></WorkCard>
-          <WorkCard cardTitle="瞬時に開発すぐに披露"></WorkCard>
-          <WorkCard cardTitle="Portfolio Site"></WorkCard>
-          <button>Show more</button>
-        </WorkCardsContainer>
-        <div className={layout.container}>
-
+        ></WorkCard>
+        <WorkCard cardTitle="自分の秘書。研究室のリーダー"></WorkCard>
+        <WorkCard cardTitle="瞬時に開発すぐに披露"></WorkCard>
+        <WorkCard cardTitle="Portfolio Site"></WorkCard>
+        <button>Show more</button>
+      </WorkCardsContainer>
+      <div className={layout.container}>
         <Heading2>Writings</Heading2>
         <Heading2>Skills & Experiences</Heading2>
         <Heading2>Social</Heading2>

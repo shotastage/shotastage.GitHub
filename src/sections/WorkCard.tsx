@@ -5,6 +5,7 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   cardTitle?: string;
+  moreEvent?: any;
 };
 
 export const WorkCardsContainer = (props: Props) => {
@@ -26,7 +27,7 @@ export const WorkCard = (props: Props) => {
         className="flex-initial w-18 flex justify-center items-end"
         style={{ height: "100%" }}
       >
-        <button className={styles.profileButton}>→</button>
+        <button className={styles.profileButton} onClick={props.moreEvent}>→</button>
       </div>
     </div>
   );
