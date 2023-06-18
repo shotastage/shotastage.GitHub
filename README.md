@@ -1,5 +1,6 @@
-# shotach.com
+# shotach.com - A portfolio for @shotastage
+This repository is the website portfolio for @shotastage. 
+This website consists of three columns.
 
->> Now under construction... 
+The technical description of this site can be found here for more detail.
 
-This is a portfolio.

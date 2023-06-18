@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Modal from "react-modal";
 import Image from "next/image";
@@ -30,7 +32,13 @@ export const SHText = ({ ...props }) => {
 export const ModalClose = ({ ...props }) => {
   return (
     <ModalCloseButton {...props}>
-      <Image src="/assets/close_button.svg" width={18} height={18} className={styles.modalIconObjElm} alt="Close Icon"/>
+      <Image
+        src="/assets/close_button.svg"
+        width={18}
+        height={18}
+        className={styles.modalIconObjElm}
+        alt="Close Icon"
+      />
     </ModalCloseButton>
   );
 };
@@ -40,8 +48,6 @@ export interface SHModalProps {
   isOpen: boolean | false;
   onClose(initialState: boolean): void;
 }
-
-Modal.setAppElement("#__next");
 
 export const NModal = (props: SHModalProps) => {
   const { children, isOpen, onClose } = props;
@@ -53,12 +59,12 @@ export const NModal = (props: SHModalProps) => {
       closeTimeoutMS={310}
       className="SHModal"
       overlayClassName="SHModalOverlay"
-    
+      // onRequestClose={() => router.push('/', undefined, { scroll: false })}
     >
       <div>
         <ModalClose onClick={() => onClose(false)} />
       </div>
-      {children}
+      <div>{children}</div>
     </Modal>
   );
 };
