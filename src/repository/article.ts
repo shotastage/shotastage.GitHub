@@ -1,18 +1,16 @@
-import type {
-  MicroCMSQueries,
-  MicroCMSImage,
-  MicroCMSDate,
-} from "microcms-js-sdk";
-
-import { client } from "@/libs/cms-client";
 import { Article } from "@/entities/article";
 
-export const getArticles = async () => {
-  const listData = await client.getList<Article>({
-    endpoint: "blogs",
+export async function getArticles(): Promise<Article> {
+  const res = await fetch("https://shota-folio.microcms.io/api/v1/blogs", {
+    method: "GET",
+    headers: {
+      "X-MICROCMS-API-KEY": `${process.env.API_KEY}`,
+    },
   });
 
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
-  return listData;
-};
+  return res.json();
+}

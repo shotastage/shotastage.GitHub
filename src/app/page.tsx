@@ -1,13 +1,11 @@
 "use client";
 
 import { NextPage } from "next";
-import Modal from "react-modal";
 
 import React, { useState } from "react";
 import Head from "next/head";
 import layout from "@/components/Layout.module.scss";
 //import Image from 'next/image'
-import { ParsedUrlQuery } from "querystring";
 
 import {
   Flex,
@@ -17,7 +15,8 @@ import {
   FooterCopyright,
   SFImage,
   PopupModal,
-  Heading2
+  Heading2,
+  NModal,
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -29,13 +28,12 @@ import { ProfileCard, WorkCardsContainer } from "@/sections";
 import { WorkCard } from "@/sections";
 
 import { getArticles } from "@/repository/article";
-import { Article } from "@/entities/article";
+import { Article, ArticleContent } from "@/entities/article";
 
 export default async function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const { contents } = await getArticles();
-
-  Modal.setAppElement("#__next");
+  const articlesData = await getArticles();
+  const articles: [Article] = await Promise.all([articlesData]);
 
   return (
     <div>
@@ -61,11 +59,18 @@ export default async function Home() {
         <Heading2>Works</Heading2>
       </div>
       <WorkCardsContainer>
-        {contents.map((article: Article) => {
-          return <WorkCard cardTitle={article.title}></WorkCard>;
+        {articles[0]?.contents?.map((article: ArticleContent) => {
+          return (
+            <WorkCard
+              cardTitle={article.title}
+              moreEvent={() => setIsOpen(true)}
+            >
+              <NModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                <h1>AAAAAA</h1>
+              </NModal>
+            </WorkCard>
+          );
         })}
-       
-
         <button>Show more</button>
       </WorkCardsContainer>
       <div className={layout.container}>

@@ -49,6 +49,8 @@ export interface SHModalProps {
   onClose(initialState: boolean): void;
 }
 
+Modal.setAppElement("#__next");
+
 export const NModal = (props: SHModalProps) => {
   const { children, isOpen, onClose } = props;
 
