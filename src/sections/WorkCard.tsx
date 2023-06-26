@@ -1,10 +1,13 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./WorkCard.module.scss";
+import { Url } from "next/dist/shared/lib/router/router";
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
   cardTitle?: string;
+  href?: Url;
   moreEvent?: any;
 };
 
@@ -17,6 +20,24 @@ export const WorkCardsContainer = (props: Props) => {
 };
 
 export const WorkCard = (props: Props) => {
+  const linkableButton = () => {
+    if (props.href) {
+      return (
+        <Link href={`/posts/${props?.href}`}>
+          <button className={styles.profileButton} onClick={props.moreEvent}>
+            →
+          </button>
+        </Link>
+      );
+    } else {
+      return (
+        <button className={styles.profileButton} onClick={props.moreEvent}>
+          →
+        </button>
+      );
+    }
+  };
+
   return (
     <div className={styles.workCard}>
       <div className="flex-initial w-42">
@@ -27,7 +48,7 @@ export const WorkCard = (props: Props) => {
         className="flex-initial w-18 flex justify-center items-end"
         style={{ height: "100%" }}
       >
-        <button className={styles.profileButton} onClick={props.moreEvent}>→</button>
+        {linkableButton()}
       </div>
     </div>
   );

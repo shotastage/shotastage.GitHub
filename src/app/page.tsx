@@ -1,11 +1,15 @@
 "use client";
 
-import { NextPage } from "next";
+import { useRouter, usePathname } from 'next/navigation'
+import Link from 'next/link';
+import Head from "next/head";
 
 import React, { useState } from "react";
-import Head from "next/head";
+import Modal from 'react-modal';
+
 import layout from "@/components/Layout.module.scss";
 //import Image from 'next/image'
+
 
 import {
   Flex,
@@ -30,7 +34,14 @@ import { WorkCard } from "@/sections";
 import { getArticles } from "@/repository/article";
 import { Article, ArticleContent } from "@/entities/article";
 
+
+// Modal.setAppElement('#__next');
+
+
 export default async function Home() {
+
+
+
   const [isOpen, setIsOpen] = useState(false);
   const articlesData = await getArticles();
   const articles: [Article] = await Promise.all([articlesData]);
@@ -64,10 +75,9 @@ export default async function Home() {
             <WorkCard
               cardTitle={article.title}
               moreEvent={() => setIsOpen(true)}
+              href={article?.slug}
             >
-              <NModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                <h1>AAAAAA</h1>
-              </NModal>
+             
             </WorkCard>
           );
         })}

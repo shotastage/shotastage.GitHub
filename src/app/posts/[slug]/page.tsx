@@ -8,16 +8,12 @@ import type {
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/navigation'
 
 type Props = {
   content: any;
 };
 
-export const ArticleDetail: NextPage<Props> = ({ content }: Props) => {
-  return (
-    <div>
-      <div></div>
-    </div>
-  );
-};
+export default function Page({ params }: { params: { slug: string } }) {
+  return <div>My Post: {params.slug}</div>
+}

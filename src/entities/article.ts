@@ -9,4 +9,5 @@ export type ArticleContent = {
   publishedAt: string;
   title: string;
   body: string;
+  slug: string;
 };

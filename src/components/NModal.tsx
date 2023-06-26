@@ -4,6 +4,8 @@ import React from "react";
 import Modal from "react-modal";
 import Image from "next/image";
 import styles from "./NModal.module.scss";
+import { useRouter } from 'next/navigation'
+
 
 export const ModalCloseButton = ({ ...props }) => {
   return (
@@ -49,9 +51,11 @@ export interface SHModalProps {
   onClose(initialState: boolean): void;
 }
 
-Modal.setAppElement("#__next");
+// Modal.setAppElement("#__next");
 
 export const NModal = (props: SHModalProps) => {
+  const router = useRouter();
+
   const { children, isOpen, onClose } = props;
 
   return (
@@ -61,7 +65,6 @@ export const NModal = (props: SHModalProps) => {
       closeTimeoutMS={310}
       className="SHModal"
       overlayClassName="SHModalOverlay"
-      // onRequestClose={() => router.push('/', undefined, { scroll: false })}
     >
       <div>
         <ModalClose onClick={() => onClose(false)} />
