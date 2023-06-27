@@ -1,10 +1,8 @@
-"use client";
-
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Head from "next/head";
 
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 
 import layout from "@/components/Layout.module.scss";
@@ -17,9 +15,7 @@ import {
   Footer,
   FooterCopyright,
   SFImage,
-  PopupModal,
   Heading2,
-  NModal,
 } from "@/components";
 
 import { Avator, Name, UserName } from "@/components/AppComponent";
@@ -34,7 +30,6 @@ import { getArticles } from "@/repository/article";
 import { Article, ArticleContent } from "@/entities/article";
 
 export default async function Home() {
-  const [isOpen, setIsOpen] = useState(false);
   const articlesData = await getArticles();
   const articles: [Article] = await Promise.all([articlesData]);
 
@@ -61,11 +56,7 @@ export default async function Home() {
       <WorkCardsContainer>
         {articles[0]?.contents?.map((article: ArticleContent) => {
           return (
-            <WorkCard
-              cardTitle={article.title}
-              moreEvent={() => setIsOpen(true)}
-              href={article?.id}
-            ></WorkCard>
+            <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>
           );
         })}
         <button>Show more</button>

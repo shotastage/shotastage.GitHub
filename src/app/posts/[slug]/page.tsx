@@ -1,6 +1,3 @@
-"use client";
-
-import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -18,10 +15,12 @@ import {
   Footer,
   FooterCopyright,
   SFImage,
-  PopupModal,
-  Heading2,
-  NModal,
+  
+  Heading2
 } from "@/components";
+
+
+// Page Sections
 
 
 import { getArticles, getArticleDetail } from "@/repository/article";
@@ -30,6 +29,20 @@ import { Article, ArticleContent } from "@/entities/article";
 import Image from "next/image";
 
 
+export async function generateStaticParams() {
+  const articlesData = await getArticles();
+ 
+  console.log("+++++++++++++++++++++++++++++++++++++");
+  articlesData.contents.forEach((elem: ArticleContent) => {
+    console.log(JSON.stringify(elem.id));
+});
+  
+  console.log("+++++++++++++++++++++++++++++++++++++");
+
+  return articlesData.contents?.map((article: ArticleContent) => ({
+     slug: article.id,
+  }))
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const articlesData = await getArticleDetail(params.slug);
