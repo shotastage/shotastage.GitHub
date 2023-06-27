@@ -1,15 +1,14 @@
 "use client";
 
-import { useRouter, usePathname } from 'next/navigation'
-import Link from 'next/link';
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 import Head from "next/head";
 
 import React, { useState } from "react";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 import layout from "@/components/Layout.module.scss";
 //import Image from 'next/image'
-
 
 import {
   Flex,
@@ -34,14 +33,7 @@ import { WorkCard } from "@/sections";
 import { getArticles } from "@/repository/article";
 import { Article, ArticleContent } from "@/entities/article";
 
-
-// Modal.setAppElement('#__next');
-
-
 export default async function Home() {
-
-
-
   const [isOpen, setIsOpen] = useState(false);
   const articlesData = await getArticles();
   const articles: [Article] = await Promise.all([articlesData]);
@@ -53,9 +45,6 @@ export default async function Home() {
         <meta name="description" content="SHOTA's portfolio site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TopBanner>
-        現在このWebページは開発中です。詳細はこちらをタップ。
-      </TopBanner>
       <div className={layout.container}>
         <Navbar>Shota's Portfolio</Navbar>
         <div className="grid grid-cols-2 gap-4 grid-flow-row auto-rows-max md:auto-rows-min">
@@ -75,10 +64,8 @@ export default async function Home() {
             <WorkCard
               cardTitle={article.title}
               moreEvent={() => setIsOpen(true)}
-              href={article?.slug}
-            >
-             
-            </WorkCard>
+              href={article?.id}
+            ></WorkCard>
           );
         })}
         <button>Show more</button>

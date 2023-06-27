@@ -8,6 +8,6 @@ export type ArticleContent = {
   updatedAt: string;
   publishedAt: string;
   title: string;
-  body: string;
+  content: string;
   slug: string;
 };
