@@ -15,33 +15,22 @@ import {
   Footer,
   FooterCopyright,
   SFImage,
-  
-  Heading2
+  Heading2,
 } from "@/components";
 
-
 // Page Sections
-
 
 import { getArticles, getArticleDetail } from "@/repository/article";
 import { Article, ArticleContent } from "@/entities/article";
 
 import Image from "next/image";
 
-
 export async function generateStaticParams() {
   const articlesData = await getArticles();
- 
-  console.log("+++++++++++++++++++++++++++++++++++++");
-  articlesData.contents.forEach((elem: ArticleContent) => {
-    console.log(JSON.stringify(elem.id));
-});
-  
-  console.log("+++++++++++++++++++++++++++++++++++++");
 
   return articlesData.contents?.map((article: ArticleContent) => ({
-     slug: article.id,
-  }))
+    slug: article.id,
+  }));
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -56,6 +45,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={layout.container}>
+        <Link href={`/`}>
+          <button className={styles.backButton}>←</button>
+        </Link>
+
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{
