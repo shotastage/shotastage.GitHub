@@ -28,7 +28,9 @@ import Image from "next/image";
 export async function generateStaticParams() {
   const articlesData = await getArticles();
 
-  return articlesData.contents?.map((article: ArticleContent) => ({
+  console.log(JSON.stringify(articlesData));
+  
+  return articlesData.contents.map((article) => ({
     slug: article.id,
   }));
 }
