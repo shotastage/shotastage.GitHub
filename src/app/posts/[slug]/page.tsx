@@ -29,7 +29,7 @@ export async function generateStaticParams() {
   const articlesData = await getArticles();
 
   console.log(JSON.stringify(articlesData));
-  
+
   return articlesData.contents.map((article) => ({
     slug: article.id,
   }));
@@ -46,11 +46,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <meta name="description" content="SHOTA's portfolio site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={layout.container}>
-        <Link href={`/`}>
-          <button className={styles.backButton}>←</button>
-        </Link>
-
+      <Link href={`/`}>
+        <button className={styles.backButton}>←</button>
+      </Link>
+      <div className={layout.articleContainer}>
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{
