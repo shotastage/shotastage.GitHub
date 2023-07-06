@@ -50,13 +50,9 @@ function ArticleNav() {
         <span>2023 Jul 7</span>
       </div>
 
-      <object
-        className={styles.articleNavToggle}
-        type="image/svg+xml"
-        data="/icons/Share-Icon.svg"
-      >
-        Button Icon can not be displayed on your browser.
-      </object>
+      <span>Home</span>
+      <span>Articles</span>
+      <span>News</span>
 
       <object
         className={styles.articleNavToggle}
