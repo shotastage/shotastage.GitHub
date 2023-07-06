@@ -36,7 +36,17 @@ export async function generateStaticParams() {
 }
 
 function ArticleNav() {
-  return <nav className={styles.articleNav}></nav>;
+  return (
+    <nav className={styles.articleNav}>
+      <object
+        className={styles.articleNavToggle}
+        type="image/svg+xml"
+        data="/icons/Pop-Toggle.svg"
+      >
+        Button Icon can not be displayed on your browser.
+      </object>
+    </nav>
+  );
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {

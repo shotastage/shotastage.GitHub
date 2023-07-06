@@ -80,4 +80,5 @@ $padding-left-xs: 1em;
 .profileButtonIcon {
   width: $btn-size - 40px;
   height: $btn-size - 40px;
+  pointer-events: none;
 }
