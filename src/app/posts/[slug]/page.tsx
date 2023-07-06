@@ -35,6 +35,10 @@ export async function generateStaticParams() {
   }));
 }
 
+function ArticleNav() {
+  return <nav className={styles.articleNav}></nav>;
+}
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const articlesData = await getArticleDetail(params.slug);
   const content: Array<ArticleContent> = await Promise.all([articlesData]);
@@ -47,9 +51,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href={`/`}>
-        <button className={styles.backButton}>←</button>
+        <button className={styles.backButton}>
+          <object
+            className={styles.backButtonIcon}
+            type="image/svg+xml"
+            data="/icons/arrow-left.svg"
+          >
+            Button Icon can not be displayed on your browser.
+          </object>
+        </button>
       </Link>
       <div className={layout.articleContainer}>
+        <ArticleNav />
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{

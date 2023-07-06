@@ -25,7 +25,13 @@ export const WorkCard = (props: Props) => {
       return (
         <Link href={`/posts/${props?.href}`}>
           <button className={styles.profileButton} onClick={props.moreEvent}>
-            →
+            <object
+              className={styles.profileButtonIcon}
+              type="image/svg+xml"
+              data="/icons/arrow-right.svg"
+            >
+              Button Icon can not be displayed on your browser.
+            </object>
           </button>
         </Link>
       );

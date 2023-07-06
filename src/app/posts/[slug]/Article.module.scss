@@ -3,6 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
+// Variables
+$btn-size: 60px;
+
+.articleNav {
+  background: rgb(255, 255, 255);
+  height: 70px;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .heading {
   font-weight: bold;
   font-size: 2.5rem;
@@ -14,10 +26,13 @@
   top: 40px;
   left: 50px;
   background: rgb(223, 223, 223);
-  width: 60px;
-  height: 60px;
+  width: $btn-size;
+  height: $btn-size;
   border-radius: 50%;
   bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include mixins.light-glass-bg;
 
   @media screen and (max-width: 1290px) {
@@ -25,6 +40,14 @@
     bottom: 10px;
   }
 }
+
+
+
+.backButtonIcon {
+  width: $btn-size - 40px;
+  height: $btn-size - 40px;
+}
+
 
 .detail {
   & > h1 {
