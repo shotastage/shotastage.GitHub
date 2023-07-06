@@ -8,19 +8,37 @@ $btn-size: 60px;
 
 .articleNav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: #f9f9f9;
-  height: 70px;
+  height: $btn-size + 3px;
   width: 100%;
   border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-top: 10px;
   margin-bottom: 30px;
+  border: 1px solid #ececec;
+}
+
+.articleNavInfoArea {
+  display: flex;
+  gap: 6pt;
+  align-items: center;
+  font-weight: bold;
+  color: #333;
 }
 
 .articleNavToggle {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
+
+.articleNavIcon {
+  width: 25px;
+  height: 25px;
   pointer-events: none;
 }
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="449px" height="428px" viewBox="0 0 449 428" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Pop Toggle</title>
+    <title>Group 2</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Nav-Menu" transform="translate(-160, -170)">
             <g id="Group" transform="translate(160, 170)">
                 <circle id="Oval" fill="#FF7C7C" cx="91.5" cy="91.5" r="91.5"></circle>
                 <circle id="Oval" fill="#87BCF7" cx="357.5" cy="91.5" r="91.5"></circle>
-                <circle id="Oval" fill="#77FF8A" cx="91.5" cy="336.5" r="91.5"></circle>
+                <circle id="Oval" fill="#87BCF7" cx="100.5" cy="331.5" r="91.5"></circle>
                 <circle id="Oval" fill="#FFCE61" cx="357.5" cy="336.5" r="91.5"></circle>
             </g>
         </g>

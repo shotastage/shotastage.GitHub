@@ -38,6 +38,26 @@ export async function generateStaticParams() {
 function ArticleNav() {
   return (
     <nav className={styles.articleNav}>
+      <div className={styles.articleNavInfoArea}>
+        <object
+          className={styles.articleNavIcon}
+          type="image/svg+xml"
+          data="/icons/Calendar-Icon.svg"
+        >
+          Button Icon can not be displayed on your browser.
+        </object>
+
+        <span>2023 Jul 7</span>
+      </div>
+
+      <object
+        className={styles.articleNavToggle}
+        type="image/svg+xml"
+        data="/icons/Share-Icon.svg"
+      >
+        Button Icon can not be displayed on your browser.
+      </object>
+
       <object
         className={styles.articleNavToggle}
         type="image/svg+xml"
