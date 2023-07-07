@@ -36,9 +36,9 @@ $standard-margin: 20px;
   margin-top: $standard-margin;
   margin-bottom: $standard-margin;
   min-height: 65px;
-  border-radius: 30px;
+  border-radius: 65px;
   top: 0;
-  padding: 0 10px;
+  padding: 0 20px;
 
   @include mixins.light-glass-bg;
 
@@ -64,7 +64,7 @@ $standard-margin: 20px;
 .navBrand {
   font-family: $font-main;
   font-size: 1.5rem;
-  letter-spacing: 1.5pt;
+  letter-spacing: 1pt;
   margin: 0;
   padding-left: 25px;
 
@@ -106,4 +106,9 @@ $standard-margin: 20px;
 
 .navForienLink {
   @include link-style;
+}
+
+.navToggle {
+  width: 20px;
+  height: 20px;
 }

@@ -1,28 +1,53 @@
-.container {
-  margin: 0 10em;
+@mixin responsive-margin(
+  $desktop: 10em,
+  $large: 5em,
+  $tablet: 2em,
+  $mobile: 1em
+) {
+  margin: 0 $desktop;
 
   @media screen and (max-width: 1500px) {
-    margin: 0 5em;
+    margin: 0 $large;
   }
 
   @media screen and (max-width: 1150px) {
-    margin: 0 2em;
+    margin: 0 $tablet;
   }
 
   @media screen and (max-width: 600px) {
-    margin: 0 1em;
+    margin: 0 $mobile;
   }
 }
 
+.container {
+  @include responsive-margin(10em, 5em, 2em, 1em);
+}
+
 .articleContainer {
-  margin: 0 auto;
+  @include responsive-margin(auto, auto, 20px, 20px);
   max-width: 920px;
   margin-top: 40px;
 
   @media screen and (max-width: 1290px) {
     margin-top: 120px;
   }
-  @media screen and (max-width: 900px) {
-    margin: 20px 20px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  @media screen and (max-width: 1190px) {
+    flex-direction: column;
+  }
+}
+
+@for $i from 1 through 4 {
+  .Col#{$i} {
+    width: 100% / $i;
+
+    @media screen and (max-width: 1190px) {
+      width: 100%;
+    }
   }
 }
