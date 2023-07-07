@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./Navbar.module.scss";
 
 type Props = {
@@ -18,9 +19,9 @@ export const Navbar = (props: Props) => {
           </a>
         </div>
         <div className={styles.navItems}>
-          <a className={styles.navLink} href="/">
+          <Link className={styles.navLink} href="#works">
             Works
-          </a>
+          </Link>
         </div>
         <div className={styles.navItems}>
           <a

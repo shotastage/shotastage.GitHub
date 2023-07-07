@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <Heading2>Works</Heading2>
+        <Heading2 id="works">Works</Heading2>
       </div>
       <WorkCardsContainer>
         {articles[0]?.contents?.map((article: ArticleContent) => {
