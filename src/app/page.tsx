@@ -42,11 +42,10 @@ export default async function Home() {
       </Head>
       <div className={layout.container}>
         <Navbar>Shota's Portfolio</Navbar>
-        <div className={layout.Row}>
+        <div className={layout.Row} id="portfolio">
           <div className={layout.Col2}>
             <ProfileCard className="w-16 md:w-32 "></ProfileCard>
           </div>
-
           <div className={layout.Col2}>
             <ProfileCard className="w-16 md:w-32 "></ProfileCard>
           </div>

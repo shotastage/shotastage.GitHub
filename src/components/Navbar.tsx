@@ -14,9 +14,9 @@ export const Navbar = (props: Props) => {
       </a>
       <div className={styles.navArea}>
         <div className={styles.navItems}>
-          <a className={styles.navLink} href="/">
+          <Link className={styles.navLink} href="#portfolio">
             Profile
-          </a>
+          </Link>
         </div>
         <div className={styles.navItems}>
           <Link className={styles.navLink} href="#works">
