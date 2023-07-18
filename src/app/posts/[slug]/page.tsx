@@ -44,7 +44,8 @@ function ArticleNav() {
           type="image/svg+xml"
           data="/icons/Calendar-Icon.svg"
         >
-          Button Icon can not be displayed on your browser.
+          This image cannot be displayed due to technical problem causing on
+          this browser.
         </object>
 
         <span>2023 Jul 7</span>
@@ -59,7 +60,8 @@ function ArticleNav() {
         type="image/svg+xml"
         data="/icons/Pop-Toggle.svg"
       >
-        Button Icon can not be displayed on your browser.
+        This image cannot be displayed due to technical problem causing on this
+        browser.
       </object>
     </nav>
   );
@@ -83,7 +85,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
             type="image/svg+xml"
             data="/icons/arrow-left.svg"
           >
-            Button Icon can not be displayed on your browser.
+            This image cannot be displayed due to technical problem causing on
+            this browser.
           </object>
         </button>
       </Link>

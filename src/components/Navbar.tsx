@@ -37,7 +37,8 @@ export const Navbar = (props: Props) => {
           type="image/svg+xml"
           data="/icons/Pop-Toggle.svg"
         >
-          Button Icon can not be displayed on your browser.
+          This image cannot be displayed due to technical problem causing on
+          this browser.
         </object>
       </div>
     </nav>
