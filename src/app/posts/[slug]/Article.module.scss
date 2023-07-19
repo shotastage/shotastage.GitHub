@@ -139,4 +139,9 @@ $btn-size: 60px;
     font-size: 1.1rem;
     line-height: 1.8rem;
   }
+
+  & > figure {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
