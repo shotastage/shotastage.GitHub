@@ -36,7 +36,7 @@ export default async function Home() {
   return (
     <div>
       <Head>
-        <title>Shota Portfolio</title>
+        <title>Shota's Portfolio</title>
         <meta name="description" content="SHOTA's portfolio site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
