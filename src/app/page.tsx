@@ -6,7 +6,6 @@ import React from "react";
 import Modal from "react-modal";
 
 import layout from "@/components/Layout.module.scss";
-//import Image from 'next/image'
 
 import {
   Flex,
@@ -54,15 +53,30 @@ export default async function Home() {
         <Heading2 id="works">Works</Heading2>
       </div>
       <WorkCardsContainer>
-        {articles[0]?.contents?.map((article: ArticleContent) => {
-          return (
-            <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>
-          );
-        })}
+        {
+          articles[0]?.contents
+            ?.filter((article: ArticleContent) => article?.category?.name === 'works')
+            .map((article: ArticleContent) => {
+              return <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>;
+            })
+        }
         <button>Show more</button>
       </WorkCardsContainer>
       <div className={layout.container}>
         <Heading2>Writings</Heading2>
+      </div>
+      <WorkCardsContainer>
+        {
+          articles[0]?.contents
+            ?.filter((article: ArticleContent) => article?.category?.name === 'writings')
+            .map((article: ArticleContent) => {
+              return <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>;
+            })
+        }
+        <button>Show more</button>
+      </WorkCardsContainer>
+      <div className={layout.container}>
+
         <Heading2>Skills & Experiences</Heading2>
         <Heading2>Social</Heading2>
       </div>
