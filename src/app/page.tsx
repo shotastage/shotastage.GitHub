@@ -21,7 +21,6 @@ import { Avator, Name, UserName } from "@/components/AppComponent";
 import { TopBanner } from "@/components/TopPopup";
 
 // Page Sections
-
 import { ProfileCard, WorkCardsContainer } from "@/sections";
 import { WorkCard } from "@/sections";
 
@@ -29,8 +28,14 @@ import { getArticles } from "@/repository/article";
 import { Article, ArticleContent } from "@/entities/article";
 
 export default async function Home() {
-  const articlesData = await getArticles();
-  const articles: [Article] = await Promise.all([articlesData]);
+  let articles: Article[] = [];
+
+  try {
+    const articleData = await getArticles();
+    articles = [articleData];
+  } catch (error) {
+    console.error('Failed to fetch articles:', error);
+  }
 
   return (
     <div>

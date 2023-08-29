@@ -7,6 +7,8 @@ export async function getArticles(): Promise<Article> {
     headers: {
       "X-MICROCMS-API-KEY": `${process.env.API_KEY}`,
     },
+    cache: 'force-cache',
+    next: { revalidate: 3600 }
   });
 
   if (!res.ok) {
@@ -15,6 +17,7 @@ export async function getArticles(): Promise<Article> {
 
   return res.json();
 }
+
 
 export async function getArticleDetail(id: string): Promise<ArticleContent> {
   const res = await fetch(
