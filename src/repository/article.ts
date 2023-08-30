@@ -6,9 +6,7 @@ export async function getArticles(): Promise<Article> {
     method: "GET",
     headers: {
       "X-MICROCMS-API-KEY": `${process.env.API_KEY}`,
-    },
-    cache: 'force-cache',
-    next: { revalidate: 3600 }
+    }
   });
 
   if (!res.ok) {
