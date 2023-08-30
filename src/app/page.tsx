@@ -3,7 +3,6 @@ import Link from "next/link";
 import Head from "next/head";
 
 import React from "react";
-import Modal from "react-modal";
 
 import layout from "@/components/Layout.module.scss";
 
@@ -15,9 +14,9 @@ import {
   FooterCopyright,
   SFImage,
   Heading2,
+  ReadMoreButton,
 } from "@/components";
 
-import { Avator, Name, UserName } from "@/components/AppComponent";
 import { TopBanner } from "@/components/TopPopup";
 
 // Page Sections
@@ -65,7 +64,6 @@ export default async function Home() {
               return <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>;
             })
         }
-        <button>Show more</button>
       </WorkCardsContainer>
       <div className={layout.container}>
         <Heading2>Writings</Heading2>
@@ -78,7 +76,6 @@ export default async function Home() {
               return <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>;
             })
         }
-        <button>Show more</button>
       </WorkCardsContainer>
       <div className={layout.container}>
 

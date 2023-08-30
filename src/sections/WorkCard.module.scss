@@ -9,6 +9,8 @@ $padding-left-xs: 1em;
 
 .workContainer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   overflow-x: scroll;
 }
