@@ -1,4 +1,3 @@
-import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -19,7 +18,7 @@ import {
 import { TopBanner } from "@/components/TopPopup";
 
 // Page Sections
-import { ProfileCard, WorkCardsContainer } from "@/sections";
+import { HighlightCard, ProfileCard, WorkCardsContainer } from "@/sections";
 import { WorkCard } from "@/sections";
 
 import { getArticles } from "@/repository/article";
@@ -49,7 +48,7 @@ export default async function Home() {
             <ProfileCard className="w-16 md:w-32 "></ProfileCard>
           </div>
           <div className={layout.Col2}>
-            <ProfileCard className="w-16 md:w-32 "></ProfileCard>
+            <HighlightCard className="w-16 md:w-32 "></HighlightCard>
           </div>
         </div>
 
