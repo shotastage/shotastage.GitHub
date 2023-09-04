@@ -7,7 +7,8 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   cardTitle?: string;
-  href?: Url;
+  href: Url;
+  eyecatch?: string;
   moreEvent?: any;
 };
 
@@ -50,6 +51,7 @@ export const WorkCard = (props: Props) => {
         <h1 className={styles.profileName}>{props.cardTitle}</h1>
         {props.children}
       </div>
+      <img src={props.eyecatch} className="w-64" alt="card logo" />
       <div
         className="flex-initial w-18 flex justify-center items-end"
         style={{ height: "100%" }}

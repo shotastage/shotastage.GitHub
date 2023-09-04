@@ -59,7 +59,7 @@ export default async function Home() {
           articles[0]?.contents
             ?.filter((article: ArticleContent) => article?.category?.name === 'works')
             .map((article: ArticleContent) => {
-              return <WorkCard cardTitle={article.title} href={article?.id}></WorkCard>;
+              return <WorkCard cardTitle={article.title} href={article?.id} eyecatch={article.eyecatch?.url}></WorkCard>;
             })
         }
       </WorkCardsContainer>
