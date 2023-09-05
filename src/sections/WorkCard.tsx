@@ -7,7 +7,7 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   cardTitle?: string;
-  href: Url;
+  href?: Url;
   eyecatch?: string;
   moreEvent?: any;
 };
