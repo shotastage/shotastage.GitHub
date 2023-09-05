@@ -9,12 +9,10 @@ type Props = {
 export const HighlightCard = (props: Props) => {
   return (
     <div className={styles.profileCard}>
-      <div className="flex flex-row justify-start items-center flex-initial w-64">
-      </div>
       <div className="flex-initial w-42">
-        <h1 className={styles.profileName}>Highlight</h1>
-        <h2>sho-ta, shimazu</h2>
-        <p>私のプロフィールはこちらから</p>
+        <h1 className={styles.profileName}>Under maintenance</h1>
+        <h2>恐れ入りますが、現在メンテナンス中です</h2>
+        <p></p>
         {props.children}
       </div>
       <div
