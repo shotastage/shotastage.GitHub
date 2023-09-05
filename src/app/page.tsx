@@ -34,6 +34,17 @@ export default async function Home() {
     console.error('Failed to fetch articles:', error);
   }
 
+  if (typeof window !== 'undefined') {
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      alert('このWebサイトは現在、更新中です。');
+    } else {
+      alert('このWebサイトは現在、更新中です。');
+    }
+  } else {
+    console.log('You are on the server')
+  }
+
+
   return (
     <div>
       <Head>
