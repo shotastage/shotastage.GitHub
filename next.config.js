@@ -24,6 +24,7 @@ const nextConfig = {
   images: {
     domains: ['media.graphassets.com', 'firebasestorage.googleapis.com', 'images.microcms-assets.io'],
   },
+  output: "export"
 }
 
 module.exports = nextConfig

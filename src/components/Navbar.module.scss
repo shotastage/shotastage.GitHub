@@ -1,0 +1,114 @@
+@use "./mixins.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+
+// Variables
+$font-main: "Quicksand", sans-serif;
+$color-main: #333;
+$color-black: #000;
+$color-gray: #d8d8d8;
+$standard-margin: 20px;
+
+@mixin link-style {
+  text-decoration: none;
+  color: $color-black;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    color: #2b26be;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.5em;
+    border-radius: 0.3em;
+  }
+}
+
+.navbar {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: $standard-margin;
+  margin-bottom: $standard-margin;
+  min-height: 65px;
+  border-radius: 65px;
+  top: 0;
+  padding: 0 20px;
+
+  @include mixins.light-glass-bg;
+
+  @media screen and (max-width: 480px) {
+    height: 60px;
+  }
+}
+
+.brandArea {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: $color-main;
+
+  &:visited {
+    text-decoration: none;
+    color: $color-main;
+  }
+}
+
+.navBrand {
+  font-family: $font-main;
+  font-size: 1.5rem;
+  letter-spacing: 1pt;
+  margin: 0;
+  padding-left: 25px;
+
+  @media screen and (max-width: 480px) {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 15px;
+  }
+}
+
+.navArea {
+  margin: $standard-margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 715px) {
+    display: none;
+  }
+}
+
+.navItems {
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 0.5em;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.navLink {
+  @include link-style;
+}
+
+.navForienLink {
+  @include link-style;
+}
+
+.navToggle {
+  width: 20px;
+  height: 20px;
+}

@@ -1,1 +1,0 @@
-export { getWindowSize } from './demensions';
