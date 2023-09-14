@@ -78,7 +78,9 @@ export default async function Home() {
       <div className={layout.container}>
 
         <Heading2>Skills & Experiences</Heading2>
+        <p>Comming soon...</p>
         <Heading2>Social</Heading2>
+        <p>Comming soon...</p>
       </div>
       {/* <StorySection stories={stories}/> */}
 
