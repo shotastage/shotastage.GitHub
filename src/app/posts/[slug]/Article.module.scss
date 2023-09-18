@@ -1,7 +1,6 @@
 @use "../../../components/mixins";
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 // Variables
 $btn-size: 60px;
@@ -19,6 +18,11 @@ $btn-size: 60px;
   margin-top: 10px;
   margin-bottom: 30px;
   border: 1px solid #ececec;
+
+  @media screen and (max-width: 480px) {
+    height: $btn-size - 5px;
+    padding: 0 25px;
+  }
 }
 
 .articleNavInfoArea {
@@ -27,12 +31,21 @@ $btn-size: 60px;
   align-items: center;
   font-weight: bold;
   color: #333;
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 }
 
 .articleNavToggle {
   width: 30px;
   height: 30px;
   pointer-events: none;
+
+  @media screen and (max-width: 480px) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 
@@ -90,6 +103,11 @@ $btn-size: 60px;
   @media screen and (max-width: 1290px) {
     left: 10px;
     bottom: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: $btn-size - 7px;
+    height: $btn-size - 7px;
   }
 }
 

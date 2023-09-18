@@ -51,9 +51,7 @@ function ArticleNav() {
         <span>2023 Jul 7</span>
       </div>
 
-      <span>Home</span>
-      <span>Articles</span>
-      <span>News</span>
+      <span>Tag: System</span>
 
       <object
         className={styles.articleNavToggle}
