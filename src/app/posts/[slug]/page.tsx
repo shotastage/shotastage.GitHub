@@ -35,6 +35,26 @@ export async function generateStaticParams() {
   }));
 }
 
+function formatTimestamp(timestamp: string): string {
+  const months = [
+      'January', 'February', 'March', 'April', 'May', 'June', 'July',
+      'August', 'September', 'October', 'November', 'December'
+  ];
+
+  const date = new Date(timestamp);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${month} ${day}, ${year}`;
+}
+
+function capitalizeFirstLetter(str: string): string {
+  if (!str || str.length === 0) return str;
+
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const articlesData = await getArticleDetail(params.slug);
   const content: Array<ArticleContent> = await Promise.all([articlesData]);
@@ -59,6 +79,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </button>
       </Link>
       <div className={layout.articleContainer}>
+        <div className={styles.updateStatus}>
+          <span className={styles.updatedNew}>{capitalizeFirstLetter(content[0]?.category?.name!)}</span>
+          <span>{formatTimestamp(content[0]?.updatedAt)}</span>
+        </div>
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{
