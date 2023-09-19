@@ -35,36 +35,6 @@ export async function generateStaticParams() {
   }));
 }
 
-function ArticleNav() {
-  return (
-    <nav className={styles.articleNav}>
-      <div className={styles.articleNavInfoArea}>
-        <object
-          className={styles.articleNavIcon}
-          type="image/svg+xml"
-          data="/icons/Calendar-Icon.svg"
-        >
-          This image cannot be displayed due to technical problem causing on
-          this browser.
-        </object>
-
-        <span>2023 Jul 7</span>
-      </div>
-
-      <span>Tag: System</span>
-
-      <object
-        className={styles.articleNavToggle}
-        type="image/svg+xml"
-        data="/icons/Pop-Toggle.svg"
-      >
-        This image cannot be displayed due to technical problem causing on this
-        browser.
-      </object>
-    </nav>
-  );
-}
-
 export default async function Page({ params }: { params: { slug: string } }) {
   const articlesData = await getArticleDetail(params.slug);
   const content: Array<ArticleContent> = await Promise.all([articlesData]);
@@ -89,7 +59,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </button>
       </Link>
       <div className={layout.articleContainer}>
-        <ArticleNav />
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{
