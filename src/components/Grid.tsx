@@ -14,7 +14,7 @@ const FullContainer = ({ children }: Props) => {
 };
 
 const MarginSparcer = () => {
-  return <div className='marginSparcer'></div>;
+  return <div className='marginSpacer'></div>;
 };
 
 const Col = ({ children }: Props) => {
