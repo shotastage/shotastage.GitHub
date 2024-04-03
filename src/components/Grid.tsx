@@ -13,7 +13,7 @@ const FullContainer = ({ children }: Props) => {
   return <div className='containerStyleBase fullContainer'>{children}</div>;
 };
 
-const MarginSparcer = () => {
+const MarginSpacer = () => {
   return <div className='marginSpacer'></div>;
 };
 
@@ -27,4 +27,4 @@ const Row = ({ children }: Props) => {
 
 // ... and so on for the rest of the components
 
-export { Container, FullContainer, MarginSparcer, Col, Row };
+export { Container, FullContainer, MarginSpacer, Col, Row };
