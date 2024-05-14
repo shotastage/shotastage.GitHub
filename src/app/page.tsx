@@ -1,98 +1,95 @@
-import Link from "next/link";
-import Head from "next/head";
+import Image from "next/image";
+import styles from "./page.module.css";
 
-import React from "react";
-
-import layout from "@/components/Layout.module.scss";
-
-import {
-  Flex,
-  Navbar,
-  Heading,
-  Footer,
-  FooterCopyright,
-  SFImage,
-  Heading2,
-} from "@/components";
-
-import { TopBanner } from "@/components/TopPopup";
-
-// Page Sections
-import { HighlightCard, ProfileCard, WorkCardsContainer } from "@/sections";
-import { WorkCard } from "@/sections";
-
-import { getArticles } from "@/repository/article";
-import { Article, ArticleContent } from "@/entities/article";
-
-export default async function Home() {
-  let articles: Article[] = [];
-
-  try {
-    const articleData = await getArticles();
-    articles = [articleData];
-  } catch (error) {
-    console.error('Failed to fetch articles:', error);
-  }
-
+export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Shota's Portfolio</title>
-        <meta name="description" content="SHOTA's portfolio site" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className={layout.container}>
-        <Navbar>Shota's Portfolio</Navbar>
-        <div className={layout.Row} id="portfolio">
-          <div className={layout.Col2}>
-            <ProfileCard className="w-16 md:w-32 "></ProfileCard>
-          </div>
-          <div className={layout.Col2}>
-            <HighlightCard className="w-16 md:w-32 "></HighlightCard>
-          </div>
+    <main className={styles.main}>
+      <div className={styles.description}>
+        <p>
+          Get started by editing&nbsp;
+          <code className={styles.code}>src/app/page.tsx</code>
+        </p>
+        <div>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            By{" "}
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className={styles.vercelLogo}
+              width={100}
+              height={24}
+              priority
+            />
+          </a>
         </div>
-
-        <Heading2 id="works">Works</Heading2>
       </div>
-      <WorkCardsContainer>
-        {
-          articles[0]?.contents
-            ?.filter((article: ArticleContent) => article?.category?.name === 'works')
-            .map((article: ArticleContent) => {
-              return <WorkCard cardTitle={article.title} href={article?.id} eyecatch={article.eyecatch?.url}></WorkCard>;
-            })
-        }
-      </WorkCardsContainer>
-      <div className={layout.container}>
-        <Heading2>Writings</Heading2>
-      </div>
-      <WorkCardsContainer>
-        {
-          articles[0]?.contents
-            ?.filter((article: ArticleContent) => article?.category?.name === 'writings')
-            .map((article: ArticleContent) => {
-              return <WorkCard cardTitle={article.title} href={article?.id} eyecatch={article.eyecatch?.url}></WorkCard>;
-            })
-        }
-      </WorkCardsContainer>
-      <div className={layout.container}>
 
-        <Heading2>Skills & Experiences</Heading2>
-        <p>Comming soon...</p>
-        <Heading2>Social</Heading2>
-        <p>Comming soon...</p>
+      <div className={styles.center}>
+        <Image
+          className={styles.logo}
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
       </div>
-      {/* <StorySection stories={stories}/> */}
 
-      {/*
-      <Works />
-      <Writings />
-      <SkillsSection />
-      <SocialSection />
-        */}
-      <Footer>
-        <FooterCopyright />
-      </Footer>
-    </div>
+      <div className={styles.grid}>
+        <a
+          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Docs <span>-&gt;</span>
+          </h2>
+          <p>Find in-depth information about Next.js features and API.</p>
+        </a>
+
+        <a
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Learn <span>-&gt;</span>
+          </h2>
+          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
+        </a>
+
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Templates <span>-&gt;</span>
+          </h2>
+          <p>Explore starter templates for Next.js.</p>
+        </a>
+
+        <a
+          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className={styles.card}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Deploy <span>-&gt;</span>
+          </h2>
+          <p>
+            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          </p>
+        </a>
+      </div>
+    </main>
   );
 }
