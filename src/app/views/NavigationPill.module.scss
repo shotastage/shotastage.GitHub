@@ -1,0 +1,36 @@
+.navigationPill {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px; /* Increase border-radius for a more pill-like shape */
+  padding: 20px 40px;  /* Increase padding for a larger size */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly darker shadow for emphasis */
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.5em; /* Increase font size for the brand */
+  font-weight: bold;
+  margin-right: 30px; /* Increase margin to space out the links */
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  width: 40px;  /* Increase size of the links */
+  height: 40px; /* Increase size of the links */
+  background-color: #ddd;
+  border-radius: 50%;
+  margin-left: 15px; /* Increase margin for better spacing */
+  transition: background-color 0.3s;
+}
+
+.link:hover {
+  background-color: #aaa;
+}

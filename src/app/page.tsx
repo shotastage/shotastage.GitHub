@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
+import NavigationPill from "./views/ NavigationPill";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-     <h1>Hello, world</h1>
+      <NavigationPill/>
+      <h1>Hello, world</h1>
     </main>
   );
 }
