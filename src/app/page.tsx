@@ -6,7 +6,9 @@ export default function Home() {
     <>
       <main className={styles.main}>
         <NavigationPill />
-        <h1>Hello, world</h1>
+        <div className={styles.headCard}>
+          <h1>Hello, Experience!</h1>
+        </div>
       </main>
 
       <section className={styles.section}>

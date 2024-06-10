@@ -4,7 +4,7 @@ import styles from './NavigationPill.module.scss';
 const NavigationPill = () => {
   return (
     <div className={styles.navPill}>
-      <a href="/" className={styles.brand}>Magical</a>
+      <a href="/" className={styles.brand}>Magicalsoft</a>
       <div className={styles.links}>
         <a href="#" className={styles.link}></a>
         <a href="#" className={styles.link}></a>
