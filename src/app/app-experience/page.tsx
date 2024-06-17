@@ -6,7 +6,7 @@ export default function GenerativeAI() {
   return (
     <main className={styles.main}>
       <NavigationPill/>
-      <h1>Hello, world</h1>
+      <h1>App Experience</h1>
     </main>
   );
 }
