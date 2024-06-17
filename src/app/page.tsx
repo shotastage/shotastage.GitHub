@@ -1,13 +1,25 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import NavigationPill from "../views/ NavigationPill";
+import NavigationPill from "../views/NavigationPill";
+
 export default function Home() {
   return (
     <>
       <main className={styles.main}>
         <NavigationPill />
-        <div className={styles.headCard}>
-          <h1>Hello, Experience!</h1>
+        <div className={styles.row}>
+          <div className={styles.headCard}>
+            <h1>Hello, Experience!</h1>
+          </div>
+          <div className={styles.headCard}>
+            <h1>Hello, Experience!</h1>
+          </div>
+          <div className={styles.headCard}>
+            <h1>Hello, Experience!</h1>
+          </div>
+          <div className={styles.headCard}>
+            <h1>Hello, Experience!</h1>
+          </div>
         </div>
       </main>
 

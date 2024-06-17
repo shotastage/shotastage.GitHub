@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import NavigationPill from "../../views/ NavigationPill";
+import NavigationPill from "../../views/NavigationPill";
 
 export default function GenerativeAI() {
   return (

@@ -11,10 +11,11 @@ $linkMargin: 15px;
   align-items: center;
   background-color: #fff;
   border-radius: 50px; /* Increase border-radius for a more pill-like shape */
+
   padding: 20px 40px;  /* Increase padding for a larger size */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly darker shadow for emphasis */
   z-index: 1000;
   min-width: 900px;
+  border: 1px solid black; /* Add a 1px border with #fbfbfb color */
 }
 
 .brand {
