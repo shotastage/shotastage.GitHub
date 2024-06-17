@@ -1,3 +1,5 @@
+@use "../styles/mixins";
+
 $brandFontSize: 1.5em;
 $linkSize: 40px;
 $linkMargin: 15px;
@@ -9,13 +11,13 @@ $linkMargin: 15px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  background-color: #fff;
+  @include mixins.light-glass-bg;
   border-radius: 50px; /* Increase border-radius for a more pill-like shape */
 
   padding: 20px 40px;  /* Increase padding for a larger size */
   z-index: 1000;
   min-width: 900px;
-  border: 1px solid black; /* Add a 1px border with #fbfbfb color */
+  border: 1px solid rgb(229, 229, 229); /* Add a 1px border with #fbfbfb color */
 }
 
 .brand {

@@ -8,7 +8,7 @@ export default function Posts() {
           <NavigationPill />
           <div className={styles.row}>
             <div className={styles.headCard}>
-              <h1>Hello, Experience!</h1>
+              <h1>Hello!</h1>
             </div>
             <div className={styles.headCard}>
               <h1>Hello, Experience!</h1>
