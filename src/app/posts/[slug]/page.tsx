@@ -1,46 +1,66 @@
 import NavigationPill from "@/views/NavigationPill";
 import styles from "./page.module.scss";
 
-export default function Posts() {
-    return (
-      <>
-        <main className={styles.main}>
-          <NavigationPill />
-          <div className={styles.row}>
-            <div className={styles.headCard}>
-              <h1>Hello!</h1>
-            </div>
-            <div className={styles.headCard}>
-              <h1>Hello, Experience!</h1>
-            </div>
-            <div className={styles.headCard}>
-              <h1>Hello, Experience!</h1>
-            </div>
-            <div className={styles.headCard}>
-              <h1>Hello, Experience!</h1>
-            </div>
-          </div>
-        </main>
+import { getArticles, getArticleDetail } from "@/repository/article";
+import { Article, ArticleContent } from "@/entities/article";
 
-        <section className={styles.section}>
-          <h2>Products</h2>
-          <p>Introducing our latest products:</p>
-          <ul>
-            <li>Web Site Creation & Renewal</li>
-            <li>Product 2</li>
-            <li>Product 3</li>
-          </ul>
-        </section>
+export async function generateStaticParams() {
+  const articlesData = await getArticles();
 
-        <section className={styles.section}>
-          <h2>Services</h2>
-          <p>Our services include:</p>
-          <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-          </ul>
-        </section>
-      </>
-    );
-  }
+  console.log(JSON.stringify(articlesData));
+
+  return articlesData.contents.map((article) => ({
+    slug: article.id,
+  }));
+}
+
+function formatTimestamp(timestamp: string): string {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const date = new Date(timestamp);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${month} ${day}, ${year}`;
+}
+
+function capitalizeFirstLetter(str: string): string {
+  if (!str || str.length === 0) return str;
+
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const articlesData = await getArticleDetail(params.slug);
+  const content: Array<ArticleContent> = await Promise.all([articlesData]);
+
+  return (
+    <>
+      <main className={styles.main}>
+        <NavigationPill />
+        <h1 className={styles.heading}>{content[0]?.title}</h1>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${content[0]?.content}`,
+          }}
+          className={styles.detail}
+        />
+
+      </main>
+    </>
+  );
+}
