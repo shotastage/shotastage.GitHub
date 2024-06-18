@@ -18,12 +18,22 @@ $linkMargin: 15px;
   z-index: 1000;
   min-width: 900px;
   border: 1px solid rgb(229, 229, 229); /* Add a 1px border with #fbfbfb color */
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+    min-width: 100px;
+  }
 }
 
 .brand {
   font-size: 1.5em; /* Increase font size for the brand */
   font-weight: bold;
   margin-right: 30px; /* Increase margin to space out the links */
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.2em; /* Increase font size for the brand */
+    margin-right: 20px; /* Increase margin to space out the links */
+  }
 }
 
 .links {
@@ -37,6 +47,12 @@ $linkMargin: 15px;
   border-radius: 50%;
   margin-left: 15px; /* Increase margin for better spacing */
   transition: background-color 0.3s;
+
+  @media screen and (max-width: 480px) {
+    width: 30px;  /* Increase size of the links */
+    height: 30px; /* Increase size of the links */
+    margin-left: 10px; /* Increase margin for better spacing */
+  }
 }
 
 .link:hover {

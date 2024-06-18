@@ -10,8 +10,15 @@
   align-items: center;
   padding: 8.5rem 25rem 10rem;
   min-height: 100vh;
-}
 
+  @media screen and (max-width: 1290px) {
+    padding: 8.5rem 6rem 6rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 8.5rem 2rem 6rem;
+  }
+}
 
 // Variables
 $btn-size: 60px;
