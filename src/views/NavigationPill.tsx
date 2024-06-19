@@ -1,12 +1,25 @@
-import React from 'react';
-import styles from './NavigationPill.module.scss';
+import React from "react";
+import styles from "./NavigationStyle.module.scss";
+import layout from "./NavigationLayout.module.scss";
 
-const NavigationPill = () => {
+interface NavigationPillProps {
+  addBackButton?: boolean;
+}
+
+const NavigationPill: React.FC<NavigationPillProps> = ({ addBackButton }) => {
   return (
     <div className={styles.navPill}>
-      <a href="/" className={styles.brand}>MagicalApps</a>
+      {addBackButton && (
+        <span className={layout.backNavigation}>
+          <a href="javascript:history.back()" className={styles.backNavigation}>
+            Back
+          </a>
+        </span>
+      )}
+      <a href="/" className={styles.brand}>
+        MagicalApps
+      </a>
       <div className={styles.links}>
-        <a href="#" className={styles.link}></a>
         <a href="#" className={styles.link}></a>
         <a href="#" className={styles.link}></a>
         <a href="#" className={styles.link}></a>

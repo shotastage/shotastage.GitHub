@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <main className={styles.main}>
-        <NavigationPill />
+        <NavigationPill addBackButton={true} />
         <h1 className={styles.heading}>{content[0]?.title}</h1>
         <div
           dangerouslySetInnerHTML={{

@@ -17,6 +17,7 @@ $linkMargin: 15px;
   padding: 20px 40px;  /* Increase padding for a larger size */
   z-index: 1000;
   min-width: 900px;
+  height: 75px;
   border: 1px solid rgb(229, 229, 229); /* Add a 1px border with #fbfbfb color */
 
   @media screen and (max-width: 480px) {
@@ -26,7 +27,7 @@ $linkMargin: 15px;
 }
 
 .brand {
-  font-size: 1.5em; /* Increase font size for the brand */
+  font-size: 1.4em; /* Increase font size for the brand */
   font-weight: bold;
   margin-right: 30px; /* Increase margin to space out the links */
 
@@ -57,4 +58,16 @@ $linkMargin: 15px;
 
 .link:hover {
   background-color: #aaa;
+}
+
+.backNavigation {
+  width: 70px;
+  height: 45px;
+  border-radius: calc(45px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixins.dark-glass-bg;
+  cursor: pointer;
+  color: white;
 }
