@@ -136,4 +136,40 @@ $btn-size: 60px;
       object-fit:contain;
     }
   }
+
+   a {
+    color: rgb(227, 111, 131);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tableOfContents {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: transformY(-50%);
+  right: 50px;
+  display: flex;
+  align-items: flex-start; /* Modify this line to align items to the left */
+  @include mixins.light-glass-bg;
+  border-radius: 15px; /* Increase border-radius for a more pill-like shape */
+  padding: 30px 20px;  /* Increase padding for a larger size */
+  z-index: 1000;
+  width: 200px;
+  min-height: 400px;
+  max-height: 80%;
+  border: 1px solid rgb(229, 229, 229); /* Add a 1px border with #fbfbfb color */
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.tableOfContentsHeading {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
 }

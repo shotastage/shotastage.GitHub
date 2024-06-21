@@ -52,14 +52,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <>
       <main className={styles.main}>
         <NavigationPill addBackButton={true} />
+        <div className={styles.tableOfContents}>
+          <span className={styles.tableOfContentsHeading}>目次</span>
+
+        </div>
         <h1 className={styles.heading}>{content[0]?.title}</h1>
+        <p>まず最初に、CopilotやChatGPTを用いてる場合は</p>
         <div
           dangerouslySetInnerHTML={{
             __html: `${content[0]?.content}`,
           }}
           className={styles.detail}
         />
-
       </main>
     </>
   );
