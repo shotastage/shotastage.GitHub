@@ -1,52 +1,89 @@
 import NavigationPill from "@/views/NavigationPill";
 import styles from "./page.module.scss";
+import { getArticleDetail } from "@/repository/article";
+import { JSDOM } from 'jsdom';
 
-import { getArticles, getArticleDetail } from "@/repository/article";
-import { Article, ArticleContent } from "@/entities/article";
-
-export async function generateStaticParams() {
-  const articlesData = await getArticles();
-
-  console.log(JSON.stringify(articlesData));
-
-  return articlesData.contents.map((article) => ({
-    slug: article.id,
-  }));
+interface ArticleContent {
+  title: string;
+  content: string;
 }
 
-function formatTimestamp(timestamp: string): string {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const date = new Date(timestamp);
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
-
-  return `${month} ${day}, ${year}`;
+interface TableOfContentsItem {
+  id: string;
+  text: string;
+  level: number;
+  parentId: string | null;
 }
 
-function capitalizeFirstLetter(str: string): string {
-  if (!str || str.length === 0) return str;
+function extractTableOfContents(htmlContent: string): TableOfContentsItem[] {
+  const dom = new JSDOM(htmlContent);
+  const doc = dom.window.document;
+  const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  const items: TableOfContentsItem[] = [];
+  const stack: TableOfContentsItem[] = [];
+
+  Array.from(headings).forEach((heading, index) => {
+    const level = parseInt(heading.tagName.charAt(1));
+    const item: TableOfContentsItem = {
+      id: `heading-${index}`,
+      text: heading.textContent || '',
+      level,
+      parentId: null
+    };
+
+    while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+      stack.pop();
+    }
+
+    if (stack.length > 0 && level > 2) {
+      item.parentId = stack[stack.length - 1].id;
+    }
+
+    items.push(item);
+    stack.push(item);
+  });
+
+  return items;
+}
+
+function TableOfContents({ items }: { items: TableOfContentsItem[] }) {
+  const renderItems = (parentId: string | null = null) => {
+    return (
+      <ul className={styles.tocList}>
+        {items
+          .filter(item => item.parentId === parentId)
+          .map(item => (
+            <li key={item.id} className={styles[`tocItem-h${item.level}`]}>
+              <a href={`#${item.id}`}>{item.text}</a>
+              {renderItems(item.id)}
+            </li>
+          ))
+        }
+      </ul>
+    );
+  };
+
+  return renderItems();
+}
+
+function addIdsToHeadings(htmlContent: string, tableOfContents: TableOfContentsItem[]): string {
+  const dom = new JSDOM(htmlContent);
+  const doc = dom.window.document;
+  const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  headings.forEach((heading, index) => {
+    heading.id = `heading-${index}`;
+  });
+
+  return dom.serialize();
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const articlesData = await getArticleDetail(params.slug);
-  const content: Array<ArticleContent> = await Promise.all([articlesData]);
+  const content: ArticleContent = articlesData;
+  const tableOfContents = extractTableOfContents(content.content);
+  const contentWithIds = addIdsToHeadings(content.content, tableOfContents);
 
   return (
     <>
@@ -54,13 +91,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <NavigationPill addBackButton={true} />
         <div className={styles.tableOfContents}>
           <span className={styles.tableOfContentsHeading}>目次</span>
-
+          <TableOfContents items={tableOfContents} />
         </div>
-        <h1 className={styles.heading}>{content[0]?.title}</h1>
+        <h1 className={styles.heading}>{content.title}</h1>
         <p>まず最初に、CopilotやChatGPTを用いてる場合は</p>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${content[0]?.content}`,
+            __html: contentWithIds,
           }}
           className={styles.detail}
         />
