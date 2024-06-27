@@ -8,7 +8,7 @@ $linkMargin: 15px;
   position: fixed;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(0);
   display: flex;
   align-items: center;
   @include mixins.light-glass-bg;
@@ -18,7 +18,8 @@ $linkMargin: 15px;
   min-width: 900px;
   height: 75px;
   border: 1px solid rgb(229, 229, 229);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, top, border-radius, width, padding, height, background-color, box-shadow;
 
   &.sticky {
     top: 0;
@@ -27,7 +28,12 @@ $linkMargin: 15px;
     min-width: 100%;
     padding: 10px 20px;
     height: 60px;
-    box-shadow: 0 2px 4px rgba(82, 82, 82, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgb(229, 229, 229);
   }
 
   @media screen and (max-width: 480px) {
@@ -40,7 +46,9 @@ $linkMargin: 15px;
   font-size: 1.4em;
   font-weight: bold;
   margin-right: 30px;
-  transition: font-size 0.3s ease-in-out;
+  transition: font-size 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateZ(0);
+  will-change: font-size;
 
   .sticky & {
     font-size: 1.2em;
@@ -62,7 +70,9 @@ $linkMargin: 15px;
   background-color: #ddd;
   border-radius: 50%;
   margin-left: 15px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateZ(0);
+  will-change: width, height, margin-left;
 
   .sticky & {
     width: 35px;
@@ -91,7 +101,9 @@ $linkMargin: 15px;
   @include mixins.dark-glass-bg;
   cursor: pointer;
   color: white;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateZ(0);
+  will-change: width, height;
 
   .sticky & {
     width: 60px;
