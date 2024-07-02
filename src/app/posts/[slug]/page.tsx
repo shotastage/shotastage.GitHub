@@ -88,7 +88,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <main className={styles.main}>
-        <NavigationPill addBackButton={true} />
+        <NavigationPill />
         <div className={styles.tableOfContents}>
           <span className={styles.tableOfContentsHeading}>目次</span>
           <TableOfContents items={tableOfContents} />

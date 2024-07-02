@@ -1,112 +1,83 @@
-@use "../styles/mixins";
+// NavigationBar.module.scss
 
-$brandFontSize: 1.5em;
-$linkSize: 40px;
-$linkMargin: 15px;
+$nav-bg-color: #ffffff; // 背景を白に変更
+$nav-text-color: #4a4a4a; // テキストの色をダークグレーに
+$nav-active-color: #ff6d99; // アクティブ状態の色を青に
+$nav-hover-color: #e0e0e0; // ホバー状態の色をライトグレーに
 
-.navPill {
+.navBarWrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(0);
-  display: flex;
-  align-items: center;
-  @include mixins.light-glass-bg;
-  border-radius: 50px;
-  padding: 20px 40px;
-  z-index: 1000;
-  min-width: 900px;
-  height: 75px;
-  border: 1px solid rgb(229, 229, 229);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  will-change: transform, top, border-radius, width, padding, height, background-color, box-shadow;
 
-  &.sticky {
-    top: 0;
-    border-radius: 0;
+
+  .navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $nav-bg-color;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    position: relative;
     width: 100%;
-    min-width: 100%;
-    padding: 10px 20px;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid rgb(229, 229, 229);
+    max-width: 600px;
+    margin: 0 auto;
+    height: 70px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // 軽いシャドウを追加
   }
 
-  @media screen and (max-width: 480px) {
-    width: 90%;
-    min-width: 100px;
-  }
-}
-
-.brand {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-right: 30px;
-  transition: font-size 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: translateZ(0);
-  will-change: font-size;
-
-  .sticky & {
-    font-size: 1.2em;
+  .tabContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 8px;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 1.2em;
-    margin-right: 20px;
-  }
-}
-
-.links {
-  display: flex;
-}
-
-.link {
-  width: 40px;
-  height: 40px;
-  background-color: #ddd;
-  border-radius: 50%;
-  margin-left: 15px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: translateZ(0);
-  will-change: width, height, margin-left;
-
-  .sticky & {
-    width: 35px;
-    height: 35px;
-    margin-left: 10px;
+  .highlight {
+    position: absolute;
+    height: 34px;
+    background-color: $nav-active-color;
+    border-radius: 9999px;
+    transition: all 0.3s ease-in-out;
   }
 
-  @media screen and (max-width: 480px) {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
+  .tab {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 10;
+    color: $nav-text-color;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $nav-hover-color;
+    }
+
+    &.active {
+      color: #ffffff; // アクティブなタブのテキストを白に
+    }
   }
-}
 
-.link:hover {
-  background-color: #aaa;
-}
+  .searchButton {
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.backNavigation {
-  width: 70px;
-  height: 45px;
-  border-radius: calc(45px / 2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include mixins.dark-glass-bg;
-  cursor: pointer;
-  color: white;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: translateZ(0);
-  will-change: width, height;
-
-  .sticky & {
-    width: 60px;
-    height: 35px;
+  .searchIcon {
+    height: 20px;
+    width: 20px;
+    color: $nav-text-color;
   }
 }
