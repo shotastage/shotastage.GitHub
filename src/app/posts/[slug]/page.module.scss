@@ -1,5 +1,5 @@
 @use "../../../styles/mixins";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap');
 
 // Variables
 $btn-size: 60px;
@@ -79,7 +79,7 @@ $border-color: rgb(229, 229, 229);
 }
 
 .detail {
-  font-family: "Inter", sans-serif;
+  font-family: "IBM Plex Sans JP", sans-serif;
 
   h1, h2, h3 {
     font-weight: 700;
@@ -175,4 +175,9 @@ $border-color: rgb(229, 229, 229);
 .tocItem-h3 {
   font-size: 0.8rem;
   margin-left: 1ch;
+}
+
+.headingTopMsg {
+  font-size: 1pt;
+  color: rgba(255, 255, 255, 1);
 }

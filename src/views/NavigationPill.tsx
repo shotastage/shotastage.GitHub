@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+
 import { Search } from 'lucide-react';
 import styles from './NavigationStyle.module.scss';
+import Link from 'next/dist/client/link';
 
 
 interface TabRefs {
@@ -10,11 +13,11 @@ interface TabRefs {
 }
 
 const NavigationPill: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('Today');
+  const [activeTab, setActiveTab] = useState('Home');
   const [highlightStyle, setHighlightStyle] = useState({});
   const tabsRef = useRef<TabRefs>({});
 
-  const tabs = ['Today', 'Games', 'Apps', 'Arcade'];
+  const tabs = ['Home', 'Projects', 'Services', 'Media', 'Contact'];
 
   useEffect(() => {
     const activeTabElement = tabsRef.current[activeTab];
@@ -28,6 +31,16 @@ const NavigationPill: React.FC = () => {
 
   return (
     <nav className={styles.navBarWrapper}>
+      <div className={styles.navBrand}>
+        <Link href="/">
+          <Image
+            src="/MagicApp.svg"
+            alt="Logo"
+            width={140}
+            height={50}
+          />
+        </Link>
+      </div>
       <div className={styles.navBar}>
         <div className={styles.tabContainer}>
           <div

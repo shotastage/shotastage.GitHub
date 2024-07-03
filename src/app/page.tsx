@@ -5,8 +5,8 @@ import NavigationPill from "../views/NavigationPill";
 export default function Home() {
   return (
     <>
+      <NavigationPill />
       <main className={styles.main}>
-        <NavigationPill />
         <div className={styles.row}>
           <div className={styles.headCard}>
             <h1>App Experience</h1>

@@ -1,7 +1,7 @@
 import NavigationPill from "@/views/NavigationPill";
 import styles from "./page.module.scss";
 import { getArticleDetail } from "@/repository/article";
-import { JSDOM } from 'jsdom';
+import { JSDOM } from "jsdom";
 
 interface ArticleContent {
   title: string;
@@ -18,7 +18,7 @@ interface TableOfContentsItem {
 function extractTableOfContents(htmlContent: string): TableOfContentsItem[] {
   const dom = new JSDOM(htmlContent);
   const doc = dom.window.document;
-  const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  const headings = doc.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
   const items: TableOfContentsItem[] = [];
   const stack: TableOfContentsItem[] = [];
@@ -27,9 +27,9 @@ function extractTableOfContents(htmlContent: string): TableOfContentsItem[] {
     const level = parseInt(heading.tagName.charAt(1));
     const item: TableOfContentsItem = {
       id: `heading-${index}`,
-      text: heading.textContent || '',
+      text: heading.textContent || "",
       level,
-      parentId: null
+      parentId: null,
     };
 
     while (stack.length > 0 && stack[stack.length - 1].level >= level) {
@@ -52,14 +52,13 @@ function TableOfContents({ items }: { items: TableOfContentsItem[] }) {
     return (
       <ul className={styles.tocList}>
         {items
-          .filter(item => item.parentId === parentId)
-          .map(item => (
+          .filter((item) => item.parentId === parentId)
+          .map((item) => (
             <li key={item.id} className={styles[`tocItem-h${item.level}`]}>
               <a href={`#${item.id}`}>{item.text}</a>
               {renderItems(item.id)}
             </li>
-          ))
-        }
+          ))}
       </ul>
     );
   };
@@ -67,10 +66,13 @@ function TableOfContents({ items }: { items: TableOfContentsItem[] }) {
   return renderItems();
 }
 
-function addIdsToHeadings(htmlContent: string, tableOfContents: TableOfContentsItem[]): string {
+function addIdsToHeadings(
+  htmlContent: string,
+  tableOfContents: TableOfContentsItem[]
+): string {
   const dom = new JSDOM(htmlContent);
   const doc = dom.window.document;
-  const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  const headings = doc.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
   headings.forEach((heading, index) => {
     heading.id = `heading-${index}`;
@@ -87,14 +89,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <NavigationPill />
       <main className={styles.main}>
-        <NavigationPill />
         <div className={styles.tableOfContents}>
           <span className={styles.tableOfContentsHeading}>目次</span>
           <TableOfContents items={tableOfContents} />
         </div>
         <h1 className={styles.heading}>{content.title}</h1>
-        <p>まず最初に、CopilotやChatGPTを用いてる場合は</p>
+        <p className={styles.headingTopMsg}>
+          まず最初に、CopilotやChatGPTを用いてる場合は、このWebページを閲覧している事実がMicrosoft並びにOpenAIのサーバーに送信されていることに注意する必要があります。また、要約された内容が事実ではない可能性があります。
+          このWebページでは、正確な要約をするAI機能を実装しています。今しばらくお待ちください。
+        </p>
         <div
           dangerouslySetInnerHTML={{
             __html: contentWithIds,
