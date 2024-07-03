@@ -32,6 +32,10 @@ $nav-hover-color: #ffa9c3; // Change hover state color to light gray
     width: 190px;
     margin: 0 auto;
     height: 70px;
+
+    @media screen and (max-width: 480px){
+      display: none;
+    }
   }
 
   .navBar {
