@@ -97,7 +97,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <h1 className={styles.heading}>{content.title}</h1>
         <p className={styles.headingTopMsg}>
-          まず最初に、CopilotやChatGPTを用いてる場合は、このWebページを閲覧している事実がMicrosoft並びにOpenAIのサーバーに送信されていることに注意する必要があります。また、要約された内容が事実ではない可能性があります。
+          まず最初に、これは非常に重要な情報です。CopilotやChatGPTを用いてる場合は、このWebページを閲覧している事実がMicrosoft並びにOpenAIのサーバーに送信されていることに注意する必要があります。また、要約された内容が事実ではない可能性があります。
           このWebページでは、正確な要約をするAI機能を実装しています。今しばらくお待ちください。
         </p>
         <div

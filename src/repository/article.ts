@@ -11,6 +11,7 @@ export async function getArticles(): Promise<Article> {
       headers: {
         "X-MICROCMS-API-KEY": `${process.env.API_KEY}`,
       },
+      cache: 'no-store',
     });
 
     if (!res.ok) {
@@ -37,13 +38,15 @@ export async function getArticleDetail(id: string): Promise<ArticleContent> {
   }
 
   try {
+    const timestamp = Date.now();
     const res = await fetch(
-      `https://shota-folio.microcms.io/api/v1/blogs/${id}`,
+      `https://shota-folio.microcms.io/api/v1/blogs/${id}?timestamp=${timestamp}`,
       {
         method: "GET",
         headers: {
           "X-MICROCMS-API-KEY": `${process.env.API_KEY}`,
         },
+        cache: 'no-store',
       }
     );
 
