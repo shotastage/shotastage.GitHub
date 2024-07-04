@@ -67,6 +67,8 @@ const NavigationPill: React.FC = () => {
           </svg>
         </button>
       </div>
+      <div className={styles.navBrand}>
+      </div>
     </nav>
   );
 };
