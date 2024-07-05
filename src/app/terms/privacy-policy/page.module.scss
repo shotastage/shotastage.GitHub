@@ -1,0 +1,187 @@
+@use "../../../styles/mixins";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap');
+
+// Variables
+$btn-size: 60px;
+$primary-color: rgb(227, 111, 131);
+$border-color: rgb(229, 229, 229);
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8.5rem 25rem 10rem;
+  min-height: 100vh;
+
+  @media screen and (max-width: 1290px) {
+    padding: 8.5rem 6rem 6rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 8.5rem 2rem 6rem;
+  }
+}
+
+.updateStatus {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 1290px) {
+    margin-left: 60px;
+    margin-bottom: 15px;
+  }
+}
+
+.updatedNew {
+  width: 50px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 2px;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.backButton {
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  background: rgb(223, 223, 223);
+  width: $btn-size;
+  height: $btn-size;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixins.light-glass-bg;
+
+  @media screen and (max-width: 1290px) {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: $btn-size - 15px;
+    height: $btn-size - 15px;
+  }
+}
+
+.backButtonIcon {
+  width: $btn-size - 40px;
+  height: $btn-size - 40px;
+  pointer-events: none;
+}
+
+.detail {
+  font-family: "IBM Plex Sans JP", sans-serif;
+
+  h1, h2, h3 {
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.7rem; }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+
+  ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
+    list-style-type: disc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  figure {
+    margin: 1.5em 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tableOfContents {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include mixins.light-glass-bg;
+  border-radius: 15px;
+  padding: 30px 20px;
+  z-index: 1000;
+  width: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid $border-color;
+
+  @media screen and (max-width: 1290px) {
+    display: none;
+  }
+}
+
+.tableOfContentsHeading {
+  margin: 0 0 1em;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.tocItem-h2, .tocItem-h3 {
+  margin: 0.5em 0;
+  font-weight: 500;
+  list-style-type: none;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tocItem-h2 { font-size: 0.9rem; }
+.tocItem-h3 {
+  font-size: 0.8rem;
+  margin-left: 1ch;
+}
+
+.headingTopMsg {
+  font-size: 1pt;
+  color: rgba(255, 255, 255, 1);
+}

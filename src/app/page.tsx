@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import NavigationPill from "../views/NavigationPill";
+import Footer from "@/views/Footer";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
           </ul>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
