@@ -11,7 +11,9 @@ export default function Home() {
         <div className={styles.row}>
           <div className={styles.jumbotron}>
             <span className={styles.boldTypo}>MagicApp is</span>
-            <span className={styles.boldTypoBottom}>Designing Farm</span>
+            <span className={styles.boldTypoBottom}>Designers Agency</span>
+            <span className={styles.sentence1}>that involves</span>
+            <span className={styles.boldTypoBottom}>rich experience</span>
           </div>
         </div>
         <div className={styles.row}></div>
