@@ -11,9 +11,9 @@ export default function Home() {
         <div className={styles.row}>
           <div className={styles.jumbotron}>
             <span className={styles.boldTypo}>MagicApp is</span>
-            <span className={styles.boldTypoBottom}>Designers Agency</span>
+            <span className={styles.boldTypoBottom}>Researcher Farm</span>
             <span className={styles.sentence1}>that involves</span>
-            <span className={styles.boldTypoBottom}>rich experience</span>
+            <span className={styles.boldTypoBottom}>Rich Experiences</span>
           </div>
         </div>
         <div className={styles.row}></div>
@@ -21,7 +21,7 @@ export default function Home() {
 
       <main className={styles.container}>
         <section className={styles.section}>
-          <h2>Products</h2>
+          <h2 className={styles.sectionHeading}>Products</h2>
           <p>Introducing our latest products:</p>
           <ul>
             <li>Web Site Creation & Renewal</li>
@@ -30,7 +30,7 @@ export default function Home() {
           </ul>
         </section>
         <section className={styles.section}>
-          <h2>Services</h2>
+          <h2 className={styles.sectionTypo}>Services</h2>
           <p>Our services include:</p>
           <ul>
             <li>Service 1</li>

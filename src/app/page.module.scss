@@ -1,6 +1,5 @@
 @use "../styles/mixins";
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
 .main {
   display: flex;
   flex-direction: column;
@@ -14,6 +13,18 @@
     flex-direction: row;
     width: 100%;
     gap: 20px;
+  }
+
+  @media screen and (max-width: 1350px) {
+    padding: 8.5rem 4rem 4rem;
+  }
+
+  @media screen and (max-width: 1100px) {
+    padding: 8.5rem 2rem 2rem;
+  }
+
+  @media screen and (max-width: 850px) {
+    padding: 8.5rem 1rem 1rem;
   }
 }
 
@@ -46,7 +57,6 @@
     color: #888888;
   }
 }
-
 .jumbotron {
   display: flex;
   flex-direction: column;
@@ -99,7 +109,7 @@
     padding-top: 30px;
   }
 
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: 1395px) {
     .boldTypo { font-size: 8rem; }
     .boldTypoBottom { font-size: 7rem; }
   }
