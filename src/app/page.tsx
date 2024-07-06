@@ -9,33 +9,12 @@ export default function Home() {
       <NavigationPill />
       <main className={styles.main}>
         <div className={styles.row}>
-          <div className={styles.headCard}>
-            <h1>App Experience</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>Web Design</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>Cloud System Design</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>AI Experience</h1>
+          <div className={styles.jumbotron}>
+            <span className={styles.boldTypo}>MagicApp is</span>
+            <span className={styles.boldTypoBottom}>Designing Farm</span>
           </div>
         </div>
-        <div className={styles.row}>
-          <div className={styles.headCard}>
-            <h1>People Management</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>Entrepreneurship</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>Global Biz</h1>
-          </div>
-          <div className={styles.headCard}>
-            <h1>Arts in Engineering</h1>
-          </div>
-        </div>
+        <div className={styles.row}></div>
       </main>
 
       <main className={styles.container}>

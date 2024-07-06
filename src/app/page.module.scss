@@ -45,3 +45,54 @@
     color: #888888;
   }
 }
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+
+  .boldTypo {
+    font-size: 10rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#ff84a7, #ff3b3b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(#ff84a7, #ff3b3b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+
+  .boldTypoBottom {
+    font-size: 9rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#ff3b3b, #ff84a7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(#ff3b3b, #ff84a7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+
+  @media screen and (max-width: 1350px) {
+    .boldTypo { font-size: 8rem; }
+    .boldTypoBottom { font-size: 7rem; }
+  }
+
+  @media screen and (max-width: 1100px) {
+    padding: 10px;
+    .boldTypo { font-size: 6rem; }
+    .boldTypoBottom { font-size: 5rem; }
+  }
+
+  @media screen and (max-width: 850px) {
+    .boldTypo { font-size: 4rem; }
+    .boldTypoBottom { font-size: 3rem; }
+  }
+}
