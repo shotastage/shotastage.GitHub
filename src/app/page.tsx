@@ -23,14 +23,10 @@ export default function Home() {
         <section className={styles.section}>
           <h2 className={styles.sectionHeading}>Projects</h2>
           <p>Introducing our latest products:</p>
-          <ul>
-            <li>Web Site Creation & Renewal</li>
-            <li>Product 2</li>
-            <li>Product 3</li>
-          </ul>
+
         </section>
         <section className={styles.section}>
-          <h2 className={styles.sectionTypo}>Services</h2>
+          <h2 className={styles.sectionHeading}>Services</h2>
           <p>Our services include:</p>
           <ul>
             <li>Service 1</li>

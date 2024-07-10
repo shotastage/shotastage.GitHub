@@ -45,7 +45,16 @@ $font-family: "Plus Jakarta Sans", sans-serif;
 
 .container {
   padding: $padding-large;
-  background: gray;
+}
+
+.section {
+}
+
+.sectionHeading {
+  font-size: 4rem;
+  @include gradient-text(linear-gradient(#ff3b3b, #ff84a7));
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .headCard {
