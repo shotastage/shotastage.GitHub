@@ -57,6 +57,10 @@ $font-family: "Plus Jakarta Sans", sans-serif;
   margin-bottom: 1rem;
 }
 
+.sectionHeadingServices {
+  @include gradient-text(linear-gradient(#3b4fff, #c037ff));
+}
+
 .headCard {
   display: flex;
   flex-direction: column;
@@ -110,6 +114,10 @@ $font-family: "Plus Jakarta Sans", sans-serif;
   .boldTypoBottom {
     font-size: 9rem;
     @include gradient-text(linear-gradient(#ff3b3b, #ff84a7));
+  }
+
+  .boldTypoLeast {
+    font-size: 7rem;
   }
 
   .sentence1 {

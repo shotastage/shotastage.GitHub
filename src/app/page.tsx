@@ -13,7 +13,7 @@ export default function Home() {
             <span className={styles.boldTypo}>MagicApp is</span>
             <span className={styles.boldTypoBottom}>Researcher Farm</span>
             <span className={styles.sentence1}>that involves</span>
-            <span className={styles.boldTypoBottom}>Rich Experiences</span>
+            <span className={`${styles.boldTypoBottom} ${styles.boldTypoLeast}`}>Rich Experiences</span>
           </div>
         </div>
         <div className={styles.row}></div>
@@ -26,7 +26,7 @@ export default function Home() {
 
         </section>
         <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>Services</h2>
+          <h2 className={`${styles.sectionHeading} ${styles.sectionHeadingServices}`}>Services</h2>
           <p>Our services include:</p>
           <ul>
             <li>Service 1</li>
