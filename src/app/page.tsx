@@ -21,7 +21,7 @@ export default function Home() {
 
       <main className={styles.container}>
         <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>Products</h2>
+          <h2 className={styles.sectionHeading}>Projects</h2>
           <p>Introducing our latest products:</p>
           <ul>
             <li>Web Site Creation & Renewal</li>

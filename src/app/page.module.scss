@@ -1,12 +1,26 @@
 @use "../styles/mixins";
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+$padding-large: 8.5rem 6rem 6rem;
+$padding-medium: 8.5rem 4rem 4rem;
+$padding-small: 8.5rem 2rem 2rem;
+$padding-xsmall: 8.5rem 1rem 1rem;
+$font-family: "Plus Jakarta Sans", sans-serif;
+
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 8.5rem 6rem 6rem;
+  padding: $padding-large;
   min-height: 100vh;
 
   .row {
@@ -17,20 +31,20 @@
   }
 
   @media screen and (max-width: 1350px) {
-    padding: 8.5rem 4rem 4rem;
+    padding: $padding-medium;
   }
 
   @media screen and (max-width: 1100px) {
-    padding: 8.5rem 2rem 2rem;
+    padding: $padding-small;
   }
 
   @media screen and (max-width: 850px) {
-    padding: 8.5rem 1rem 1rem;
+    padding: $padding-xsmall;
   }
 }
 
 .container {
-  padding: 8.5rem 6rem 6rem;
+  padding: $padding-large;
   background: gray;
 }
 
@@ -58,6 +72,7 @@
     color: #888888;
   }
 }
+
 .jumbotron {
   display: flex;
   flex-direction: column;
@@ -67,46 +82,31 @@
   border-radius: 15px;
   width: 100%;
   height: auto;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: $font-family;
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
   vertical-align: middle;
 
+  .boldTypo,
+  .boldTypoBottom {
+    @include gradient-text(linear-gradient(#ff84a7, #ff3b3b));
+    font-weight: bold;
+  }
+
   .boldTypo {
     font-size: 10rem;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#ff84a7, #ff3b3b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background: linear-gradient(#ff84a7, #ff3b3b);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
   }
 
   .boldTypoBottom {
     font-size: 9rem;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#ff3b3b, #ff84a7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background: linear-gradient(#ff3b3b, #ff84a7);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    @include gradient-text(linear-gradient(#ff3b3b, #ff84a7));
   }
 
   .sentence1 {
     font-size: 5rem;
     font-weight: bold;
-    background: -webkit-linear-gradient(#3b4fff, #c037ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background: linear-gradient(#3b4fff, #c037ff);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    @include gradient-text(linear-gradient(#3b4fff, #c037ff));
     padding-top: 30px;
   }
 
