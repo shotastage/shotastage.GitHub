@@ -20,7 +20,6 @@ export async function getArticles(): Promise<Article> {
     }
 
     const data = await res.json();
-    // 型チェック（例）
     if (!('contents' in data)) {
       throw new Error("Received data does not match the expected type");
     }

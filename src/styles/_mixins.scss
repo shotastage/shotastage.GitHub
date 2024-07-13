@@ -1,24 +1,29 @@
+// Variables
+$light-bg-color: rgba(255, 255, 255, 0.75);
+$dark-bg-color: rgba(0, 0, 0, 0.75);
+$shadow-color: rgba(56, 56, 56, 0.1);
+$blur-amount: 7.2px;
+$border-opacity: 0.56;
+
+// Common glass background properties
+@mixin glass-bg-common {
+  filter: drop-shadow(0 4px 10px $shadow-color);
+  backdrop-filter: blur($blur-amount);
+  -webkit-backdrop-filter: blur($blur-amount);
+
+  &:hover {
+    filter: none;
+  }
+}
+
 @mixin light-glass-bg {
-    background: rgba(255, 255, 255, 0.75);
-    filter: drop-shadow(0 4px 10px rgba(56, 56, 56, 0.1));
+  @include glass-bg-common;
+  background: $light-bg-color;
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+}
 
-    backdrop-filter: blur(7.2px);
-    -webkit-backdrop-filter: blur(7.2px);
-    border: 1px solid rgba(255, 255, 255, 0.56);
-
-    &:hover {
-      filter: none;
-    }
-  }
-
-  @mixin dark-glass-bg {
-    background: rgba(0, 0, 0, 0.75);
-    filter: drop-shadow(0 4px 10px rgba(56, 56, 56, 0.1));
-    backdrop-filter: blur(7.2px);
-    -webkit-backdrop-filter: blur(7.2px);
-    border: 1px solid rgba(0, 0, 0, 0.56);
-
-    &:hover {
-      filter: none;
-    }
-  }
+@mixin dark-glass-bg {
+  @include glass-bg-common;
+  background: $dark-bg-color;
+  border: 1px solid rgba(0, 0, 0, $border-opacity);
+}
